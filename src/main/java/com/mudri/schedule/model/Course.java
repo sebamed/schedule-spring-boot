@@ -3,13 +3,16 @@
  */
 package com.mudri.schedule.model;
 
-import javax.persistence.CascadeType;
+import java.util.List;
+
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,27 +22,33 @@ import lombok.NoArgsConstructor;
 
 /*
   +---------------------------------------------+
-  | Name: Subject                                  
+  | Name: Course                                  
   | Author: Sebastian                         
-  | Date: Oct 21, 2018                                                                                                                         
+  | Date: Oct 22, 2018                                                                                                                         
   +---------------------------------------------+
 */
 
 @Entity
-@Table(name = "subject")
+@Table(name = "course")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Subject {
+public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "types")
+	@ElementCollection
+	private List<String> types;
 
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "subject")
-	private Course course;
+	@Column(name = "material")
+	@ElementCollection
+	private List<String> material;
+
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "subject_id", nullable = false)
+	private Subject subject;
 
 }
