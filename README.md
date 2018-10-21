@@ -7,7 +7,7 @@
 * **ADMIN**: profesor
 
 ### Entiteti
-* Predmet
+* Subject
+* Course
+* Lesson
 * User
-* Zakazani predmet
-* Raspored
