@@ -3,6 +3,7 @@
  */
 package com.mudri.schedule.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,7 +21,6 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /*
   +---------------------------------------------+
@@ -33,7 +33,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "lesson")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Lesson {
 
@@ -64,5 +63,9 @@ public class Lesson {
 	@ManyToOne(cascade = { CascadeType.REFRESH })
 	@JoinColumn(name = "course_id")
 	private Course course;
+	
+	public Lesson() {
+		this.students = new ArrayList<>();
+	}
 
 }

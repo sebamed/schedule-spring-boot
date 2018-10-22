@@ -13,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
+import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.model.Lesson;
+import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.LessonRepository;
 
 /*
@@ -34,18 +36,28 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	@Autowired
 	LessonRepository lessonRepository;
 	
-	public LessonDTO create(LessonDTO lessonDTO) {
-		Lesson lesson = new Lesson();
-		lesson = this.modelMapper.map(lessonDTO, Lesson.class);
-		lesson.setConfirmed(false);
-		lesson.setLength(0);
-		lesson.setPrice(0);
-		lesson.setTeacher(null);
+	@Autowired
+	UserService userService;
+	
+	public LessonDTO create(CreateLessonDTO lessonDTO) {
 		
-		lesson = this.save(lesson);
-		
-		if(lesson.getId() != null) {
-			return this.modelMapper.map(lesson, LessonDTO.class);
+		User user = this.userService.findOneById(lessonDTO.getUserID());
+		if(user.getId() != null) {
+			Lesson lesson = new Lesson();
+			lesson.getStudents().add(user);
+			lesson.setConfirmed(false);
+			lesson.setLength(0);
+			lesson.setPrice(0);
+			lesson.setTeacher(null);
+			lesson = this.save(lesson);
+			
+			if(lesson.getId() == null) {
+				return new LessonDTO();
+			} else {				
+				user.getLessons().add(lesson);
+				this.userService.save(user);
+				return this.modelMapper.map(lesson, LessonDTO.class);
+			}
 		} else {
 			return new LessonDTO();
 		}

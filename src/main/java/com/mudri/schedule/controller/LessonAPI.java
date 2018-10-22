@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.service.LessonService;
 
@@ -45,7 +46,7 @@ public class LessonAPI {
 	// todo confirm lesson...
 
 	@PostMapping("/")
-	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody LessonDTO lessonDTO) {
+	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
 		LessonDTO newLessonDTO = this.lessonService.create(lessonDTO);
 		if(newLessonDTO.getId() != null) {
 			return new ResponseEntity<LessonDTO>(newLessonDTO, HttpStatus.CREATED);
