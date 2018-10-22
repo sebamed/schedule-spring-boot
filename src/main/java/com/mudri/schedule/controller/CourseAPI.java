@@ -27,7 +27,7 @@ import com.mudri.schedule.service.CourseService;
 */
 
 @RestController
-@RequestMapping("/api/course")
+@RequestMapping("/api/courses")
 public class CourseAPI {
 	
 	@Autowired
@@ -43,7 +43,7 @@ public class CourseAPI {
 		}
 	}
 	
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<CourseDTO>> handleGetAllDTO(){
 		List<CourseDTO> coursesDTO = this.courseService.getAllDTO();
 		
@@ -54,7 +54,7 @@ public class CourseAPI {
 		}
 	}
 	
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<CourseDTO> handleCreateCourse(@RequestBody CourseDTO courseDTO){
 		CourseDTO newCourseDTO = this.courseService.create(courseDTO);
 		if(newCourseDTO.getId() != null) {

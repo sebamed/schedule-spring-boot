@@ -28,13 +28,13 @@ import com.mudri.schedule.service.UserService;
 */
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserAPI {
 
 	@Autowired
 	UserService userService;
 
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<UserDTO> handleCreateUser(@RequestBody UserDTO userDTO) {
 		UserDTO newUserDTO = this.userService.create(userDTO);
 		if(newUserDTO.getId() != null) {
@@ -54,7 +54,7 @@ public class UserAPI {
 		}
 	}
 	
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<UserDTO>> handleGetAllUsers(){
 		List<UserDTO> usersDTO = this.userService.getAllDTO();
 		if(!usersDTO.isEmpty()) {

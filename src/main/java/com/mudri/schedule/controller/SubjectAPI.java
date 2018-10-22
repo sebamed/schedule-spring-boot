@@ -27,7 +27,7 @@ import com.mudri.schedule.service.SubjectService;
 */
 
 @RestController
-@RequestMapping("/api/subject")
+@RequestMapping("/api/subjects")
 public class SubjectAPI {
 
 	@Autowired
@@ -43,7 +43,7 @@ public class SubjectAPI {
 		}
 	}
 
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<SubjectDTO>> handleGetAllSubjects() {
 		List<SubjectDTO> subjectsDTO = this.subjectService.getAllDTO();
 		if (!subjectsDTO.isEmpty()) {
@@ -53,7 +53,7 @@ public class SubjectAPI {
 		}
 	}
 
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<SubjectDTO> handleCreateSubject(@RequestBody SubjectDTO subjectDTO) {
 		SubjectDTO newSubjectDTO = this.subjectService.create(subjectDTO);
 		if (newSubjectDTO.getId() != null) {

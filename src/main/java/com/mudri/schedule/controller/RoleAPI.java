@@ -27,7 +27,7 @@ import com.mudri.schedule.service.RoleService;
 */
 
 @RestController
-@RequestMapping("/api/role")
+@RequestMapping("/api/roles")
 public class RoleAPI {
 	
 	@Autowired
@@ -43,7 +43,7 @@ public class RoleAPI {
 		}
 	}
 	
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<RoleDTO>> handleGetAllRoles(){
 		List<RoleDTO> rolesDTO = this.roleService.getAllDTO();
 		if(!rolesDTO.isEmpty()) {
@@ -53,7 +53,7 @@ public class RoleAPI {
 		}		
 	}
 	
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<RoleDTO> handleCreateRole(@RequestBody RoleDTO roleDTO){
 		RoleDTO newSoleDTO = this.roleService.create(roleDTO);
 		if(newSoleDTO.getId() != null) {

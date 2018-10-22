@@ -27,13 +27,13 @@ import com.mudri.schedule.service.LessonService;
 */
 
 @RestController
-@RequestMapping("/api/lesson")
+@RequestMapping("/api/lessons")
 public class LessonAPI {
 
 	@Autowired
 	LessonService lessonService;
 
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
 		List<LessonDTO> lessonsDTO = this.lessonService.getAllDTO();
 		if (!lessonsDTO.isEmpty()) {
@@ -45,7 +45,7 @@ public class LessonAPI {
 	
 	// todo confirm lesson...
 
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
 		LessonDTO newLessonDTO = this.lessonService.create(lessonDTO);
 		if(newLessonDTO.getId() != null) {
