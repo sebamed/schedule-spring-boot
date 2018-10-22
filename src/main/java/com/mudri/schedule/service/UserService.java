@@ -20,6 +20,7 @@ import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.model.Role;
 import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.UserRepository;
+import com.mudri.schedule.utils.Constants;
 
 /*
   +---------------------------------------------+
@@ -49,7 +50,7 @@ public class UserService implements BaseCrudInterface<User> {
 		}
 
 		User user = new User();
-		Role role = this.roleService.findOneByName("USER");
+		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 		if (role.getId() != null) {
 			user.setEmail(registerDTO.getEmail());
 			user.setFirstName(registerDTO.getFirstName());
@@ -95,7 +96,7 @@ public class UserService implements BaseCrudInterface<User> {
 
 	public UserDTO create(UserDTO userDTO) {
 		User user = new User();
-		Role role = this.roleService.findOneByName("USER");
+		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 		if (role.getId() != null) {
 			user = this.modelMapper.map(userDTO, User.class);
 			user.setRole(role);
