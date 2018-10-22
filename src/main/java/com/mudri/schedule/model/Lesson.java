@@ -16,7 +16,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -25,48 +24,45 @@ import lombok.NoArgsConstructor;
 
 /*
   +---------------------------------------------+
-  | Name: User                                  
+  | Name: Lesson                                  
   | Author: Sebastian                         
   | Date: Oct 22, 2018                                                                                                                         
   +---------------------------------------------+
 */
 
 @Entity
-@Table(name = "user")
+@Table(name = "lesson")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@AllArgsConstructor
+public class Lesson {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "first_name")
-	private String firstName;
+	@Column(name = "confirmed")
+	private boolean confirmed;
 
-	@Column(name = "last_name")
-	private String lastName;
+	@Column(name = "price_per_student")
+	private int price;
 
-	@Column(name = "email")
-	private String email;
+	@Column(name = "length_in_minutes")
+	private int length;
 
-	@Column(name = "password")
-	private String password;
+	// date time start separated
+
+	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST })
+	@JoinTable(name = "lesson_students", joinColumns = { @JoinColumn(name = "lesson_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "user_id") })
+	private List<User> students;
+
+	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE })
+	@JoinColumn(name = "teacher_id")
+	private User teacher;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH })
-	@JoinColumn(name = "role_id")
-	private Role role;
-
-	@OneToMany(mappedBy = "teacher", cascade = { CascadeType.REFRESH })
-	private List<Lesson> teachedLessons;
-
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST }, mappedBy = "students")
-	private List<Lesson> lessons;
-
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE })
-	@JoinTable(name = "user_skills", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "subject_id") })
-	private List<Subject> skills;
+	@JoinColumn(name = "course_id")
+	private Course course;
 
 }

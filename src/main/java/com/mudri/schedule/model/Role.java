@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,6 +46,7 @@ public class Role {
 	private boolean active;
 	
 	@OneToMany(mappedBy="role", cascade = {CascadeType.REFRESH})
+	@JsonBackReference
 	private List<User> users;
 
 }

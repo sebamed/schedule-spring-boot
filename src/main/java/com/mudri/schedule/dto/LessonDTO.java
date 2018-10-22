@@ -5,15 +5,13 @@ package com.mudri.schedule.dto;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /*
   +---------------------------------------------+
-  | Name: UserDTO                                  
+  | Name: LessonDTO                                  
   | Author: Sebastian                         
   | Date: Oct 22, 2018                                                                                                                         
   +---------------------------------------------+
@@ -22,20 +20,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDTO {
+public class LessonDTO {
 
 	private Long id;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String password;
-	private RoleDTO role;	
-	private List<SubjectDTO> skills;
+	private boolean confirmed;
+	private int price;
+	private int length;
+	private List<UserDTO> students;
+	private UserDTO teacher;
+	private CourseDTO course;
 	
-	@JsonBackReference
-	private List<LessonDTO> teachedLessons;
-	
-	@JsonBackReference
-	private List<LessonDTO> lessons;
-
 }

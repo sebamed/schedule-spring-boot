@@ -72,6 +72,9 @@ public class UserService implements BaseCrudInterface<User> {
 		Role role = this.roleService.findOneByName("USER");
 		if(role.getId() != null) {
 			user = this.modelMapper.map(userDTO, User.class);
+			user.setLessons(null);
+			user.setTeachedLessons(null);
+			user.setSkills(null);
 			user.setRole(role);
 			user = this.save(user);
 			if(user.getId() != null) {
