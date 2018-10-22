@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.CourseDTO;
+import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.repository.CourseRepository;
 
@@ -32,29 +33,38 @@ public class CourseService implements BaseCrudInterface<Course> {
 	CourseRepository courseRepository;
 
 	@Autowired
+	SubjectService subjectService;
+
+	@Autowired
 	ModelMapper modelMapper;
-	
+
 	public CourseDTO create(CourseDTO courseDTO) {
 		Course course = this.modelMapper.map(courseDTO, Course.class);
-		
+
 		courseDTO.setId(this.save(course).getId());
-		
-		return courseDTO;
+
+		SubjectDTO subjectDTO = this.subjectService.getDTOById(course.getSubject().getId());
+		if (subjectDTO.getId() != null) {
+			courseDTO.getSubject().setName(subjectDTO.getName());
+			return courseDTO;
+		} else {
+			return new CourseDTO();
+		}
 	}
-	
-	public List<CourseDTO> getAllDTO(){
+
+	public List<CourseDTO> getAllDTO() {
 		List<CourseDTO> coursesDTO = new ArrayList<>();
-		
-		for(Course course : this.findAll()) {
+
+		for (Course course : this.findAll()) {
 			coursesDTO.add(this.modelMapper.map(course, CourseDTO.class));
 		}
-		
+
 		return coursesDTO;
 	}
-	
+
 	public CourseDTO getDTOById(Long id) {
 		Course course = this.findOneById(id);
-		if(course.getId() != null) {
+		if (course.getId() != null) {
 			return this.modelMapper.map(course, CourseDTO.class);
 		} else {
 			return new CourseDTO();
@@ -79,7 +89,7 @@ public class CourseService implements BaseCrudInterface<Course> {
 	@Override
 	public List<Course> findAll() {
 		List<Course> courses = this.courseRepository.findAll();
-		if(courses.size() > 0) {
+		if (courses.size() > 0) {
 			return courses;
 		} else {
 			return Collections.emptyList();

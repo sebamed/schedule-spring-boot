@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,33 +21,37 @@ import lombok.NoArgsConstructor;
 
 /*
   +---------------------------------------------+
-  | Name: Course                                  
+  | Name: User                                  
   | Author: Sebastian                         
   | Date: Oct 22, 2018                                                                                                                         
   +---------------------------------------------+
 */
 
 @Entity
-@Table(name = "course")
+@Table(name = "user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "types")
-	@ElementCollection
-	private List<String> types;
+	@Column(name = "first_name")
+	private String firstName;
 
-	@Column(name = "material")
-	@ElementCollection
-	private List<String> material;
+	@Column(name = "last_name")
+	private String lastName;
+
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "password")
+	private String password;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE })
-	@JoinColumn(name = "subject_id")
-	private Subject subject;
+	@JoinColumn(name = "role_id")
+	private Role role;
 
 }

@@ -57,7 +57,7 @@ public class SubjectAPI {
 	public ResponseEntity<SubjectDTO> handleCreateSubject(@RequestBody SubjectDTO subjectDTO) {
 		SubjectDTO newSubjectDTO = this.subjectService.create(subjectDTO);
 		if (newSubjectDTO.getId() != null) {
-			return new ResponseEntity<SubjectDTO>(newSubjectDTO, HttpStatus.OK);
+			return new ResponseEntity<SubjectDTO>(newSubjectDTO, HttpStatus.CREATED);
 		} else {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
