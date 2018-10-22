@@ -92,5 +92,14 @@ public class RoleService implements BaseCrudInterface<Role> {
 			return Collections.emptyList();
 		}
 	}
+	
+	public Role findOneByName(String name) {
+		Optional<Role> role = this.roleRepository.findOneByName(name);
+		if(role.isPresent()) {
+			return role.get();
+		} else {
+			return new Role();
+		}
+	}
 
 }
