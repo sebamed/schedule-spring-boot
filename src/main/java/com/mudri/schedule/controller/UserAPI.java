@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.service.UserService;
 
@@ -38,6 +39,16 @@ public class UserAPI {
 		UserDTO newUserDTO = this.userService.create(userDTO);
 		if(newUserDTO.getId() != null) {
 			return new ResponseEntity<UserDTO>(newUserDTO, HttpStatus.CREATED);
+		} else {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<UserDTO> handleRegister(@RequestBody RegisterDTO registerDTO){
+		UserDTO userDTO = this.userService.register(registerDTO);
+		if(userDTO.getId() != null) {
+			return new ResponseEntity<UserDTO>(userDTO, HttpStatus.CREATED);
 		} else {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 /*
   +---------------------------------------------+
-  | Name: CreateLessonDTO                                  
+  | Name: RegisterDTO                                  
   | Author: Sebastian                         
   | Date: Oct 22, 2018                                                                                                                         
   +---------------------------------------------+
@@ -18,11 +18,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateLessonDTO {
+public class RegisterDTO {
 
-	// TODO: dodati datum i vreme
-	
-	private Long userID;
-	private CourseDTO course;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
 	
 }

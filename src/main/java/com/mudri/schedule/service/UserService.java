@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
+import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.model.Role;
 import com.mudri.schedule.model.User;
@@ -31,51 +32,28 @@ public class UserService implements BaseCrudInterface<User> {
 
 	@Autowired
 	ModelMapper modelMapper;
-	
+
 	@Autowired
 	UserRepository userRepository;
-	
+
 	@Autowired
 	RoleService roleService;
-	
-	public List<UserDTO> getAllDTOByRoleName(String name){
-		List<UserDTO> usersDTO = new ArrayList<>();
-		
-		for(User user : this.findAllByRoleName(name)) {
-			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
-		}
-		
-		return usersDTO;
-	}
-	
-	public UserDTO getDTOById(Long id) {
-		User user = this.findOneById(id);
-		if(user.getId() != null) {
-			return this.modelMapper.map(user, UserDTO.class);
-		} else {
+
+	public UserDTO register(RegisterDTO registerDTO) {
+
+		// check if user with email already exists
+		if (this.findOneByEmail(registerDTO.getEmail()).getId() == null) {
 			return new UserDTO();
 		}
-	}
-	
-	public List<UserDTO> getAllDTO(){
-		List<UserDTO> usersDTO = new ArrayList<>();
-		
-		for(User user : this.findAll()) {
-			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
-		}
-		
-		return usersDTO;
-	}
-	
-	public UserDTO create(UserDTO userDTO) {
+
 		User user = new User();
 		Role role = this.roleService.findOneByName("USER");
-		if(role.getId() != null) {
-			user = this.modelMapper.map(userDTO, User.class);
-			user.setLessons(null);
-			user.setTeachedLessons(null);
-			user.setSkills(null);
-			user.setRole(role);
+		if (role.getId() != null) {
+			user.setEmail(registerDTO.getEmail());
+			user.setFirstName(registerDTO.getFirstName());
+			user.setLastName(registerDTO.getLastName());
+			user.setPassword(registerDTO.getPassword());
+			
 			user = this.save(user);
 			if(user.getId() != null) {
 				role.getUsers().add(user);
@@ -83,9 +61,70 @@ public class UserService implements BaseCrudInterface<User> {
 				return this.modelMapper.map(user, UserDTO.class);
 			} else {
 				return new UserDTO();
-			}	
+			}
 		} else {
 			return new UserDTO();
+		}
+
+	}
+
+	public List<UserDTO> getAllDTOByRoleName(String name) {
+		List<UserDTO> usersDTO = new ArrayList<>();
+
+		for (User user : this.findAllByRoleName(name)) {
+			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
+		}
+
+		return usersDTO;
+	}
+
+	public UserDTO getDTOById(Long id) {
+		User user = this.findOneById(id);
+		if (user.getId() != null) {
+			return this.modelMapper.map(user, UserDTO.class);
+		} else {
+			return new UserDTO();
+		}
+	}
+
+	public List<UserDTO> getAllDTO() {
+		List<UserDTO> usersDTO = new ArrayList<>();
+
+		for (User user : this.findAll()) {
+			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
+		}
+
+		return usersDTO;
+	}
+
+	public UserDTO create(UserDTO userDTO) {
+		User user = new User();
+		Role role = this.roleService.findOneByName("USER");
+		if (role.getId() != null) {
+			user = this.modelMapper.map(userDTO, User.class);
+			user.setLessons(null);
+			user.setTeachedLessons(null);
+			user.setSkills(null);
+			user.setRole(role);
+			user = this.save(user);
+			if (user.getId() != null) {
+				role.getUsers().add(user);
+				this.roleService.save(role);
+				return this.modelMapper.map(user, UserDTO.class);
+			} else {
+				return new UserDTO();
+			}
+		} else {
+			return new UserDTO();
+		}
+	}
+
+	public User findOneByEmail(String email) {
+		Optional<User> user = this.userRepository.findOneByEmail(email);
+		if (user.isPresent()) {
+			return user.get();
+		} else {
+			return new User();
 		}
 	}
 
@@ -109,19 +148,19 @@ public class UserService implements BaseCrudInterface<User> {
 		List<User> users = this.userRepository.findAll();
 		return this.returnList(users);
 	}
-	
-	public List<User> findAllByRoleId(Long id){
+
+	public List<User> findAllByRoleId(Long id) {
 		List<User> users = this.userRepository.findAllByRoleId(id);
 		return this.returnList(users);
 	}
-	
-	public List<User> findAllByRoleName(String name){
+
+	public List<User> findAllByRoleName(String name) {
 		List<User> users = this.userRepository.findAllByRoleName(name);
 		return this.returnList(users);
 	}
-	
-	private List<User> returnList(List<User> users){
-		if(users.size() > 0) {
+
+	private List<User> returnList(List<User> users) {
+		if (users.size() > 0) {
 			return users;
 		} else {
 			return Collections.emptyList();

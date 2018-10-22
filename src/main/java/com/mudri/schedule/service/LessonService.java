@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
 import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.LessonRepository;
@@ -39,12 +40,17 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	@Autowired
 	UserService userService;
 	
+	@Autowired
+	CourseService courseService;
+	
 	public LessonDTO create(CreateLessonDTO lessonDTO) {
 		
 		User user = this.userService.findOneById(lessonDTO.getUserID());
-		if(user.getId() != null) {
+		Course course = this.courseService.save(this.modelMapper.map(lessonDTO.getCourse(), Course.class));
+		if(user.getId() != null && course.getId() != null) {
 			Lesson lesson = new Lesson();
 			lesson.getStudents().add(user);
+			lesson.setCourse(course);
 			lesson.setConfirmed(false);
 			lesson.setLength(0);
 			lesson.setPrice(0);
