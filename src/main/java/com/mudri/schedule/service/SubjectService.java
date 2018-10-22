@@ -3,6 +3,7 @@
  */
 package com.mudri.schedule.service;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,7 +13,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
+import com.mudri.schedule.dto.CourseDTO;
 import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.model.Subject;
 import com.mudri.schedule.repository.SubjectRepository;
@@ -58,11 +61,8 @@ public class SubjectService implements BaseCrudInterface<Subject> {
 	}
 	
 	public List<SubjectDTO> getAllDTO(){
-		List<SubjectDTO> subjectsDTO = new ArrayList<>();
-		
-		for(Subject subject : this.findAll()) {
-			subjectsDTO.add(this.modelMapper.map(subject, SubjectDTO.class));
-		}
+		Type targetSubjectType = new TypeToken<List<SubjectDTO>>() {}.getType();
+		List<SubjectDTO> subjectsDTO = this.modelMapper.map(this.findAll(), targetSubjectType);
 		
 		return subjectsDTO;
 	}

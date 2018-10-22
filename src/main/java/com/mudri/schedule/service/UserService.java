@@ -3,6 +3,7 @@
  */
 package com.mudri.schedule.service;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,6 +13,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
@@ -69,11 +71,8 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public List<UserDTO> getAllDTOByRoleName(String name) {
-		List<UserDTO> usersDTO = new ArrayList<>();
-
-		for (User user : this.findAllByRoleName(name)) {
-			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
-		}
+		Type targetUserType = new TypeToken<List<UserDTO>>() {}.getType();
+		List<UserDTO> usersDTO = this.modelMapper.map(this.findAllByRoleName(name), targetUserType);
 
 		return usersDTO;
 	}
@@ -88,11 +87,8 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public List<UserDTO> getAllDTO() {
-		List<UserDTO> usersDTO = new ArrayList<>();
-
-		for (User user : this.findAll()) {
-			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
-		}
+		Type targetUserType = new TypeToken<List<UserDTO>>() {}.getType();
+		List<UserDTO> usersDTO = this.modelMapper.map(this.findAll(), targetUserType);
 
 		return usersDTO;
 	}
@@ -102,9 +98,6 @@ public class UserService implements BaseCrudInterface<User> {
 		Role role = this.roleService.findOneByName("USER");
 		if (role.getId() != null) {
 			user = this.modelMapper.map(userDTO, User.class);
-			user.setLessons(null);
-			user.setTeachedLessons(null);
-			user.setSkills(null);
 			user.setRole(role);
 			user = this.save(user);
 			if (user.getId() != null) {
