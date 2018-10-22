@@ -66,6 +66,9 @@ public class Lesson {
 	
 	public Lesson() {
 		this.students = new ArrayList<>();
+		this.length = 0;
+		this.price = 0;
+		this.confirmed = false;
 	}
 
 }

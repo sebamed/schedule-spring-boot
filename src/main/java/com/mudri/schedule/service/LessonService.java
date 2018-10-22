@@ -54,10 +54,6 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 			Lesson lesson = new Lesson();
 			lesson.getStudents().add(user);
 			lesson.setCourse(course);
-			lesson.setConfirmed(false);
-			lesson.setLength(0);
-			lesson.setPrice(0);
-			lesson.setTeacher(null);
 			lesson = this.save(lesson);
 			
 			if(lesson.getId() == null) {
