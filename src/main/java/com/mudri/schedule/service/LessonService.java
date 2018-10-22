@@ -102,7 +102,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	@Override
 	public List<Lesson> findAll() {
 		List<Lesson> lessons = this.lessonRepository.findAll();
-		if(lessons.size() > 0) {
+		if(!lessons.isEmpty()) {
 			return lessons;
 		} else {
 			return Collections.emptyList();

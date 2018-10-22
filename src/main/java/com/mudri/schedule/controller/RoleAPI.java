@@ -46,7 +46,7 @@ public class RoleAPI {
 	@GetMapping("/")
 	public ResponseEntity<List<RoleDTO>> handleGetAllRoles(){
 		List<RoleDTO> rolesDTO = this.roleService.getAllDTO();
-		if(rolesDTO.size() > 0) {
+		if(!rolesDTO.isEmpty()) {
 			return new ResponseEntity<List<RoleDTO>>(rolesDTO, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

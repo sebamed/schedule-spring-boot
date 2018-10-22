@@ -46,7 +46,7 @@ public class SubjectAPI {
 	@GetMapping("/")
 	public ResponseEntity<List<SubjectDTO>> handleGetAllSubjects() {
 		List<SubjectDTO> subjectsDTO = this.subjectService.getAllDTO();
-		if (subjectsDTO.size() > 0) {
+		if (!subjectsDTO.isEmpty()) {
 			return new ResponseEntity<List<SubjectDTO>>(subjectsDTO, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

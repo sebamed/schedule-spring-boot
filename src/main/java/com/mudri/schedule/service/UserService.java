@@ -154,7 +154,7 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	private List<User> returnList(List<User> users) {
-		if (users.size() > 0) {
+		if (!users.isEmpty()) {
 			return users;
 		} else {
 			return Collections.emptyList();

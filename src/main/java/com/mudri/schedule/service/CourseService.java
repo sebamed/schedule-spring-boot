@@ -89,7 +89,7 @@ public class CourseService implements BaseCrudInterface<Course> {
 	@Override
 	public List<Course> findAll() {
 		List<Course> courses = this.courseRepository.findAll();
-		if (courses.size() > 0) {
+		if (!courses.isEmpty()) {
 			return courses;
 		} else {
 			return Collections.emptyList();

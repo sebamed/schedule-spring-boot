@@ -36,7 +36,7 @@ public class LessonAPI {
 	@GetMapping("/")
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
 		List<LessonDTO> lessonsDTO = this.lessonService.getAllDTO();
-		if (lessonsDTO.size() > 0) {
+		if (!lessonsDTO.isEmpty()) {
 			return new ResponseEntity<List<LessonDTO>>(lessonsDTO, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

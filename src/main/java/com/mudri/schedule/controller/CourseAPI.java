@@ -47,7 +47,7 @@ public class CourseAPI {
 	public ResponseEntity<List<CourseDTO>> handleGetAllDTO(){
 		List<CourseDTO> coursesDTO = this.courseService.getAllDTO();
 		
-		if(coursesDTO.size() > 0) {
+		if(!coursesDTO.isEmpty()) {
 			return new ResponseEntity<List<CourseDTO>>(coursesDTO, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

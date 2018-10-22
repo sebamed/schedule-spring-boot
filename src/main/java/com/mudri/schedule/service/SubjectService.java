@@ -85,7 +85,7 @@ public class SubjectService implements BaseCrudInterface<Subject> {
 	@Override
 	public List<Subject> findAll() {
 		List<Subject> subjects = this.subjectRepository.findAll();
-		if (subjects.size() > 0) {
+		if (!subjects.isEmpty()) {
 			return subjects;
 		} else {
 			return Collections.emptyList();

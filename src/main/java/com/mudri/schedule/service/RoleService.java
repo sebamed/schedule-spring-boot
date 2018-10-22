@@ -86,7 +86,7 @@ public class RoleService implements BaseCrudInterface<Role> {
 	@Override
 	public List<Role> findAll() {
 		List<Role> roles = this.roleRepository.findAll();
-		if (roles.size() > 0) {
+		if (!roles.isEmpty()) {
 			return roles;
 		} else {
 			return Collections.emptyList();

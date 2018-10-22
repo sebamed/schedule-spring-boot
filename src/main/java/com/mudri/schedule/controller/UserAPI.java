@@ -57,7 +57,7 @@ public class UserAPI {
 	@GetMapping("/")
 	public ResponseEntity<List<UserDTO>> handleGetAllUsers(){
 		List<UserDTO> usersDTO = this.userService.getAllDTO();
-		if(usersDTO.size() > 0) {
+		if(!usersDTO.isEmpty()) {
 			return new ResponseEntity<List<UserDTO>>(usersDTO, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -67,7 +67,7 @@ public class UserAPI {
 	@GetMapping("/role/{role}")
 	public ResponseEntity<List<UserDTO>> handleGetAllUsersByRoleName(@PathVariable("role") String name){
 		List<UserDTO> usersDTO = this.userService.getAllDTOByRoleName(name);
-		if(usersDTO.size() > 0) {
+		if(!usersDTO.isEmpty()) {
 			return new ResponseEntity<List<UserDTO>>(usersDTO, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
