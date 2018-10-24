@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.RoleDTO;
+import com.mudri.schedule.exception.EntityAlreadyExistsException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.model.Role;
@@ -37,6 +38,11 @@ public class RoleService implements BaseCrudInterface<Role> {
 	ModelMapper modelMapper;
 
 	public RoleDTO create(RoleDTO roleDTO) {
+		
+		if(this.doesRoleExist(roleDTO.getName())) {
+			throw new EntityAlreadyExistsException("Role with name: " + roleDTO.getName() + " already exists!");
+		}
+		
 		Role role = new Role();
 		role.setName(roleDTO.getName());
 		role.setActive(true);
@@ -67,8 +73,8 @@ public class RoleService implements BaseCrudInterface<Role> {
 	@Override
 	public Role save(Role object) {
 		try {
-			return this.roleRepository.save(object);			
-		} catch(SaveFailedException e) {
+			return this.roleRepository.save(object);
+		} catch (SaveFailedException e) {
 			throw new SaveFailedException("Role could not be saved properly.");
 		}
 	}
@@ -90,6 +96,15 @@ public class RoleService implements BaseCrudInterface<Role> {
 			return roles;
 		} else {
 			throw new NotFoundException("No roles were added");
+		}
+	}
+
+	private boolean doesRoleExist(String name) {
+		Optional<Role> role = this.roleRepository.findOneByName(name);
+		if (role.isPresent()) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 

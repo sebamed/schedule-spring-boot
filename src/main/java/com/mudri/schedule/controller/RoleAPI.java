@@ -37,29 +37,17 @@ public class RoleAPI {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<RoleDTO> handleGetRoleById(@PathVariable("id") Long id) {
-		try {
-			return new ResponseEntity<RoleDTO>(this.roleService.getDTOById(id), HttpStatus.OK);
-		} catch (NotFoundException e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<RoleDTO>(this.roleService.getDTOById(id), HttpStatus.OK);
 	}
 
 	@GetMapping()
 	public ResponseEntity<List<RoleDTO>> handleGetAllRoles() {
-		try {
-			return new ResponseEntity<List<RoleDTO>>(this.roleService.getAllDTO(), HttpStatus.OK);			
-		} catch(NotFoundException e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);			
-		}
+		return new ResponseEntity<List<RoleDTO>>(this.roleService.getAllDTO(), HttpStatus.OK);
 	}
 
 	@PostMapping()
 	public ResponseEntity<RoleDTO> handleCreateRole(@RequestBody RoleDTO roleDTO) {
-		try {			
-			return new ResponseEntity<RoleDTO>(this.roleService.create(roleDTO), HttpStatus.CREATED);
-		} catch(SaveFailedException e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);			
-		}
+		return new ResponseEntity<RoleDTO>(this.roleService.create(roleDTO), HttpStatus.CREATED);
 	}
 
 }

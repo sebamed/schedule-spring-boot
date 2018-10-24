@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
+import com.mudri.schedule.exception.NotFoundException;
+import com.mudri.schedule.exception.SaveFailedException;
+import com.mudri.schedule.exception.UserAlreadyExistsException;
 import com.mudri.schedule.service.UserService;
 
 /*
@@ -36,52 +39,29 @@ public class UserAPI {
 
 	@PostMapping()
 	public ResponseEntity<UserDTO> handleCreateUser(@RequestBody UserDTO userDTO) {
-		UserDTO newUserDTO = this.userService.create(userDTO);
-		if(newUserDTO.getId() != null) {
-			return new ResponseEntity<UserDTO>(newUserDTO, HttpStatus.CREATED);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		return new ResponseEntity<UserDTO>(this.userService.create(userDTO), HttpStatus.CREATED);
 	}
-	
+
 	@PostMapping("/register")
-	public ResponseEntity<UserDTO> handleRegister(@RequestBody RegisterDTO registerDTO){
-		UserDTO userDTO = this.userService.register(registerDTO);
-		if(userDTO.getId() != null) {
-			return new ResponseEntity<UserDTO>(userDTO, HttpStatus.CREATED);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+	public ResponseEntity<UserDTO> handleRegister(@RequestBody RegisterDTO registerDTO) {
+		return new ResponseEntity<UserDTO>(this.userService.register(registerDTO), HttpStatus.CREATED);
 	}
-	
+
 	@GetMapping()
-	public ResponseEntity<List<UserDTO>> handleGetAllUsers(){
-		List<UserDTO> usersDTO = this.userService.getAllDTO();
-		if(!usersDTO.isEmpty()) {
-			return new ResponseEntity<List<UserDTO>>(usersDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public ResponseEntity<List<UserDTO>> handleGetAllUsers() {
+		return new ResponseEntity<List<UserDTO>>(this.userService.getAllDTO(), HttpStatus.OK);
+
 	}
-	
+
 	@GetMapping("/role/{role}")
-	public ResponseEntity<List<UserDTO>> handleGetAllUsersByRoleName(@PathVariable("role") String name){
-		List<UserDTO> usersDTO = this.userService.getAllDTOByRoleName(name);
-		if(!usersDTO.isEmpty()) {
-			return new ResponseEntity<List<UserDTO>>(usersDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public ResponseEntity<List<UserDTO>> handleGetAllUsersByRoleName(@PathVariable("role") String name) {
+		return new ResponseEntity<List<UserDTO>>(this.userService.getAllDTOByRoleName(name), HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<UserDTO> handleGetUserById(@PathVariable("id") Long id){
-		UserDTO userDTO = this.userService.getDTOById(id);
-		if(userDTO.getId() != null) {
-			return new ResponseEntity<UserDTO>(userDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public ResponseEntity<UserDTO> handleGetUserById(@PathVariable("id") Long id) {
+		return new ResponseEntity<UserDTO>(this.userService.getDTOById(id), HttpStatus.OK);
+
 	}
 
 }
