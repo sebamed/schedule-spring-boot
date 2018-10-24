@@ -50,15 +50,12 @@ public class UserService implements BaseCrudInterface<User> {
 			throw new UserAlreadyExistsException("User with email: " + registerDTO.getEmail() + " already exists!");
 		}
 
-		User user = new User();
 		Role role = new Role();
 
 		role = this.roleService.findOneByName(Constants.USER_ROLE);
 
-		user.setEmail(registerDTO.getEmail());
-		user.setFirstName(registerDTO.getFirstName());
-		user.setLastName(registerDTO.getLastName());
-		user.setPassword(registerDTO.getPassword());
+		User user = new User();
+		user.setFieldsFromRegisterDTO(registerDTO);
 
 		user = this.save(user);
 
@@ -71,12 +68,8 @@ public class UserService implements BaseCrudInterface<User> {
 	public List<UserDTO> getAllDTOByRoleName(String name) {
 		Type targetUserType = new TypeToken<List<UserDTO>>() {
 		}.getType();
-		List<UserDTO> usersDTO = this.modelMapper.map(this.findAllByRoleName(name), targetUserType);
-		if(usersDTO.isEmpty()) {
-			throw new NotFoundException("No users with role: " + name);
-		}
 		
-		return usersDTO;
+		return this.modelMapper.map(this.findAllByRoleName(name), targetUserType);
 	}
 
 	public UserDTO getDTOById(Long id) {
@@ -91,12 +84,8 @@ public class UserService implements BaseCrudInterface<User> {
 	public List<UserDTO> getAllDTO() {
 		Type targetUserType = new TypeToken<List<UserDTO>>() {
 		}.getType();
-		List<UserDTO> usersDTO = this.modelMapper.map(this.findAll(), targetUserType);
-		if(usersDTO.isEmpty()) {
-			throw new NotFoundException("No users in database");
-		}
 
-		return usersDTO;
+		return this.modelMapper.map(this.findAll(), targetUserType);
 	}
 
 	// TODO: SREDITI
@@ -120,28 +109,23 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public boolean doesUserExist(String email) {
-		Optional<User> user = this.userRepository.findOneByEmail(email);
-		if (user.isPresent()) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.userRepository.findOneByEmail(email).isPresent();
 	}
 
 	public User findOneByEmail(String email) {
 		Optional<User> user = this.userRepository.findOneByEmail(email);
-		if (user.isPresent()) {
+		if (user.isPresent())
 			return user.get();
-		} else {
+		else
 			throw new NotFoundException("No user found with email: " + email);
-		}
+
 	}
 
 	@Override
 	public User save(User object) {
 		try {
 			return this.userRepository.save(object);
-		} catch (SaveFailedException e) {
+		} catch (Exception e) {
 			throw new SaveFailedException("User not saved! email: " + object.getEmail());
 		}
 	}
@@ -163,13 +147,11 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public List<User> findAllByRoleId(Long id) {
-		List<User> users = this.userRepository.findAllByRoleId(id);
-		return this.returnList(users);
+		return this.returnList(this.userRepository.findAllByRoleId(id));
 	}
 
 	public List<User> findAllByRoleName(String name) {
-		List<User> users = this.userRepository.findAllByRoleName(name);
-		return this.returnList(users);
+		return this.returnList(this.userRepository.findAllByRoleName(name));
 	}
 
 	private List<User> returnList(List<User> users) {

@@ -35,24 +35,14 @@ public class LessonAPI {
 
 	@GetMapping()
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
-		List<LessonDTO> lessonsDTO = this.lessonService.getAllDTO();
-		if (!lessonsDTO.isEmpty()) {
-			return new ResponseEntity<List<LessonDTO>>(lessonsDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<List<LessonDTO>>(this.lessonService.getAllDTO(), HttpStatus.OK);
 	}
-	
+
 	// todo confirm lesson...
 
 	@PostMapping()
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
-		LessonDTO newLessonDTO = this.lessonService.create(lessonDTO);
-		if(newLessonDTO.getId() != null) {
-			return new ResponseEntity<LessonDTO>(newLessonDTO, HttpStatus.CREATED);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		return new ResponseEntity<LessonDTO>(this.lessonService.create(lessonDTO), HttpStatus.CREATED);
 	}
 
 }

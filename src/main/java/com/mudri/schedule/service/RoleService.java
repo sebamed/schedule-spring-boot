@@ -60,9 +60,8 @@ public class RoleService implements BaseCrudInterface<Role> {
 	public List<RoleDTO> getAllDTO() {
 		Type targetRoleType = new TypeToken<List<RoleDTO>>() {
 		}.getType();
-		List<RoleDTO> rolesDTO = this.modelMapper.map(this.findAll(), targetRoleType);
 
-		return rolesDTO;
+		return this.modelMapper.map(this.findAll(), targetRoleType);
 	}
 
 	public RoleDTO getDTOById(Long id) {
@@ -74,7 +73,7 @@ public class RoleService implements BaseCrudInterface<Role> {
 	public Role save(Role object) {
 		try {
 			return this.roleRepository.save(object);
-		} catch (SaveFailedException e) {
+		} catch (Exception e) {
 			throw new SaveFailedException("Role could not be saved properly.");
 		}
 	}

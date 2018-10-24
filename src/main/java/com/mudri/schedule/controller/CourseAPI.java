@@ -29,39 +29,23 @@ import com.mudri.schedule.service.CourseService;
 @RestController
 @RequestMapping("/api/courses")
 public class CourseAPI {
-	
+
 	@Autowired
 	CourseService courseService;
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<CourseDTO> handleGetDTOById(@PathVariable("id") Long id){
-		CourseDTO courseDTO = this.courseService.getDTOById(id);
-		if(courseDTO.getId() != null) {
-			return new ResponseEntity<CourseDTO>(courseDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public ResponseEntity<CourseDTO> handleGetDTOById(@PathVariable("id") Long id) {
+		return new ResponseEntity<CourseDTO>(this.courseService.getDTOById(id), HttpStatus.OK);
 	}
-	
+
 	@GetMapping()
-	public ResponseEntity<List<CourseDTO>> handleGetAllDTO(){
-		List<CourseDTO> coursesDTO = this.courseService.getAllDTO();
-		
-		if(!coursesDTO.isEmpty()) {
-			return new ResponseEntity<List<CourseDTO>>(coursesDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public ResponseEntity<List<CourseDTO>> handleGetAllDTO() {
+		return new ResponseEntity<List<CourseDTO>>(this.courseService.getAllDTO(), HttpStatus.OK);
 	}
-	
+
 	@PostMapping()
-	public ResponseEntity<CourseDTO> handleCreateCourse(@RequestBody CourseDTO courseDTO){
-		CourseDTO newCourseDTO = this.courseService.create(courseDTO);
-		if(newCourseDTO.getId() != null) {
-			return new ResponseEntity<CourseDTO>(newCourseDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+	public ResponseEntity<CourseDTO> handleCreateCourse(@RequestBody CourseDTO courseDTO) {
+		return new ResponseEntity<CourseDTO>(this.courseService.create(courseDTO), HttpStatus.OK);
 	}
 
 }
