@@ -3,7 +3,7 @@
  */
 package com.mudri.schedule.service;
 
-import java.util.ArrayList;
+import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,16 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UserLessonDTO;
+import com.mudri.schedule.exception.NoNeededSkillException;
+import com.mudri.schedule.exception.NoUserInLessonException;
+import com.mudri.schedule.exception.NotFoundException;
+import com.mudri.schedule.exception.SaveFailedException;
+import com.mudri.schedule.exception.UserAlreadyInLessonException;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
 import com.mudri.schedule.model.User;
@@ -36,77 +43,116 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	@Autowired
 	LessonRepository lessonRepository;
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	CourseService courseService;
 	
-	public LessonDTO create(CreateLessonDTO lessonDTO) {
+	public LessonDTO leave(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
 		
-		User user = this.userService.findOneById(lessonDTO.getUserID());
-		Course course = this.courseService.save(this.modelMapper.map(lessonDTO.getCourse(), Course.class));
-		if(user.getId() != null && course.getId() != null) {
-			Lesson lesson = new Lesson();
-			lesson.getStudents().add(user);
-			lesson.setCourse(course);
-			lesson.setConfirmed(false);
-			lesson.setLength(0);
-			lesson.setPrice(0);
-			lesson.setTeacher(null);
-			lesson = this.save(lesson);
-			
-			if(lesson.getId() == null) {
-				return new LessonDTO();
-			} else {				
-				user.getLessons().add(lesson);
-				this.userService.save(user);
-				return this.modelMapper.map(lesson, LessonDTO.class);
-			}
-		} else {
-			return new LessonDTO();
-		}
-	}
-	
-	public List<LessonDTO> getAllDTO(){
-		List<LessonDTO> lessonsDTO = new ArrayList<>();
-		
-		for(Lesson lesson : this.findAll()) {
-			lessonsDTO.add(this.modelMapper.map(lesson, LessonDTO.class));
+		// if user is not in the lesson at all
+		if(!(lesson.getStudents().contains(user))) {
+			throw new NoUserInLessonException("No user with ID: " + userLessonDTO.getUserId() + " in this lesson");
 		}
 		
-		return lessonsDTO;
+		user.getLessons().remove(lesson);
+		this.userService.save(user);
+		
+		lesson.getStudents().remove(user);
+		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
 	}
-	
+
+	public LessonDTO join(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		
+		// if user is already in lesson
+		if(lesson.getStudents().contains(user)) {
+			throw new UserAlreadyInLessonException("User with ID: " + userLessonDTO.getUserId() + " already joined this lesson");
+		}
+		
+		user.getLessons().add(lesson);
+		this.userService.save(user);
+		
+		lesson.getStudents().add(user);
+		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+	}
+
+	public LessonDTO confirm(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
+
+		// checks if user has the needed skill for this lesson
+		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
+			throw new NoNeededSkillException("User with ID:" + userLessonDTO.getUserId()
+					+ " cannot confirm lesson with ID: " + userLessonDTO.getLessonId());
+		}
+		
+		// TODO: napraviti email servis sa thymeleaf html templateom koji ce slati
+		// mejlove svim studentima iz lessona
+		lesson.confirm();
+		lesson.setTeacher(user);
+
+		user.getTeachedLessons().add(lesson);
+		this.userService.save(user);
+
+		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+
+	}
+
+	public LessonDTO create(CreateLessonDTO createLessonDTO) {
+
+		User user = this.userService.findOneById(createLessonDTO.getUserID());
+		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
+		Lesson lesson = new Lesson();
+
+		lesson.getStudents().add(user);
+		lesson.setCourse(course);
+		lesson = this.save(lesson);
+
+		user.getLessons().add(lesson);
+		this.userService.save(user);
+		return this.modelMapper.map(lesson, LessonDTO.class);
+	}
+
+	public List<LessonDTO> getAllDTO() {
+		Type targetLessonType = new TypeToken<List<LessonDTO>>() {
+		}.getType();
+
+		return this.modelMapper.map(this.findAll(), targetLessonType);
+	}
+
 	public LessonDTO getDTOById(Long id) {
-		Lesson lesson = this.findOneById(id);
-		if(lesson.getId() != null) {
-			return this.modelMapper.map(lesson, LessonDTO.class);
-		} else {
-			return new LessonDTO();
-		}
+		return this.modelMapper.map(this.findOneById(id), LessonDTO.class);
 	}
 
 	@Override
 	public Lesson save(Lesson object) {
-		return this.lessonRepository.save(object);
+		try {
+			return this.lessonRepository.save(object);
+		} catch (Exception e) {
+			throw new SaveFailedException("Lesson not saved!");
+		}
 	}
 
 	@Override
 	public Lesson findOneById(Long id) {
 		Optional<Lesson> lesson = this.lessonRepository.findOneById(id);
-		if(lesson.isPresent()) {
+		if (lesson.isPresent()) {
 			return lesson.get();
 		} else {
-			return new Lesson();
+			throw new NotFoundException("No lesson with ID: " + id);
 		}
 	}
 
 	@Override
 	public List<Lesson> findAll() {
 		List<Lesson> lessons = this.lessonRepository.findAll();
-		if(lessons.size() > 0) {
+		if (!lessons.isEmpty()) {
 			return lessons;
 		} else {
 			return Collections.emptyList();

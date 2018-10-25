@@ -3,7 +3,7 @@
  */
 package com.mudri.schedule.service;
 
-import java.util.ArrayList;
+import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.CourseDTO;
 import com.mudri.schedule.dto.SubjectDTO;
+import com.mudri.schedule.exception.NotFoundException;
+import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.repository.CourseRepository;
 
@@ -44,36 +47,29 @@ public class CourseService implements BaseCrudInterface<Course> {
 		courseDTO.setId(this.save(course).getId());
 
 		SubjectDTO subjectDTO = this.subjectService.getDTOById(course.getSubject().getId());
-		if (subjectDTO.getId() != null) {
-			courseDTO.getSubject().setName(subjectDTO.getName());
-			return courseDTO;
-		} else {
-			return new CourseDTO();
-		}
+
+		courseDTO.getSubject().setName(subjectDTO.getName());
+		return courseDTO;
 	}
 
 	public List<CourseDTO> getAllDTO() {
-		List<CourseDTO> coursesDTO = new ArrayList<>();
+		Type targetCourseType = new TypeToken<List<CourseDTO>>() {
+		}.getType();
 
-		for (Course course : this.findAll()) {
-			coursesDTO.add(this.modelMapper.map(course, CourseDTO.class));
-		}
-
-		return coursesDTO;
+		return this.modelMapper.map(this.findAll(), targetCourseType);
 	}
 
 	public CourseDTO getDTOById(Long id) {
-		Course course = this.findOneById(id);
-		if (course.getId() != null) {
-			return this.modelMapper.map(course, CourseDTO.class);
-		} else {
-			return new CourseDTO();
-		}
+		return this.modelMapper.map(this.findOneById(id), CourseDTO.class);
 	}
 
 	@Override
 	public Course save(Course object) {
-		return this.courseRepository.save(object);
+		try {
+			return this.courseRepository.save(object);
+		} catch (Exception e) {
+			throw new SaveFailedException("Course not saved! ID: " + object.getId());
+		}
 	}
 
 	@Override
@@ -82,14 +78,14 @@ public class CourseService implements BaseCrudInterface<Course> {
 		if (course.isPresent()) {
 			return course.get();
 		} else {
-			return new Course();
+			throw new NotFoundException("No course with id:" + id);
 		}
 	}
 
 	@Override
 	public List<Course> findAll() {
 		List<Course> courses = this.courseRepository.findAll();
-		if (courses.size() > 0) {
+		if (!courses.isEmpty()) {
 			return courses;
 		} else {
 			return Collections.emptyList();

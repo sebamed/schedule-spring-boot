@@ -27,7 +27,7 @@ import com.mudri.schedule.service.SubjectService;
 */
 
 @RestController
-@RequestMapping("/api/subject")
+@RequestMapping("/api/subjects")
 public class SubjectAPI {
 
 	@Autowired
@@ -35,32 +35,17 @@ public class SubjectAPI {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<SubjectDTO> handleGetSubjectById(@PathVariable("id") Long id) {
-		SubjectDTO subjectDTO = this.subjectService.getDTOById(id);
-		if (subjectDTO.getId() != null) {
-			return new ResponseEntity<SubjectDTO>(subjectDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<SubjectDTO>(this.subjectService.getDTOById(id), HttpStatus.OK);
 	}
 
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<SubjectDTO>> handleGetAllSubjects() {
-		List<SubjectDTO> subjectsDTO = this.subjectService.getAllDTO();
-		if (subjectsDTO.size() > 0) {
-			return new ResponseEntity<List<SubjectDTO>>(subjectsDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<List<SubjectDTO>>(this.subjectService.getAllDTO(), HttpStatus.OK);
 	}
 
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<SubjectDTO> handleCreateSubject(@RequestBody SubjectDTO subjectDTO) {
-		SubjectDTO newSubjectDTO = this.subjectService.create(subjectDTO);
-		if (newSubjectDTO.getId() != null) {
-			return new ResponseEntity<SubjectDTO>(newSubjectDTO, HttpStatus.CREATED);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		return new ResponseEntity<SubjectDTO>(this.subjectService.create(subjectDTO), HttpStatus.CREATED);
 	}
 
 }

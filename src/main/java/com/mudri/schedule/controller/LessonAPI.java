@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UserLessonDTO;
 import com.mudri.schedule.service.LessonService;
 
 /*
@@ -27,32 +28,35 @@ import com.mudri.schedule.service.LessonService;
 */
 
 @RestController
-@RequestMapping("/api/lesson")
+@RequestMapping("/api/lessons")
 public class LessonAPI {
 
 	@Autowired
 	LessonService lessonService;
 
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
-		List<LessonDTO> lessonsDTO = this.lessonService.getAllDTO();
-		if (lessonsDTO.size() > 0) {
-			return new ResponseEntity<List<LessonDTO>>(lessonsDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return new ResponseEntity<List<LessonDTO>>(this.lessonService.getAllDTO(), HttpStatus.OK);
 	}
-	
-	// todo confirm lesson...
 
-	@PostMapping("/")
+	@PostMapping()
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
-		LessonDTO newLessonDTO = this.lessonService.create(lessonDTO);
-		if(newLessonDTO.getId() != null) {
-			return new ResponseEntity<LessonDTO>(newLessonDTO, HttpStatus.CREATED);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		return new ResponseEntity<LessonDTO>(this.lessonService.create(lessonDTO), HttpStatus.CREATED);
+	}
+
+	@PostMapping("/confirm")
+	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody UserLessonDTO userLessonDTO) {
+		return new ResponseEntity<LessonDTO>(this.lessonService.confirm(userLessonDTO), HttpStatus.OK);
+	}
+
+	@PostMapping("/join")
+	public ResponseEntity<LessonDTO> handleJoinLesson(@RequestBody UserLessonDTO userLessonDTO) {
+		return new ResponseEntity<LessonDTO>(this.lessonService.join(userLessonDTO), HttpStatus.OK);
+	}
+
+	@PostMapping("/leave")
+	public ResponseEntity<LessonDTO> handleLeaveLesson(@RequestBody UserLessonDTO userLessonDTO) {
+		return new ResponseEntity<LessonDTO>(this.lessonService.leave(userLessonDTO), HttpStatus.OK);
 	}
 
 }

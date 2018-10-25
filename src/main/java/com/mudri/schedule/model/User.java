@@ -19,6 +19,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.mudri.schedule.dto.RegisterDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -68,5 +70,12 @@ public class User {
 	@JoinTable(name = "user_skills", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "subject_id") })
 	private List<Subject> skills;
+	
+	public void setFieldsFromRegisterDTO(RegisterDTO registerDTO){
+		this.setEmail(registerDTO.getEmail());
+		this.setFirstName(registerDTO.getFirstName());
+		this.setLastName(registerDTO.getLastName());
+		this.setPassword(registerDTO.getPassword());
+	}
 
 }

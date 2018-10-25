@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.RoleDTO;
+import com.mudri.schedule.exception.NotFoundException;
+import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.service.RoleService;
 
 /*
@@ -27,40 +29,25 @@ import com.mudri.schedule.service.RoleService;
 */
 
 @RestController
-@RequestMapping("/api/role")
+@RequestMapping("/api/roles")
 public class RoleAPI {
-	
+
 	@Autowired
 	RoleService roleService;
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<RoleDTO> handleGetRoleById(@PathVariable("id") Long id){
-		RoleDTO roleDTO = this.roleService.getDTOById(id);
-		if(roleDTO.getId() != null) {
-			return new ResponseEntity<RoleDTO>(roleDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public ResponseEntity<RoleDTO> handleGetRoleById(@PathVariable("id") Long id) {
+		return new ResponseEntity<RoleDTO>(this.roleService.getDTOById(id), HttpStatus.OK);
 	}
-	
-	@GetMapping("/")
-	public ResponseEntity<List<RoleDTO>> handleGetAllRoles(){
-		List<RoleDTO> rolesDTO = this.roleService.getAllDTO();
-		if(rolesDTO.size() > 0) {
-			return new ResponseEntity<List<RoleDTO>>(rolesDTO, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}		
+
+	@GetMapping()
+	public ResponseEntity<List<RoleDTO>> handleGetAllRoles() {
+		return new ResponseEntity<List<RoleDTO>>(this.roleService.getAllDTO(), HttpStatus.OK);
 	}
-	
-	@PostMapping("/")
-	public ResponseEntity<RoleDTO> handleCreateRole(@RequestBody RoleDTO roleDTO){
-		RoleDTO newSoleDTO = this.roleService.create(roleDTO);
-		if(newSoleDTO.getId() != null) {
-			return new ResponseEntity<RoleDTO>(newSoleDTO, HttpStatus.CREATED);
-		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+
+	@PostMapping()
+	public ResponseEntity<RoleDTO> handleCreateRole(@RequestBody RoleDTO roleDTO) {
+		return new ResponseEntity<RoleDTO>(this.roleService.create(roleDTO), HttpStatus.CREATED);
 	}
 
 }

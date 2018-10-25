@@ -3,7 +3,7 @@
  */
 package com.mudri.schedule.service;
 
-import java.util.ArrayList;
+import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -12,12 +12,17 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
+import com.mudri.schedule.exception.NotFoundException;
+import com.mudri.schedule.exception.SaveFailedException;
+import com.mudri.schedule.exception.UserAlreadyExistsException;
 import com.mudri.schedule.model.Role;
 import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.UserRepository;
+import com.mudri.schedule.utils.Constants;
 
 /*
   +---------------------------------------------+
@@ -41,41 +46,30 @@ public class UserService implements BaseCrudInterface<User> {
 
 	public UserDTO register(RegisterDTO registerDTO) {
 
-		// check if user with email already exists
-		if (this.findOneByEmail(registerDTO.getEmail()).getId() == null) {
-			return new UserDTO();
+		if (this.doesUserExist(registerDTO.getEmail())) {
+			throw new UserAlreadyExistsException("User with email: " + registerDTO.getEmail() + " already exists!");
 		}
+
+		Role role = new Role();
+
+		role = this.roleService.findOneByName(Constants.USER_ROLE);
 
 		User user = new User();
-		Role role = this.roleService.findOneByName("USER");
-		if (role.getId() != null) {
-			user.setEmail(registerDTO.getEmail());
-			user.setFirstName(registerDTO.getFirstName());
-			user.setLastName(registerDTO.getLastName());
-			user.setPassword(registerDTO.getPassword());
-			
-			user = this.save(user);
-			if(user.getId() != null) {
-				role.getUsers().add(user);
-				this.roleService.save(role);
-				return this.modelMapper.map(user, UserDTO.class);
-			} else {
-				return new UserDTO();
-			}
-		} else {
-			return new UserDTO();
-		}
+		user.setFieldsFromRegisterDTO(registerDTO);
 
+		user = this.save(user);
+
+		role.getUsers().add(user);
+		this.roleService.save(role);
+
+		return this.modelMapper.map(user, UserDTO.class);
 	}
 
 	public List<UserDTO> getAllDTOByRoleName(String name) {
-		List<UserDTO> usersDTO = new ArrayList<>();
-
-		for (User user : this.findAllByRoleName(name)) {
-			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
-		}
-
-		return usersDTO;
+		Type targetUserType = new TypeToken<List<UserDTO>>() {
+		}.getType();
+		
+		return this.modelMapper.map(this.findAllByRoleName(name), targetUserType);
 	}
 
 	public UserDTO getDTOById(Long id) {
@@ -83,28 +77,23 @@ public class UserService implements BaseCrudInterface<User> {
 		if (user.getId() != null) {
 			return this.modelMapper.map(user, UserDTO.class);
 		} else {
-			return new UserDTO();
+			throw new NotFoundException("No user with ID: " + id);
 		}
 	}
 
 	public List<UserDTO> getAllDTO() {
-		List<UserDTO> usersDTO = new ArrayList<>();
+		Type targetUserType = new TypeToken<List<UserDTO>>() {
+		}.getType();
 
-		for (User user : this.findAll()) {
-			usersDTO.add(this.modelMapper.map(user, UserDTO.class));
-		}
-
-		return usersDTO;
+		return this.modelMapper.map(this.findAll(), targetUserType);
 	}
 
+	// TODO: SREDITI
 	public UserDTO create(UserDTO userDTO) {
 		User user = new User();
-		Role role = this.roleService.findOneByName("USER");
+		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 		if (role.getId() != null) {
 			user = this.modelMapper.map(userDTO, User.class);
-			user.setLessons(null);
-			user.setTeachedLessons(null);
-			user.setSkills(null);
 			user.setRole(role);
 			user = this.save(user);
 			if (user.getId() != null) {
@@ -119,18 +108,26 @@ public class UserService implements BaseCrudInterface<User> {
 		}
 	}
 
+	public boolean doesUserExist(String email) {
+		return this.userRepository.findOneByEmail(email).isPresent();
+	}
+
 	public User findOneByEmail(String email) {
 		Optional<User> user = this.userRepository.findOneByEmail(email);
-		if (user.isPresent()) {
+		if (user.isPresent())
 			return user.get();
-		} else {
-			return new User();
-		}
+		else
+			throw new NotFoundException("No user found with email: " + email);
+
 	}
 
 	@Override
 	public User save(User object) {
-		return this.userRepository.save(object);
+		try {
+			return this.userRepository.save(object);
+		} catch (Exception e) {
+			throw new SaveFailedException("User not saved! email: " + object.getEmail());
+		}
 	}
 
 	@Override
@@ -139,7 +136,7 @@ public class UserService implements BaseCrudInterface<User> {
 		if (user.isPresent()) {
 			return user.get();
 		} else {
-			return new User();
+			throw new NotFoundException("No user found with ID: " + id);
 		}
 	}
 
@@ -150,17 +147,15 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public List<User> findAllByRoleId(Long id) {
-		List<User> users = this.userRepository.findAllByRoleId(id);
-		return this.returnList(users);
+		return this.returnList(this.userRepository.findAllByRoleId(id));
 	}
 
 	public List<User> findAllByRoleName(String name) {
-		List<User> users = this.userRepository.findAllByRoleName(name);
-		return this.returnList(users);
+		return this.returnList(this.userRepository.findAllByRoleName(name));
 	}
 
 	private List<User> returnList(List<User> users) {
-		if (users.size() > 0) {
+		if (!users.isEmpty()) {
 			return users;
 		} else {
 			return Collections.emptyList();
