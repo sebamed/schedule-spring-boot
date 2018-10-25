@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UserLessonDTO;
 import com.mudri.schedule.service.LessonService;
 
 /*
@@ -38,11 +39,24 @@ public class LessonAPI {
 		return new ResponseEntity<List<LessonDTO>>(this.lessonService.getAllDTO(), HttpStatus.OK);
 	}
 
-	// todo confirm lesson...
-
 	@PostMapping()
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
 		return new ResponseEntity<LessonDTO>(this.lessonService.create(lessonDTO), HttpStatus.CREATED);
+	}
+
+	@PostMapping("/confirm")
+	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody UserLessonDTO userLessonDTO) {
+		return new ResponseEntity<LessonDTO>(this.lessonService.confirm(userLessonDTO), HttpStatus.OK);
+	}
+
+	@PostMapping("/join")
+	public ResponseEntity<LessonDTO> handleJoinLesson(@RequestBody UserLessonDTO userLessonDTO) {
+		return new ResponseEntity<LessonDTO>(this.lessonService.join(userLessonDTO), HttpStatus.OK);
+	}
+
+	@PostMapping("/leave")
+	public ResponseEntity<LessonDTO> handleLeaveLesson(@RequestBody UserLessonDTO userLessonDTO) {
+		return new ResponseEntity<LessonDTO>(this.lessonService.leave(userLessonDTO), HttpStatus.OK);
 	}
 
 }

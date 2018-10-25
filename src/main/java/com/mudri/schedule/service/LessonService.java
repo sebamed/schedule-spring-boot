@@ -16,8 +16,12 @@ import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UserLessonDTO;
+import com.mudri.schedule.exception.NoNeededSkillException;
+import com.mudri.schedule.exception.NoUserInLessonException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
+import com.mudri.schedule.exception.UserAlreadyInLessonException;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
 import com.mudri.schedule.model.User;
@@ -45,13 +49,67 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	@Autowired
 	CourseService courseService;
-
-	public LessonDTO create(CreateLessonDTO lessonDTO) {
-
-		User user = this.userService.findOneById(lessonDTO.getUserID());
-		Course course = this.courseService.save(this.modelMapper.map(lessonDTO.getCourse(), Course.class));
-		Lesson lesson = new Lesson();
+	
+	public LessonDTO leave(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
 		
+		// if user is not in the lesson at all
+		if(!(lesson.getStudents().contains(user))) {
+			throw new NoUserInLessonException("No user with ID: " + userLessonDTO.getUserId() + " in this lesson");
+		}
+		
+		user.getLessons().remove(lesson);
+		this.userService.save(user);
+		
+		lesson.getStudents().remove(user);
+		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+	}
+
+	public LessonDTO join(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		
+		// if user is already in lesson
+		if(lesson.getStudents().contains(user)) {
+			throw new UserAlreadyInLessonException("User with ID: " + userLessonDTO.getUserId() + " already joined this lesson");
+		}
+		
+		user.getLessons().add(lesson);
+		this.userService.save(user);
+		
+		lesson.getStudents().add(user);
+		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+	}
+
+	public LessonDTO confirm(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
+
+		// checks if user has the needed skill for this lesson
+		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
+			throw new NoNeededSkillException("User with ID:" + userLessonDTO.getUserId()
+					+ " cannot confirm lesson with ID: " + userLessonDTO.getLessonId());
+		}
+		
+		// TODO: napraviti email servis sa thymeleaf html templateom koji ce slati
+		// mejlove svim studentima iz lessona
+		lesson.confirm();
+		lesson.setTeacher(user);
+
+		user.getTeachedLessons().add(lesson);
+		this.userService.save(user);
+
+		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+
+	}
+
+	public LessonDTO create(CreateLessonDTO createLessonDTO) {
+
+		User user = this.userService.findOneById(createLessonDTO.getUserID());
+		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
+		Lesson lesson = new Lesson();
+
 		lesson.getStudents().add(user);
 		lesson.setCourse(course);
 		lesson = this.save(lesson);

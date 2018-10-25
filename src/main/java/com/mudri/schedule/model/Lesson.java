@@ -70,5 +70,9 @@ public class Lesson {
 		this.price = 0;
 		this.confirmed = false;
 	}
+	
+	public void confirm() {
+		this.setConfirmed(true);
+	}
 
 }
