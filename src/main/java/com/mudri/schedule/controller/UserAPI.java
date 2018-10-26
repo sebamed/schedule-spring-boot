@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
-import com.mudri.schedule.exception.NotFoundException;
-import com.mudri.schedule.exception.SaveFailedException;
-import com.mudri.schedule.exception.UserAlreadyExistsException;
 import com.mudri.schedule.service.UserService;
 
 /*

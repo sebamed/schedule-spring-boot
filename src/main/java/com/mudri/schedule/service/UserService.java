@@ -3,7 +3,6 @@
  */
 package com.mudri.schedule.service;
 
-import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +11,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
@@ -23,6 +21,7 @@ import com.mudri.schedule.model.Role;
 import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.UserRepository;
 import com.mudri.schedule.utils.Constants;
+import com.mudri.schedule.utils.TargetType;
 
 /*
   +---------------------------------------------+
@@ -65,11 +64,8 @@ public class UserService implements BaseCrudInterface<User> {
 		return this.modelMapper.map(user, UserDTO.class);
 	}
 
-	public List<UserDTO> getAllDTOByRoleName(String name) {
-		Type targetUserType = new TypeToken<List<UserDTO>>() {
-		}.getType();
-		
-		return this.modelMapper.map(this.findAllByRoleName(name), targetUserType);
+	public List<UserDTO> getAllDTOByRoleName(String name) {	
+		return this.modelMapper.map(this.findAllByRoleName(name), TargetType.userType);
 	}
 
 	public UserDTO getDTOById(Long id) {
@@ -82,10 +78,7 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public List<UserDTO> getAllDTO() {
-		Type targetUserType = new TypeToken<List<UserDTO>>() {
-		}.getType();
-
-		return this.modelMapper.map(this.findAll(), targetUserType);
+		return this.modelMapper.map(this.findAll(), TargetType.userType);
 	}
 
 	// TODO: SREDITI

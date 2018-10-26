@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.RoleDTO;
-import com.mudri.schedule.exception.NotFoundException;
-import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.service.RoleService;
 
 /*
