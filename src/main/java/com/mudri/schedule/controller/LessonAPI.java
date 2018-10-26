@@ -38,7 +38,7 @@ public class LessonAPI {
 
 	@GetMapping()
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
-		return new ResponseEntity<List<LessonDTO>>(this.lessonService.getAllDTO(), HttpStatus.OK);
+		List<LessonDTO> lessons = this.lessonService.getAllDTO();
 	}
 
 	@PostMapping()
@@ -48,7 +48,8 @@ public class LessonAPI {
 	
 	@GetMapping("/{id}/students")
 	public ResponseEntity<List<UserDTO>> handleGetStudents(@PathVariable("id") Long id){
-		return new ResponseEntity<List<UserDTO>>(this.lessonService.getStudentsDTO(id), HttpStatus.OK);
+		List<UserDTO> users = this.lessonService.getStudentsDTO(id);
+		return users.isEmpty()  ? new ResponseEntity<>(HttpStatus.NOT_FOUND) : new ResponseEntity<List<UserDTO>>(users, HttpStatus.OK);
 	}
 
 	@PostMapping("/confirm")
