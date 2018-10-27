@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
+import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyExistsException;
@@ -43,42 +44,41 @@ public class UserService implements BaseCrudInterface<User> {
 	@Autowired
 	RoleService roleService;
 
-	public UserDTO register(RegisterDTO registerDTO) {
+	public UserInfoDTO register(RegisterDTO registerDTO) {
 
 		if (this.doesUserExist(registerDTO.getEmail())) {
 			throw new UserAlreadyExistsException("User with email: " + registerDTO.getEmail() + " already exists!");
 		}
 
 		Role role = new Role();
-
 		role = this.roleService.findOneByName(Constants.USER_ROLE);
 
 		User user = new User();
 		user.setFieldsFromRegisterDTO(registerDTO);
+		user.setRole(role);
 
-		user = this.save(user);
 
 		role.getUsers().add(user);
 		this.roleService.save(role);
-
-		return this.modelMapper.map(user, UserDTO.class);
+		
+		return this.modelMapper.map(this.save(user), UserInfoDTO.class);
 	}
 
-	public List<UserDTO> getAllDTOByRoleName(String name) {	
-		return this.modelMapper.map(this.findAllByRoleName(name), TargetType.userType);
+	public List<UserInfoDTO> getAllDTOByRoleName(String name) {	
+		return this.modelMapper.map(this.findAllByRoleName(name), TargetType.userInfoType);
 	}
 
-	public UserDTO getDTOById(Long id) {
+	public UserInfoDTO getDTOById(Long id) {
 		User user = this.findOneById(id);
 		if (user.getId() != null) {
-			return this.modelMapper.map(user, UserDTO.class);
+			return this.modelMapper.map(user, UserInfoDTO.class);
 		} else {
 			throw new NotFoundException("No user with ID: " + id);
 		}
 	}
 
-	public List<UserDTO> getAllDTO() {
-		return this.modelMapper.map(this.findAll(), TargetType.userType);
+	public List<UserInfoDTO> getAllDTO() {
+		return this.modelMapper.map(this.findAll(), TargetType.userInfoType);
 	}
 
 	// TODO: SREDITI

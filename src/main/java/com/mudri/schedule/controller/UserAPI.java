@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
+import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.service.UserService;
+import com.mudri.schedule.utils.ReturnResponse;
 
 /*
   +---------------------------------------------+
@@ -34,31 +36,29 @@ public class UserAPI {
 	@Autowired
 	UserService userService;
 
+	@PostMapping("/register")
+	public ResponseEntity<UserInfoDTO> handleRegister(@RequestBody RegisterDTO registerDTO) {
+		return ReturnResponse.entityGet(this.userService.register(registerDTO));
+	}
+
+	@GetMapping()
+	public ResponseEntity<List<UserInfoDTO>> handleGetAllUsers() {
+		return ReturnResponse.listGet(this.userService.getAllDTO());
+	}
+
+	@GetMapping("/role/{role}")
+	public ResponseEntity<List<UserInfoDTO>> handleGetAllUsersByRoleName(@PathVariable("role") String name) {
+		return ReturnResponse.listGet(this.userService.getAllDTOByRoleName(name));
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<UserInfoDTO> handleGetUserById(@PathVariable("id") Long id) {
+		return ReturnResponse.entityGet(this.userService.getDTOById(id));
+	}
+
+	// depricated ne koristi se!!!
 	@PostMapping()
 	public ResponseEntity<UserDTO> handleCreateUser(@RequestBody UserDTO userDTO) {
 		return new ResponseEntity<UserDTO>(this.userService.create(userDTO), HttpStatus.CREATED);
 	}
-
-	@PostMapping("/register")
-	public ResponseEntity<UserDTO> handleRegister(@RequestBody RegisterDTO registerDTO) {
-		return new ResponseEntity<UserDTO>(this.userService.register(registerDTO), HttpStatus.CREATED);
-	}
-
-	@GetMapping()
-	public ResponseEntity<List<UserDTO>> handleGetAllUsers() {
-		return new ResponseEntity<List<UserDTO>>(this.userService.getAllDTO(), HttpStatus.OK);
-
-	}
-
-	@GetMapping("/role/{role}")
-	public ResponseEntity<List<UserDTO>> handleGetAllUsersByRoleName(@PathVariable("role") String name) {
-		return new ResponseEntity<List<UserDTO>>(this.userService.getAllDTOByRoleName(name), HttpStatus.OK);
-	}
-
-	@GetMapping("/{id}")
-	public ResponseEntity<UserDTO> handleGetUserById(@PathVariable("id") Long id) {
-		return new ResponseEntity<UserDTO>(this.userService.getDTOById(id), HttpStatus.OK);
-
-	}
-
 }

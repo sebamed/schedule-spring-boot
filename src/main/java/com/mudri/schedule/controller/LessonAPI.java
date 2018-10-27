@@ -6,7 +6,6 @@ package com.mudri.schedule.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +19,7 @@ import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserLessonDTO;
 import com.mudri.schedule.service.LessonService;
+import com.mudri.schedule.utils.ReturnResponse;
 
 /*
   +---------------------------------------------+
@@ -38,33 +38,32 @@ public class LessonAPI {
 
 	@GetMapping()
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
-		List<LessonDTO> lessons = this.lessonService.getAllDTO();
+		return ReturnResponse.listGet(this.lessonService.getAllDTO());
 	}
 
 	@PostMapping()
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
-		return new ResponseEntity<LessonDTO>(this.lessonService.create(lessonDTO), HttpStatus.CREATED);
+		return ReturnResponse.entityCreated(this.lessonService.create(lessonDTO));
 	}
-	
+
 	@GetMapping("/{id}/students")
-	public ResponseEntity<List<UserDTO>> handleGetStudents(@PathVariable("id") Long id){
-		List<UserDTO> users = this.lessonService.getStudentsDTO(id);
-		return users.isEmpty()  ? new ResponseEntity<>(HttpStatus.NOT_FOUND) : new ResponseEntity<List<UserDTO>>(users, HttpStatus.OK);
+	public ResponseEntity<List<UserDTO>> handleGetStudents(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getStudentsDTO(id));
 	}
 
 	@PostMapping("/confirm")
 	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody UserLessonDTO userLessonDTO) {
-		return new ResponseEntity<LessonDTO>(this.lessonService.confirm(userLessonDTO), HttpStatus.OK);
+		return ReturnResponse.entityCreated(this.lessonService.confirm(userLessonDTO));
 	}
 
 	@PostMapping("/join")
 	public ResponseEntity<LessonDTO> handleJoinLesson(@RequestBody UserLessonDTO userLessonDTO) {
-		return new ResponseEntity<LessonDTO>(this.lessonService.join(userLessonDTO), HttpStatus.OK);
+		return ReturnResponse.entityGet(this.lessonService.join(userLessonDTO));
 	}
 
 	@PostMapping("/leave")
 	public ResponseEntity<LessonDTO> handleLeaveLesson(@RequestBody UserLessonDTO userLessonDTO) {
-		return new ResponseEntity<LessonDTO>(this.lessonService.leave(userLessonDTO), HttpStatus.OK);
+		return ReturnResponse.entityGet(this.lessonService.leave(userLessonDTO));
 	}
 
 }

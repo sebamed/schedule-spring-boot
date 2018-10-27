@@ -12,6 +12,7 @@ import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.RoleDTO;
 import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.dto.UserDTO;
+import com.mudri.schedule.dto.UserInfoDTO;
 
 /*
   +---------------------------------------------+
@@ -25,6 +26,10 @@ public final class TargetType {
 
 	public final static Type userType = new TypeToken<List<UserDTO>>() {
 		private static final long serialVersionUID = 7984774601232761011L;
+	}.getType();
+
+	public final static Type userInfoType = new TypeToken<List<UserInfoDTO>>() {
+		private static final long serialVersionUID = -3895670399509757735L;
 	}.getType();
 
 	public final static Type lessonType = new TypeToken<List<LessonDTO>>() {

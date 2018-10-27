@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.CourseDTO;
 import com.mudri.schedule.service.CourseService;
+import com.mudri.schedule.utils.ReturnResponse;
 
 /*
   +---------------------------------------------+
@@ -35,17 +36,17 @@ public class CourseAPI {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<CourseDTO> handleGetDTOById(@PathVariable("id") Long id) {
-		return new ResponseEntity<CourseDTO>(this.courseService.getDTOById(id), HttpStatus.OK);
+		return ReturnResponse.entityGet(this.courseService.getDTOById(id));
 	}
 
 	@GetMapping()
 	public ResponseEntity<List<CourseDTO>> handleGetAllDTO() {
-		return new ResponseEntity<List<CourseDTO>>(this.courseService.getAllDTO(), HttpStatus.OK);
+		return ReturnResponse.listGet(this.courseService.getAllDTO());
 	}
 
 	@PostMapping()
 	public ResponseEntity<CourseDTO> handleCreateCourse(@RequestBody CourseDTO courseDTO) {
-		return new ResponseEntity<CourseDTO>(this.courseService.create(courseDTO), HttpStatus.OK);
+		return ReturnResponse.entityCreated(this.courseService.create(courseDTO));
 	}
 
 }

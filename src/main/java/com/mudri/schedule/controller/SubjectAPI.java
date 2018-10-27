@@ -6,7 +6,6 @@ package com.mudri.schedule.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.service.SubjectService;
+import com.mudri.schedule.utils.ReturnResponse;
 
 /*
   +---------------------------------------------+
@@ -35,17 +35,17 @@ public class SubjectAPI {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<SubjectDTO> handleGetSubjectById(@PathVariable("id") Long id) {
-		return new ResponseEntity<SubjectDTO>(this.subjectService.getDTOById(id), HttpStatus.OK);
+		return ReturnResponse.entityGet(this.subjectService.getDTOById(id));
 	}
 
 	@GetMapping()
 	public ResponseEntity<List<SubjectDTO>> handleGetAllSubjects() {
-		return new ResponseEntity<List<SubjectDTO>>(this.subjectService.getAllDTO(), HttpStatus.OK);
+		return ReturnResponse.listGet(this.subjectService.getAllDTO());
 	}
 
 	@PostMapping()
 	public ResponseEntity<SubjectDTO> handleCreateSubject(@RequestBody SubjectDTO subjectDTO) {
-		return new ResponseEntity<SubjectDTO>(this.subjectService.create(subjectDTO), HttpStatus.CREATED);
+		return ReturnResponse.entityCreated(this.subjectService.create(subjectDTO));
 	}
 
 }
