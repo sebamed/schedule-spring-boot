@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
@@ -54,6 +55,11 @@ public class UserAPI {
 	@GetMapping("/{id}")
 	public ResponseEntity<UserInfoDTO> handleGetUserById(@PathVariable("id") Long id) {
 		return ReturnResponse.entityGet(this.userService.getDTOById(id));
+	}
+	
+	@GetMapping("/{id}/lessons")
+	public ResponseEntity<List<LessonDTO>> handleGetUsersLessons(@PathVariable("id") Long id){
+		return ReturnResponse.listGet(this.userService.getUserLessonsDTO(id));
 	}
 
 	// depricated ne koristi se!!!

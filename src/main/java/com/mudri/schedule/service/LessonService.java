@@ -107,7 +107,6 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		this.userService.save(user);
 
 		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
-
 	}
 
 	public LessonDTO create(CreateLessonDTO createLessonDTO) {

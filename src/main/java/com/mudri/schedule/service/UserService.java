@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
+import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
@@ -43,9 +44,12 @@ public class UserService implements BaseCrudInterface<User> {
 
 	@Autowired
 	RoleService roleService;
+	
+	public List<LessonDTO> getUserLessonsDTO(Long id){	
+		return this.modelMapper.map(this.findOneById(id).getLessons(), TargetType.lessonType);
+	}
 
 	public UserInfoDTO register(RegisterDTO registerDTO) {
-
 		if (this.doesUserExist(registerDTO.getEmail())) {
 			throw new UserAlreadyExistsException("User with email: " + registerDTO.getEmail() + " already exists!");
 		}
