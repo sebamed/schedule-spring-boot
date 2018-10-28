@@ -38,7 +38,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class AppUser {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,12 +70,10 @@ public class User {
 	@JoinTable(name = "user_skills", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "subject_id") })
 	private List<Subject> skills;
-	
-	public void setFieldsFromRegisterDTO(RegisterDTO registerDTO){
+
+	public void setFieldsFromRegisterDTO(RegisterDTO registerDTO) {
 		this.setEmail(registerDTO.getEmail());
 		this.setFirstName(registerDTO.getFirstName());
 		this.setLastName(registerDTO.getLastName());
-		this.setPassword(registerDTO.getPassword());
 	}
-
 }

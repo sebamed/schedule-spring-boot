@@ -9,9 +9,11 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
+import com.mudri.schedule.consts.Constants;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
@@ -19,10 +21,9 @@ import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyExistsException;
+import com.mudri.schedule.model.AppUser;
 import com.mudri.schedule.model.Role;
-import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.UserRepository;
-import com.mudri.schedule.utils.Constants;
 import com.mudri.schedule.utils.TargetType;
 
 /*
@@ -34,10 +35,13 @@ import com.mudri.schedule.utils.TargetType;
 */
 
 @Service
-public class UserService implements BaseCrudInterface<User> {
+public class UserService implements BaseCrudInterface<AppUser> {
 
 	@Autowired
 	ModelMapper modelMapper;
+	
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
 	UserRepository userRepository;
@@ -57,8 +61,9 @@ public class UserService implements BaseCrudInterface<User> {
 		Role role = new Role();
 		role = this.roleService.findOneByName(Constants.USER_ROLE);
 
-		User user = new User();
+		AppUser user = new AppUser();
 		user.setFieldsFromRegisterDTO(registerDTO);
+		user.setPassword(this.bCryptPasswordEncoder.encode(registerDTO.getPassword()));
 		user.setRole(role);
 
 
@@ -73,12 +78,16 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	public UserInfoDTO getDTOById(Long id) {
-		User user = this.findOneById(id);
+		AppUser user = this.findOneById(id);
 		if (user.getId() != null) {
 			return this.modelMapper.map(user, UserInfoDTO.class);
 		} else {
 			throw new NotFoundException("No user with ID: " + id);
 		}
+	}
+	
+	public UserInfoDTO getDTOByEmail(String email) {
+		return this.modelMapper.map(this.findOneByEmail(email), UserInfoDTO.class);
 	}
 
 	public List<UserInfoDTO> getAllDTO() {
@@ -87,10 +96,10 @@ public class UserService implements BaseCrudInterface<User> {
 
 	// TODO: SREDITI
 	public UserDTO create(UserDTO userDTO) {
-		User user = new User();
+		AppUser user = new AppUser();
 		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 		if (role.getId() != null) {
-			user = this.modelMapper.map(userDTO, User.class);
+			user = this.modelMapper.map(userDTO, AppUser.class);
 			user.setRole(role);
 			user = this.save(user);
 			if (user.getId() != null) {
@@ -109,8 +118,8 @@ public class UserService implements BaseCrudInterface<User> {
 		return this.userRepository.findOneByEmail(email).isPresent();
 	}
 
-	public User findOneByEmail(String email) {
-		Optional<User> user = this.userRepository.findOneByEmail(email);
+	public AppUser findOneByEmail(String email) {
+		Optional<AppUser> user = this.userRepository.findOneByEmail(email);
 		if (user.isPresent())
 			return user.get();
 		else
@@ -119,7 +128,7 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	@Override
-	public User save(User object) {
+	public AppUser save(AppUser object) {
 		try {
 			return this.userRepository.save(object);
 		} catch (Exception e) {
@@ -128,8 +137,8 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	@Override
-	public User findOneById(Long id) {
-		Optional<User> user = this.userRepository.findOneById(id);
+	public AppUser findOneById(Long id) {
+		Optional<AppUser> user = this.userRepository.findOneById(id);
 		if (user.isPresent()) {
 			return user.get();
 		} else {
@@ -138,20 +147,20 @@ public class UserService implements BaseCrudInterface<User> {
 	}
 
 	@Override
-	public List<User> findAll() {
-		List<User> users = this.userRepository.findAll();
+	public List<AppUser> findAll() {
+		List<AppUser> users = this.userRepository.findAll();
 		return this.returnList(users);
 	}
 
-	public List<User> findAllByRoleId(Long id) {
+	public List<AppUser> findAllByRoleId(Long id) {
 		return this.returnList(this.userRepository.findAllByRoleId(id));
 	}
 
-	public List<User> findAllByRoleName(String name) {
+	public List<AppUser> findAllByRoleName(String name) {
 		return this.returnList(this.userRepository.findAllByRoleName(name));
 	}
 
-	private List<User> returnList(List<User> users) {
+	private List<AppUser> returnList(List<AppUser> users) {
 		if (!users.isEmpty()) {
 			return users;
 		} else {

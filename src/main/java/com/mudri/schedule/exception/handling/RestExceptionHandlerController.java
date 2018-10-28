@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,7 +36,15 @@ public class RestExceptionHandlerController {
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@ExceptionHandler(NoNeededSkillException.class)
+	@ExceptionHandler({ AccessDeniedException.class })
+	@ResponseStatus(value = HttpStatus.FORBIDDEN)
+	public @ResponseBody ExceptionResponse handleAccessDeniedException(final RuntimeException exc,
+			final HttpServletRequest request) {
+		this.formatLogError(exc, request, HttpStatus.FORBIDDEN);
+		return new ExceptionResponse(exc.getMessage(), request.getRequestURI(), HttpStatus.FORBIDDEN.toString());
+	}
+
+	@ExceptionHandler({ NoNeededSkillException.class })
 	@ResponseStatus(value = HttpStatus.UNAUTHORIZED)
 	public @ResponseBody ExceptionResponse handleNoNeededSkillException(final RuntimeException exc,
 			final HttpServletRequest request) {
@@ -77,8 +86,8 @@ public class RestExceptionHandlerController {
 	}
 
 	private void formatLogError(Exception exc, HttpServletRequest request, HttpStatus status) {
-		this.logger.error(request.getRequestURI() + " | " + request.getMethod() + " | " + status + " | "
-				+ exc.getMessage());
+		this.logger.error(
+				request.getRequestURI() + " | " + request.getMethod() + " | " + status + " | " + exc.getMessage());
 	}
 
 }

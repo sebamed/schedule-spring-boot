@@ -1,7 +1,7 @@
 /**
  * SCHEDULE API
  */
-package com.mudri.schedule.config;
+package com.mudri.schedule.config.interceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

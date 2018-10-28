@@ -23,7 +23,7 @@ import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyInLessonException;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
-import com.mudri.schedule.model.User;
+import com.mudri.schedule.model.AppUser;
 import com.mudri.schedule.repository.LessonRepository;
 import com.mudri.schedule.utils.TargetType;
 
@@ -58,7 +58,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	
 	public LessonDTO leave(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 		
 		// if user is not in the lesson at all
 		if(!(lesson.getStudents().contains(user))) {
@@ -74,7 +74,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO join(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 		
 		// if user is already in lesson
 		if(lesson.getStudents().contains(user)) {
@@ -90,7 +90,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO confirm(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 
 		// checks if user has the needed skill for this lesson
 		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
@@ -110,7 +110,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	}
 
 	public LessonDTO create(CreateLessonDTO createLessonDTO) {
-		User user = this.userService.findOneById(createLessonDTO.getUserID());
+		AppUser user = this.userService.findOneById(createLessonDTO.getUserID());
 		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
 		Lesson lesson = new Lesson();
 

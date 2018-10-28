@@ -54,11 +54,11 @@ public class Lesson {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST })
 	@JoinTable(name = "lesson_students", joinColumns = { @JoinColumn(name = "lesson_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "user_id") })
-	private List<User> students;
+	private List<AppUser> students;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE })
 	@JoinColumn(name = "teacher_id")
-	private User teacher;
+	private AppUser teacher;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH })
 	@JoinColumn(name = "course_id")
