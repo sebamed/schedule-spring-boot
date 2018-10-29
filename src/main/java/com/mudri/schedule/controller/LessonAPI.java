@@ -48,6 +48,12 @@ public class LessonAPI {
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
 		return ReturnResponse.entityCreated(this.lessonService.create(lessonDTO));
 	}
+	
+	@GetMapping("/skill/{name}")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
+	public ResponseEntity<List<LessonDTO>> handleGetBySkillName(@PathVariable("name") String name) {
+		return ReturnResponse.listGet(this.lessonService.getLessonsBySkillDTO(name));
+	}
 
 	@GetMapping("/{id}/students")
     @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")

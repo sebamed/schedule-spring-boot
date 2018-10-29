@@ -21,9 +21,9 @@ import com.mudri.schedule.exception.NoUserInLessonException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyInLessonException;
+import com.mudri.schedule.model.AppUser;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
-import com.mudri.schedule.model.AppUser;
 import com.mudri.schedule.repository.LessonRepository;
 import com.mudri.schedule.utils.TargetType;
 
@@ -49,6 +49,10 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	@Autowired
 	CourseService courseService;
+	
+	public List<LessonDTO> getLessonsBySkillDTO(String skillName){
+		return this.modelMapper.map(this.lessonRepository.findAllBySkillName(skillName), TargetType.lessonType);
+	}
 		
 	public List<UserDTO> getStudentsDTO(Long id){
 		Lesson lesson = this.findOneById(id);
@@ -114,8 +118,10 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
 		Lesson lesson = new Lesson();
 
-		lesson.getStudents().add(user);
 		lesson.setCourse(course);
+		lesson.setDate(createLessonDTO.getDate());
+		lesson.setTime(createLessonDTO.getTime());
+		lesson.getStudents().add(user);
 		lesson = this.save(lesson);
 
 		user.getLessons().add(lesson);

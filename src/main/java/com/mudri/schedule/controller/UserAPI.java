@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.LessonDTO;
-import com.mudri.schedule.dto.LoginDTO;
-import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.service.UserService;
