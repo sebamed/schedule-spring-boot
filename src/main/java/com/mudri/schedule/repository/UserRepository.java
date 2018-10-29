@@ -9,7 +9,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.mudri.schedule.model.User;
+import com.mudri.schedule.model.AppUser;
 
 /*
   +---------------------------------------------+
@@ -20,12 +20,12 @@ import com.mudri.schedule.model.User;
 */
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<AppUser, Long> {
 
-	Optional<User> findOneById(Long id);
-	Optional<User> findOneByEmail(String email);
-	List<User> findAllByRoleId(Long id);
-	List<User> findAllByRoleName(String name);
-	List<User> findAll();
+	Optional<AppUser> findOneById(Long id);
+	Optional<AppUser> findOneByEmail(String email);
+	List<AppUser> findAllByRoleId(Long id);
+	List<AppUser> findAllByRoleName(String name);
+	List<AppUser> findAll();
 	
 }

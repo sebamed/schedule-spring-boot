@@ -4,6 +4,7 @@
 package com.mudri.schedule.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,6 +19,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -48,17 +53,25 @@ public class Lesson {
 
 	@Column(name = "length_in_minutes")
 	private int length;
+	
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date date;
+	
+	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "HH:mm")
+	private Date time;
 
 	// date time start separated
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST })
 	@JoinTable(name = "lesson_students", joinColumns = { @JoinColumn(name = "lesson_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "user_id") })
-	private List<User> students;
+	private List<AppUser> students;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE })
 	@JoinColumn(name = "teacher_id")
-	private User teacher;
+	private AppUser teacher;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH })
 	@JoinColumn(name = "course_id")

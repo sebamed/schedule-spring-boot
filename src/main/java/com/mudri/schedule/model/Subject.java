@@ -49,6 +49,6 @@ public class Subject {
 	private List<Course> courses;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "skills")
-	private List<User> skilledUsers;
+	private List<AppUser> skilledUsers;
 
 }

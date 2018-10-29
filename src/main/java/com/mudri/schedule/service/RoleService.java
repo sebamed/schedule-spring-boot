@@ -3,7 +3,6 @@
  */
 package com.mudri.schedule.service;
 
-import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +10,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.RoleDTO;
 import com.mudri.schedule.exception.EntityAlreadyExistsException;
@@ -19,6 +17,7 @@ import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.model.Role;
 import com.mudri.schedule.repository.RoleRepository;
+import com.mudri.schedule.utils.TargetType;
 
 /*
   +---------------------------------------------+
@@ -58,10 +57,7 @@ public class RoleService implements BaseCrudInterface<Role> {
 	}
 
 	public List<RoleDTO> getAllDTO() {
-		Type targetRoleType = new TypeToken<List<RoleDTO>>() {
-		}.getType();
-
-		return this.modelMapper.map(this.findAll(), targetRoleType);
+		return this.modelMapper.map(this.findAll(), TargetType.roleType);
 	}
 
 	public RoleDTO getDTOById(Long id) {

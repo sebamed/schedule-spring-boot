@@ -3,7 +3,6 @@
  */
 package com.mudri.schedule.service;
 
-import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -12,20 +11,21 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.reflect.TypeToken;
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserLessonDTO;
 import com.mudri.schedule.exception.NoNeededSkillException;
 import com.mudri.schedule.exception.NoUserInLessonException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyInLessonException;
+import com.mudri.schedule.model.AppUser;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
-import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.LessonRepository;
+import com.mudri.schedule.utils.TargetType;
 
 /*
   +---------------------------------------------+
@@ -50,9 +50,19 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	@Autowired
 	CourseService courseService;
 	
+	public List<LessonDTO> getLessonsBySkillDTO(String skillName){
+		return this.modelMapper.map(this.lessonRepository.findAllBySkillName(skillName), TargetType.lessonType);
+	}
+		
+	public List<UserDTO> getStudentsDTO(Long id){
+		Lesson lesson = this.findOneById(id);
+		
+		return this.modelMapper.map(lesson.getStudents(), TargetType.userType);		
+	}
+	
 	public LessonDTO leave(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 		
 		// if user is not in the lesson at all
 		if(!(lesson.getStudents().contains(user))) {
@@ -68,7 +78,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO join(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 		
 		// if user is already in lesson
 		if(lesson.getStudents().contains(user)) {
@@ -84,7 +94,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO confirm(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		User user = this.userService.findOneById(userLessonDTO.getUserId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 
 		// checks if user has the needed skill for this lesson
 		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
@@ -101,17 +111,17 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		this.userService.save(user);
 
 		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
-
 	}
 
 	public LessonDTO create(CreateLessonDTO createLessonDTO) {
-
-		User user = this.userService.findOneById(createLessonDTO.getUserID());
+		AppUser user = this.userService.findOneById(createLessonDTO.getUserID());
 		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
 		Lesson lesson = new Lesson();
 
-		lesson.getStudents().add(user);
 		lesson.setCourse(course);
+		lesson.setDate(createLessonDTO.getDate());
+		lesson.setTime(createLessonDTO.getTime());
+		lesson.getStudents().add(user);
 		lesson = this.save(lesson);
 
 		user.getLessons().add(lesson);
@@ -120,10 +130,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	}
 
 	public List<LessonDTO> getAllDTO() {
-		Type targetLessonType = new TypeToken<List<LessonDTO>>() {
-		}.getType();
-
-		return this.modelMapper.map(this.findAll(), targetLessonType);
+		return this.modelMapper.map(this.findAll(), TargetType.lessonType);
 	}
 
 	public LessonDTO getDTOById(Long id) {

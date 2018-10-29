@@ -1,7 +1,7 @@
 /**
  * SCHEDULE API
  */
-package com.mudri.schedule.config;
+package com.mudri.schedule.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -6,8 +6,8 @@ package com.mudri.schedule.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.dto.RoleDTO;
-import com.mudri.schedule.exception.NotFoundException;
-import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.service.RoleService;
+import com.mudri.schedule.utils.ReturnResponse;
 
 /*
   +---------------------------------------------+
@@ -36,18 +35,21 @@ public class RoleAPI {
 	RoleService roleService;
 
 	@GetMapping("/{id}")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
 	public ResponseEntity<RoleDTO> handleGetRoleById(@PathVariable("id") Long id) {
-		return new ResponseEntity<RoleDTO>(this.roleService.getDTOById(id), HttpStatus.OK);
+		return ReturnResponse.entityGet(this.roleService.getDTOById(id));
 	}
 
 	@GetMapping()
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
 	public ResponseEntity<List<RoleDTO>> handleGetAllRoles() {
-		return new ResponseEntity<List<RoleDTO>>(this.roleService.getAllDTO(), HttpStatus.OK);
+		return ReturnResponse.listGet(this.roleService.getAllDTO());
 	}
 
 	@PostMapping()
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
 	public ResponseEntity<RoleDTO> handleCreateRole(@RequestBody RoleDTO roleDTO) {
-		return new ResponseEntity<RoleDTO>(this.roleService.create(roleDTO), HttpStatus.CREATED);
+		return ReturnResponse.entityCreated(this.roleService.create(roleDTO));
 	}
 
 }
