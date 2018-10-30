@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
+import com.mudri.schedule.dto.ConfirmLessonDTO;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.UserDTO;
@@ -49,6 +50,9 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	@Autowired
 	CourseService courseService;
+	
+	@Autowired
+	EmailService emailService;
 	
 	public LessonDTO cancel(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
@@ -105,24 +109,28 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
 	}
 
-	public LessonDTO confirm(UserLessonDTO userLessonDTO) {
-		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
+	public LessonDTO confirm(ConfirmLessonDTO confirmLessonDTO) {
+		Lesson lesson = this.findOneById(confirmLessonDTO.getLessonId());
+		AppUser user = this.userService.findOneById(confirmLessonDTO.getUserId());
 
 		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
-			throw new NoNeededSkillException("User with ID:" + userLessonDTO.getUserId()
-					+ " cannot confirm lesson with ID: " + userLessonDTO.getLessonId());
+			throw new NoNeededSkillException("User with ID:" + confirmLessonDTO.getUserId()
+					+ " cannot confirm lesson with ID: " + confirmLessonDTO.getLessonId());
 		}
 		
-		// TODO: napraviti email servis sa thymeleaf html templateom koji ce slati
-		// mejlove svim studentima iz lessona
+		lesson.setLength(confirmLessonDTO.getLength());
+		lesson.setPrice(confirmLessonDTO.getPrice());
 		lesson.confirm();
 		lesson.setTeacher(user);
 
 		user.getTeachedLessons().add(lesson);
 		this.userService.save(user);
+		
+		LessonDTO lessonDTO = this.modelMapper.map(this.save(lesson), LessonDTO.class);
+		
+		this.emailService.sendLessonConfirmedMail(lessonDTO);
 
-		return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+		return lessonDTO;
 	}
 
 	public LessonDTO create(CreateLessonDTO createLessonDTO) {

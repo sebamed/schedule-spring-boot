@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.mudri.schedule.exception.EmailNotSentException;
 import com.mudri.schedule.exception.EntityAlreadyExistsException;
 import com.mudri.schedule.exception.ExceptionResponse;
 import com.mudri.schedule.exception.NoNeededSkillException;
@@ -33,6 +34,14 @@ import com.mudri.schedule.exception.UserAlreadyInLessonException;
 public class RestExceptionHandlerController {
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@ExceptionHandler({ EmailNotSentException.class })
+	@ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
+	public @ResponseBody ExceptionResponse handleEmailNotSentException(final RuntimeException exc,
+			final HttpServletRequest request) {
+		this.formatLogError(exc, request, HttpStatus.UNPROCESSABLE_ENTITY);
+		return new ExceptionResponse(exc.getMessage(), request.getRequestURI(), HttpStatus.UNPROCESSABLE_ENTITY.toString());
+	}
 
 	@ExceptionHandler({ AccessDeniedException.class })
 	@ResponseStatus(value = HttpStatus.FORBIDDEN)

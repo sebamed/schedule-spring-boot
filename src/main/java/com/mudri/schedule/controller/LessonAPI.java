@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.consts.RoleConstants;
+import com.mudri.schedule.dto.ConfirmLessonDTO;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.UserDTO;
@@ -61,8 +62,8 @@ public class LessonAPI {
 
 	@PostMapping("/confirm")
     @PreAuthorize(RoleConstants.AUTH_ADMIN)
-	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody UserLessonDTO userLessonDTO) {
-		return ReturnResponse.entityCreated(this.lessonService.confirm(userLessonDTO));
+	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody ConfirmLessonDTO confirmLessonDTO) {
+		return ReturnResponse.entityCreated(this.lessonService.confirm(confirmLessonDTO));
 	}
 
 	@PostMapping("/join")
