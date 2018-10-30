@@ -42,7 +42,7 @@ li p {
 .details li {
 	padding: 5px 0 0 0;
 	border: none;
-	line-height: 20px;
+	line-height: 15px;
 }
 
 .text {
@@ -75,16 +75,22 @@ li p {
 	<ul>
 		<li>
 			<p>
-				Hello! <br />The lesson You wanted to attend is
-				now confirmed, and You can see the details in the info box. Please
-				make sure you read all the details and check for any mistakes. You
-				can always leave this lesson, or contact teachers for further
-				information!
+				Hello! <br />The lesson You wanted to attend is now confirmed, and
+				You can see the details in the info box. Please make sure you read
+				all the details and check for any mistakes. You can always leave
+				this lesson, or contact teachers for further information!
 			</p>
 		</li>
 		<li>
 			<ul class="details">
-				<li>Teacher: <b th:text="${lesson.teacher.firstName + ' ' + lesson.teacher.lastName}">Teachers name</b></li>
+				<li>Course: <b th:text="${lesson.course.subject.name}">course</b> | 
+					<b th:each="type : ${lesson.course.types}" th:text="${type + ', '}">types</b> |
+					<b th:each="material : ${lesson.course.material}"
+					th:text="${material + ', '}"></b></li>
+
+				<li>Teacher: <b
+					th:text="${lesson.teacher.firstName + ' ' + lesson.teacher.lastName}">Teachers
+						name</b></li>
 				<li>Starts at: <b th:text="${lesson.time + ', ' + lesson.date}">Start</b></li>
 				<li>Price: <b th:text="${lesson.price}">Price</b></li>
 				<li>Duration: <b th:text="${lesson.length}">Duration</b></li>

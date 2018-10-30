@@ -46,8 +46,12 @@ public class EmailService {
 	@Autowired
 	ApplicationProperties applicationProperties;
 
+	/**
+	 * This method will be called from another service, and will send emails after lesson is confirmed by suitable teacher
+	 * 
+	 * @param lesson
+	 */
 	public void sendLessonConfirmedMail(LessonDTO lesson) {
-
 		this.createAndSendMail(lesson, EmailConstants.SUBJECT_LESSON_CONFIRMED_STUDENT,
 				EmailConstants.FILE_LESSON_CONFIRMED_STUDENT, this.formatMultipleEmails(lesson));
 
@@ -56,9 +60,8 @@ public class EmailService {
 	}
 
 	/**
-	 * This method creates mail that will contain lesson information
+	 * This method creates context that will contain lesson information
 	 * 
-	 * @author sebamed
 	 * @param lesson
 	 * @param subject
 	 * @param file
@@ -73,7 +76,6 @@ public class EmailService {
 	/**
 	 * This method sends an email
 	 * 
-	 * @author sebamed
 	 * @param to
 	 * @param subject
 	 * @param templateName
@@ -98,6 +100,12 @@ public class EmailService {
 		javaMailSender.send(mail);
 	}
 
+	/**
+	 * Helper method for converting mails from lesson to string array, so MimeMessageHelper can send emails on multiple addresses
+	 * 
+	 * @param lesson
+	 * @return
+	 */
 	private String[] formatMultipleEmails(LessonDTO lesson) {
 		List<String> mails = new ArrayList<>();
 		for (UserDTO user : lesson.getStudents()) {

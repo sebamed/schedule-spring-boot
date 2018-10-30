@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/schedule?useSSL=true
+    username: seba
+    password: pass123!
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: spring.angular123@gmail.com
+    password: springANGULAR123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            require: true
+            
+application:
+  security:
+    expiration: 180000
+    secret: MudriSchoolOfMath
+  mail:
+    from: spring.angular123@gmail.com
