@@ -53,16 +53,17 @@ public class Lesson {
 
 	@Column(name = "length_in_minutes")
 	private int length;
-	
+
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date date;
-	
+
 	@Temporal(TemporalType.TIME)
 	@DateTimeFormat(pattern = "HH:mm")
 	private Date time;
 
-	// date time start separated
+	@Column(name = "canceled")
+	private boolean canceled;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST })
 	@JoinTable(name = "lesson_students", joinColumns = { @JoinColumn(name = "lesson_id") }, inverseJoinColumns = {
@@ -76,16 +77,21 @@ public class Lesson {
 	@ManyToOne(cascade = { CascadeType.REFRESH })
 	@JoinColumn(name = "course_id")
 	private Course course;
-	
+
 	public Lesson() {
 		this.students = new ArrayList<>();
 		this.length = 0;
 		this.price = 0;
 		this.confirmed = false;
+		this.canceled = false;
 	}
-	
+
 	public void confirm() {
 		this.setConfirmed(true);
+	}
+	
+	public void cancel() {
+		this.setCanceled(true);
 	}
 
 }

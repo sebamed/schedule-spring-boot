@@ -29,6 +29,7 @@ public class LessonDTO {
 	private Date date;
 	private Time time;
 	private int price;
+	private boolean canceled;
 	private int length;
 	private List<UserDTO> students;
 	private UserDTO teacher;

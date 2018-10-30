@@ -50,21 +50,35 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	@Autowired
 	CourseService courseService;
 	
+	public LessonDTO cancel(UserLessonDTO userLessonDTO) {
+		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
+		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
+		
+		if(lesson.getTeacher() == null) {
+			throw new NoUserInLessonException("No teacher in lesson with ID: " + userLessonDTO.getLessonId());
+		}
+		
+		if(lesson.getTeacher().equals(user)) {
+			lesson.cancel();
+			// TODO: POSLATI MEJLOVE SVIMA
+			return this.modelMapper.map(this.save(lesson), LessonDTO.class);
+		} else {
+			throw new NoNeededSkillException("User with ID: " + userLessonDTO.getUserId() + " is not teacher for lesson with ID: " + userLessonDTO.getLessonId());
+		}
+	}
+	
 	public List<LessonDTO> getLessonsBySkillDTO(String skillName){
 		return this.modelMapper.map(this.lessonRepository.findAllBySkillName(skillName), TargetType.lessonType);
 	}
 		
-	public List<UserDTO> getStudentsDTO(Long id){
-		Lesson lesson = this.findOneById(id);
-		
-		return this.modelMapper.map(lesson.getStudents(), TargetType.userType);		
+	public List<UserDTO> getStudentsDTO(Long id){	
+		return this.modelMapper.map(this.findOneById(id).getStudents(), TargetType.userType);		
 	}
 	
 	public LessonDTO leave(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
 		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 		
-		// if user is not in the lesson at all
 		if(!(lesson.getStudents().contains(user))) {
 			throw new NoUserInLessonException("No user with ID: " + userLessonDTO.getUserId() + " in this lesson");
 		}
@@ -80,7 +94,6 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
 		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 		
-		// if user is already in lesson
 		if(lesson.getStudents().contains(user)) {
 			throw new UserAlreadyInLessonException("User with ID: " + userLessonDTO.getUserId() + " already joined this lesson");
 		}
@@ -96,7 +109,6 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
 		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
 
-		// checks if user has the needed skill for this lesson
 		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
 			throw new NoNeededSkillException("User with ID:" + userLessonDTO.getUserId()
 					+ " cannot confirm lesson with ID: " + userLessonDTO.getLessonId());

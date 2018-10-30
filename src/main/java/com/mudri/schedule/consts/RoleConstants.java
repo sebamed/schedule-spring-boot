@@ -3,15 +3,12 @@
  */
 package com.mudri.schedule.consts;
 
-/*
-  +---------------------------------------------+
-  | Name: RoleConstatns                                  
-  | Author: Sebastian                         
-  | Date: Oct 28, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
-public class RoleConstants {
+/**
+ * Role constants
+ * 
+ * @author sansajn
+ */
+public final class RoleConstants {
 
 	public static final String SUPER_ADMIN = "SUPER_ADMIN";
 
@@ -21,12 +18,10 @@ public class RoleConstants {
 
 	public static final String ANONYMOUS = "ANONYMOUS";
 
-	private static final String AUTH_ADMIN = "hasAuthority('ADMIN')";
+	public static final String AUTH_ADMIN = "hasAuthority('ADMIN')";
 
-	private static final String AUTH_USER = "hasAuthority('USER')";
-
-	private RoleConstants() {
-
-	}
+	public static final String AUTH_USER = "hasAuthority('USER')";
+	
+	public static final String AUTH_USER_ADMIN = "hasAnyAuthority('USER', 'ADMIN')";
 
 }

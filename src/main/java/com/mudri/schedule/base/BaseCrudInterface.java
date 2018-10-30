@@ -5,14 +5,10 @@ package com.mudri.schedule.base;
 
 import java.util.List;
 
-/*
-  +---------------------------------------------+
-  | Name: BaseCrudInterface                                  
-  | Author: Sebastian                         
-  | Date: Oct 21, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Base interface with crud operations
+ * @author sebamed
+ */
 public interface BaseCrudInterface<T> {
 	
 	T save(T object);

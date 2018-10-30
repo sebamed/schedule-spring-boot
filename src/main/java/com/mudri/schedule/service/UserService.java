@@ -16,7 +16,6 @@ import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.consts.Constants;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.RegisterDTO;
-import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
@@ -39,7 +38,7 @@ public class UserService implements BaseCrudInterface<AppUser> {
 
 	@Autowired
 	ModelMapper modelMapper;
-	
+
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -48,8 +47,8 @@ public class UserService implements BaseCrudInterface<AppUser> {
 
 	@Autowired
 	RoleService roleService;
-	
-	public List<LessonDTO> getUserLessonsDTO(Long id){	
+
+	public List<LessonDTO> getUserLessonsDTO(Long id) {
 		return this.modelMapper.map(this.findOneById(id).getLessons(), TargetType.lessonType);
 	}
 
@@ -58,60 +57,33 @@ public class UserService implements BaseCrudInterface<AppUser> {
 			throw new UserAlreadyExistsException("User with email: " + registerDTO.getEmail() + " already exists!");
 		}
 
-		Role role = new Role();
-		role = this.roleService.findOneByName(Constants.USER_ROLE);
+		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 
 		AppUser user = new AppUser();
 		user.setFieldsFromRegisterDTO(registerDTO);
 		user.setPassword(this.bCryptPasswordEncoder.encode(registerDTO.getPassword()));
 		user.setRole(role);
 
-
 		role.getUsers().add(user);
 		this.roleService.save(role);
-		
+
 		return this.modelMapper.map(this.save(user), UserInfoDTO.class);
 	}
 
-	public List<UserInfoDTO> getAllDTOByRoleName(String name) {	
+	public List<UserInfoDTO> getAllDTOByRoleName(String name) {
 		return this.modelMapper.map(this.findAllByRoleName(name), TargetType.userInfoType);
 	}
 
 	public UserInfoDTO getDTOById(Long id) {
-		AppUser user = this.findOneById(id);
-		if (user.getId() != null) {
-			return this.modelMapper.map(user, UserInfoDTO.class);
-		} else {
-			throw new NotFoundException("No user with ID: " + id);
-		}
+		return this.modelMapper.map(this.findOneById(id), UserInfoDTO.class);
 	}
-	
+
 	public UserInfoDTO getDTOByEmail(String email) {
 		return this.modelMapper.map(this.findOneByEmail(email), UserInfoDTO.class);
 	}
 
 	public List<UserInfoDTO> getAllDTO() {
 		return this.modelMapper.map(this.findAll(), TargetType.userInfoType);
-	}
-
-	// TODO: SREDITI
-	public UserDTO create(UserDTO userDTO) {
-		AppUser user = new AppUser();
-		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
-		if (role.getId() != null) {
-			user = this.modelMapper.map(userDTO, AppUser.class);
-			user.setRole(role);
-			user = this.save(user);
-			if (user.getId() != null) {
-				role.getUsers().add(user);
-				this.roleService.save(role);
-				return this.modelMapper.map(user, UserDTO.class);
-			} else {
-				return new UserDTO();
-			}
-		} else {
-			return new UserDTO();
-		}
 	}
 
 	public boolean doesUserExist(String email) {
@@ -161,11 +133,7 @@ public class UserService implements BaseCrudInterface<AppUser> {
 	}
 
 	private List<AppUser> returnList(List<AppUser> users) {
-		if (!users.isEmpty()) {
-			return users;
-		} else {
-			return Collections.emptyList();
-		}
+		return !users.isEmpty() ? users : Collections.emptyList();
 	}
 
 }

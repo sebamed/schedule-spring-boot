@@ -8,14 +8,11 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-/*
-  +---------------------------------------------+
-  | Name: ReturnResponse                                  
-  | Author: Sebastian                         
-  | Date: Oct 27, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Util class
+ * 
+ * @author sebamed
+ */
 public class ReturnResponse {
 	
 	public static <T> ResponseEntity<List<T>> listGet(List<T> list) {

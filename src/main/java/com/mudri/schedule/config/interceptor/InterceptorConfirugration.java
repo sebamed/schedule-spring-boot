@@ -10,14 +10,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.mudri.schedule.interceptor.LoggerInterceptor;
 
-/*
-  +---------------------------------------------+
-  | Name: InterceptorConfirugration                                  
-  | Author: Sebastian                         
-  | Date: Oct 26, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Configuration for interceptor
+ * @author sebamed
+ */
 @Configuration
 public class InterceptorConfirugration implements WebMvcConfigurer {
 

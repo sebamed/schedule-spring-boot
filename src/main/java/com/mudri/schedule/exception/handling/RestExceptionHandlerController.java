@@ -17,20 +17,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import com.mudri.schedule.exception.EntityAlreadyExistsException;
 import com.mudri.schedule.exception.ExceptionResponse;
 import com.mudri.schedule.exception.NoNeededSkillException;
+import com.mudri.schedule.exception.NoTeacherInLessonException;
 import com.mudri.schedule.exception.NoUserInLessonException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyExistsException;
 import com.mudri.schedule.exception.UserAlreadyInLessonException;
 
-/*
-  +---------------------------------------------+
-  | Name: ExceptionHandler                                  
-  | Author: Sebastian                         
-  | Date: Oct 24, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Exception handler that catches and loggs every exception thrown in app
+ * 
+ * @author sebamed
+ */
 @ControllerAdvice
 public class RestExceptionHandlerController {
 
@@ -52,7 +50,7 @@ public class RestExceptionHandlerController {
 		return new ExceptionResponse(exc.getMessage(), request.getRequestURI(), HttpStatus.UNAUTHORIZED.toString());
 	}
 
-	@ExceptionHandler({ NotFoundException.class, NoUserInLessonException.class })
+	@ExceptionHandler({ NotFoundException.class, NoUserInLessonException.class, NoTeacherInLessonException.class })
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
 	public @ResponseBody ExceptionResponse handleNotFoundException(final RuntimeException exc,
 			final HttpServletRequest request) {

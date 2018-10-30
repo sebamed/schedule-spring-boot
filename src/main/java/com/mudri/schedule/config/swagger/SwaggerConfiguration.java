@@ -3,6 +3,9 @@
  */
 package com.mudri.schedule.config.swagger;
 
+import static com.google.common.base.Predicates.or;
+import static springfox.documentation.builders.PathSelectors.regex;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,15 +17,12 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import static springfox.documentation.builders.PathSelectors.regex;
-import static com.google.common.base.Predicates.or;
-/*
-  +---------------------------------------------+
-  | Name: SwaggerConfiguration                                  
-  | Author: Sebastian                         
-  | Date: Oct 21, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
+
+/**
+ * Configuration for swagger2 docs
+ * 
+ * @author sebamed
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {

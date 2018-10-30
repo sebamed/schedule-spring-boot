@@ -25,22 +25,18 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.mudri.schedule.utils.TokenProvider;
-
+/**
+ * Application security config
+ * 
+ * @author sansajn
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	private final UserDetailsService userDetailsService;
-
-	private TokenProvider tokenProvider;
-
 	@Autowired
-	public SecurityConfiguration(UserDetailsService userDetailsService, TokenProvider tokenProvider) {
-		this.userDetailsService = userDetailsService;
-		this.tokenProvider = tokenProvider;
-	}
+	private UserDetailsService userDetailsService;
 
 	/**
 	 * This method configures authentication manager
@@ -49,17 +45,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 * @throws Exception
 	 */
 	public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-
 		authenticationManagerBuilder.userDetailsService(this.userDetailsService);
 	}
 
 	/**
 	 * Method witch returns new instance of PasswordEncoder
-	 *
+	 * in this case, returns 500 with message: "There is no PasswordEncoder mapped for id \"null\""
 	 * @return
 	 */
-	// in this case, returns 500 with message: "There is no PasswordEncoder mapped
-	// for the id \"null\""
 	// @Bean
 	// public PasswordEncoder passwordEncoder() {
 	// return new BCryptPasswordEncoder();
@@ -82,7 +75,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	 */
 	@Bean
 	public JWTFilter authenticationTokenFilterBean() throws Exception {
-		JWTFilter authenticationTokenFilter = new JWTFilter(this.tokenProvider, this.userDetailsService);
+		JWTFilter authenticationTokenFilter = new JWTFilter();
 		authenticationTokenFilter.setAuthenticationManager(authenticationManagerBean());
 		return authenticationTokenFilter;
 	}

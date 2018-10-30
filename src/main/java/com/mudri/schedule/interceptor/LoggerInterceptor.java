@@ -12,14 +12,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-/*
-  +---------------------------------------------+
-  | Name: LoggerInterceptor                                  
-  | Author: Sebastian                         
-  | Date: Oct 26, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Logger interceptor
+ * 
+ * @author sebamed
+ */
 @Component
 public class LoggerInterceptor implements HandlerInterceptor {
 
@@ -28,7 +25,6 @@ public class LoggerInterceptor implements HandlerInterceptor {
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object object,
 			Exception arg3) {
-
 	}
 
 	@Override

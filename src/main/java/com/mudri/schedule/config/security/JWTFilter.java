@@ -28,15 +28,12 @@ import com.mudri.schedule.utils.TokenProvider;
  */
 public class JWTFilter extends UsernamePasswordAuthenticationFilter {
 
+	@Autowired
     private TokenProvider tokenProvider;
 
+	@Autowired
     private UserDetailsService userDetailsService;
 
-    @Autowired
-    public JWTFilter(TokenProvider tokenProvider, UserDetailsService userDetailsService) {
-        this.tokenProvider = tokenProvider;
-        this.userDetailsService = userDetailsService;
-    }
 
     /**
      * This method sets authentication on user who doesn't have authentication

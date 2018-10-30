@@ -27,12 +27,8 @@ import com.mudri.schedule.repository.UserRepository;
 @Component
 public class DomainUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
-
-    @Autowired
-    public DomainUserDetailsService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+	@Autowired
+    private UserRepository userRepository;
 
     @Override
     @Transactional(readOnly = true)

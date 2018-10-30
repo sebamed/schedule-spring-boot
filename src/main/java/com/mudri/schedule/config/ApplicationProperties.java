@@ -7,13 +7,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-/*
-  +---------------------------------------------+
-  | Name: ApplicationProperties                                  
-  | Author: Sebastian                         
-  | Date: Oct 28, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
+/**
+ * Application properties, can be managed in application.properties
+ * @author sebamed
+ */
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "application")

@@ -14,14 +14,11 @@ import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
 
-/*
-  +---------------------------------------------+
-  | Name: TargetTypes                                  
-  | Author: Sebastian                         
-  | Date: Oct 26, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Util class with entity types for ModelMapper
+ * 
+ * @author sebamed
+ */
 public final class TargetType {
 
 	public final static Type userType = new TypeToken<List<UserDTO>>() {

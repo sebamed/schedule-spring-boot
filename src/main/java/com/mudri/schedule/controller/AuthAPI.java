@@ -21,14 +21,11 @@ import com.mudri.schedule.service.AuthService;
 import com.mudri.schedule.utils.ReturnResponse;
 import com.mudri.schedule.utils.TokenProvider;
 
-/*
-  +---------------------------------------------+
-  | Name: AuthAPI                                  
-  | Author: Sebastian                         
-  | Date: Oct 28, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Endpoints for authentication
+ * 
+ * @author sebamed
+ */
 @RestController
 @RequestMapping("/api/auth")
 public class AuthAPI {

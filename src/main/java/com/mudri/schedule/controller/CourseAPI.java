@@ -15,18 +15,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mudri.schedule.consts.RoleConstants;
 import com.mudri.schedule.dto.CourseDTO;
 import com.mudri.schedule.service.CourseService;
 import com.mudri.schedule.utils.ReturnResponse;
 
-/*
-  +---------------------------------------------+
-  | Name: CourseAPI                                  
-  | Author: Sebastian                         
-  | Date: Oct 22, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Endpoints for courses
+ * 
+ * @author sebamed
+ */
 @RestController
 @RequestMapping("/api/courses")
 public class CourseAPI {
@@ -35,19 +33,19 @@ public class CourseAPI {
 	CourseService courseService;
 
 	@GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<CourseDTO> handleGetDTOById(@PathVariable("id") Long id) {
 		return ReturnResponse.entityGet(this.courseService.getDTOById(id));
 	}
 
 	@GetMapping()
-    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<List<CourseDTO>> handleGetAllDTO() {
 		return ReturnResponse.listGet(this.courseService.getAllDTO());
 	}
 
 	@PostMapping()
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
 	public ResponseEntity<CourseDTO> handleCreateCourse(@RequestBody CourseDTO courseDTO) {
 		return ReturnResponse.entityCreated(this.courseService.create(courseDTO));
 	}

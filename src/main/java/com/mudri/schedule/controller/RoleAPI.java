@@ -15,18 +15,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mudri.schedule.consts.RoleConstants;
 import com.mudri.schedule.dto.RoleDTO;
 import com.mudri.schedule.service.RoleService;
 import com.mudri.schedule.utils.ReturnResponse;
 
-/*
-  +---------------------------------------------+
-  | Name: RoleAPI                                  
-  | Author: Sebastian                         
-  | Date: Oct 22, 2018                                                                                                                         
-  +---------------------------------------------+
-*/
-
+/**
+ * Endpoints for roles
+ * 
+ * @author sebamed
+ */
 @RestController
 @RequestMapping("/api/roles")
 public class RoleAPI {
@@ -35,19 +33,19 @@ public class RoleAPI {
 	RoleService roleService;
 
 	@GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
 	public ResponseEntity<RoleDTO> handleGetRoleById(@PathVariable("id") Long id) {
 		return ReturnResponse.entityGet(this.roleService.getDTOById(id));
 	}
 
 	@GetMapping()
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
 	public ResponseEntity<List<RoleDTO>> handleGetAllRoles() {
 		return ReturnResponse.listGet(this.roleService.getAllDTO());
 	}
 
 	@PostMapping()
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
 	public ResponseEntity<RoleDTO> handleCreateRole(@RequestBody RoleDTO roleDTO) {
 		return ReturnResponse.entityCreated(this.roleService.create(roleDTO));
 	}
