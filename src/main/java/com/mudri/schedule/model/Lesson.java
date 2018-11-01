@@ -24,6 +24,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.mudri.schedule.dto.UpdateLessonDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -92,6 +94,13 @@ public class Lesson {
 	
 	public void cancel() {
 		this.setCanceled(true);
+	}
+	
+	public void updateLesson(UpdateLessonDTO updateLessonDTO) {
+		this.setDate(updateLessonDTO.getDate());
+		this.setTime(updateLessonDTO.getTime());
+		this.setLength(updateLessonDTO.getLength());
+		this.setPrice(updateLessonDTO.getPrice());		
 	}
 
 }

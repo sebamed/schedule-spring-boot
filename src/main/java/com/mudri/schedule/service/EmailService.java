@@ -45,7 +45,33 @@ public class EmailService {
 
 	@Autowired
 	ApplicationProperties applicationProperties;
+	
+	/**
+	 * This method will be called from another service, and will send emails after lesson is updated by its teacher
+	 * 
+	 * @param lesson
+	 */
+	public void sendLessonUpdatedMail(LessonDTO oldLesson, LessonDTO newLesson) {
+		this.createAndSendMailWithTwoLessons(oldLesson, newLesson, EmailConstants.SUBJECT_LESSON_UPDATED_STUDENT,
+				EmailConstants.FILE_LESSON_UPDATED_STUDENT, this.formatMultipleEmails(newLesson));
 
+		this.createAndSendMailWithTwoLessons(oldLesson, newLesson, EmailConstants.SUBJECT_LESSON_UPDATED_TEACHER,
+				EmailConstants.FILE_LESSON_UPDATED_TEACHER, new String[] { newLesson.getTeacher().getEmail() });
+	}
+
+	/**
+	 * This method will be called from another service, and will send emails after lesson is canceled by its teacher
+	 * 
+	 * @param lesson
+	 */
+	public void sendLessonCanceledMail(LessonDTO lesson) {
+		this.createAndSendMail(lesson, EmailConstants.SUBJECT_LESSON_CANCELED_STUDENT,
+				EmailConstants.FILE_LESSON_CANCELED_STUDENT, this.formatMultipleEmails(lesson));
+
+		this.createAndSendMail(lesson, EmailConstants.SUBJECT_LESSON_CANCELED_TEACHER,
+				EmailConstants.FILE_LESSON_CANCELED_TEACHER, new String[] { lesson.getTeacher().getEmail() });
+	}
+	
 	/**
 	 * This method will be called from another service, and will send emails after lesson is confirmed by suitable teacher
 	 * 
@@ -57,6 +83,23 @@ public class EmailService {
 
 		this.createAndSendMail(lesson, EmailConstants.SUBJECT_LESSON_CONFIRMED_TEACHER,
 				EmailConstants.FILE_LESSON_CONFIRMED_TEACHER, new String[] { lesson.getTeacher().getEmail() });
+	}
+	
+	/**
+	 * 
+	 * This method vreates context that will contain two lessons, old one and new one
+	 * 
+	 * @param oldLesson
+	 * @param newLesson
+	 * @param subject
+	 * @param file
+	 * @param mails
+	 */
+	private void createAndSendMailWithTwoLessons(LessonDTO oldLesson, LessonDTO newLesson, String subject, String file, String[] mails) {
+		final Context studentsContext = new Context();
+		studentsContext.setVariable("oldLesson", oldLesson);
+		studentsContext.setVariable("newLesson", newLesson);
+		this.sendHtmlMail(mails, subject, file, studentsContext);
 	}
 
 	/**

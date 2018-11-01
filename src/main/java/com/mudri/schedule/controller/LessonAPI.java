@@ -19,6 +19,7 @@ import com.mudri.schedule.consts.RoleConstants;
 import com.mudri.schedule.dto.ConfirmLessonDTO;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UpdateLessonDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserLessonDTO;
 import com.mudri.schedule.service.LessonService;
@@ -80,8 +81,14 @@ public class LessonAPI {
 	
 	@PostMapping("/cancel")
 	@PreAuthorize(RoleConstants.AUTH_ADMIN)
-	public ResponseEntity<LessonDTO> handleCanceLesson(@RequestBody UserLessonDTO userLessonDTO){
+	public ResponseEntity<LessonDTO> handleCancelLesson(@RequestBody UserLessonDTO userLessonDTO){
 		return ReturnResponse.entityGet(this.lessonService.cancel(userLessonDTO));
+	}
+	
+	@PostMapping("/update")
+	@PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<LessonDTO> handleUpdateLesson(@RequestBody UpdateLessonDTO updateLessonDTO){
+		return ReturnResponse.entityGet(this.lessonService.update(updateLessonDTO));
 	}
 
 }
