@@ -4,7 +4,11 @@
 package com.mudri.schedule.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -21,6 +25,21 @@ public class WebConfiguration implements WebMvcConfigurer {
 
 	@Autowired
 	LoggerInterceptor loggerInterceptor;
+
+	@Bean
+	public CorsFilter corsFilter() {
+		final CorsConfiguration config = new CorsConfiguration();
+		config.setAllowCredentials(true);
+		config.addAllowedOrigin("*");
+		config.addAllowedHeader("*");
+		config.addAllowedMethod("*");
+		config.setMaxAge(1800L);
+
+		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/api/**", config);
+
+		return new CorsFilter(source);
+	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
