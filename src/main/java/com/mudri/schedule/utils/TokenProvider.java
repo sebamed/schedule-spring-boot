@@ -22,7 +22,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import com.mudri.schedule.config.ApplicationProperties;
-import com.mudri.schedule.model.AppUser;
+import com.mudri.schedule.model.User;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -128,7 +128,7 @@ public class TokenProvider {
      * @param user
      * @return token
      */
-    public String generateToken(AppUser user) {
+    public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("sub", user.getEmail());
         return Jwts.builder().setClaims(claims)

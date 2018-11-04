@@ -18,7 +18,7 @@ import com.mudri.schedule.dto.LoginDTO;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.exception.UserAlreadyExistsException;
-import com.mudri.schedule.model.AppUser;
+import com.mudri.schedule.model.User;
 import com.mudri.schedule.model.Role;
 
 /*
@@ -50,7 +50,7 @@ public class AuthService {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
-	public AppUser login(LoginDTO loginDTO) {
+	public User login(LoginDTO loginDTO) {
 		domainUserDetailsService.loadUserByUsername(loginDTO.getEmail());
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 				loginDTO.getEmail(), loginDTO.getPassword());
@@ -67,7 +67,7 @@ public class AuthService {
 		Role role = new Role();
 		role = this.roleService.findOneByName(Constants.USER_ROLE);
 
-		AppUser user = new AppUser();
+		User user = new User();
 		user.setFieldsFromRegisterDTO(registerDTO);
 		user.setPassword(passwordEncoder.encode(registerDTO.getPassword()));
 		user.setRole(role);

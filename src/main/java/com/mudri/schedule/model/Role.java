@@ -47,7 +47,7 @@ public class Role {
 	
 	@OneToMany(mappedBy="role", cascade = {CascadeType.REFRESH})
 	@JsonBackReference
-	private List<AppUser> users;
+	private List<User> users;
 
 }
 

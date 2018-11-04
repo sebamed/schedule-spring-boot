@@ -23,7 +23,7 @@ import com.mudri.schedule.exception.NoUserInLessonException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyInLessonException;
-import com.mudri.schedule.model.AppUser;
+import com.mudri.schedule.model.User;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
 import com.mudri.schedule.repository.LessonRepository;
@@ -57,7 +57,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO update(UpdateLessonDTO updateLessonDTO) {
 		Lesson lesson = this.findOneById(updateLessonDTO.getLessonId());
-		AppUser user = this.userService.findOneById(updateLessonDTO.getUserId());
+		User user = this.userService.findOneById(updateLessonDTO.getUserId());
 
 		user = this.getTeacherInLesson(lesson, user);
 		
@@ -71,7 +71,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO cancel(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
 
 		user = this.getTeacherInLesson(lesson, user);
 		lesson.cancel();
@@ -91,7 +91,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO leave(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
 
 		if (!(lesson.getStudents().contains(user))) {
 			throw new NoUserInLessonException("No user with ID: " + userLessonDTO.getUserId() + " in this lesson");
@@ -106,7 +106,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO join(UserLessonDTO userLessonDTO) {
 		Lesson lesson = this.findOneById(userLessonDTO.getLessonId());
-		AppUser user = this.userService.findOneById(userLessonDTO.getUserId());
+		User user = this.userService.findOneById(userLessonDTO.getUserId());
 
 		if (lesson.getStudents().contains(user)) {
 			throw new UserAlreadyInLessonException(
@@ -122,7 +122,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	public LessonDTO confirm(ConfirmLessonDTO confirmLessonDTO) {
 		Lesson lesson = this.findOneById(confirmLessonDTO.getLessonId());
-		AppUser user = this.userService.findOneById(confirmLessonDTO.getUserId());
+		User user = this.userService.findOneById(confirmLessonDTO.getUserId());
 
 		if (!(user.getSkills().contains(lesson.getCourse().getSubject()))) {
 			throw new NoNeededSkillException("User with ID:" + confirmLessonDTO.getUserId()
@@ -145,7 +145,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	}
 
 	public LessonDTO create(CreateLessonDTO createLessonDTO) {
-		AppUser user = this.userService.findOneById(createLessonDTO.getUserID());
+		User user = this.userService.findOneById(createLessonDTO.getUserID());
 		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
 		Lesson lesson = new Lesson();
 
@@ -197,7 +197,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		}
 	}
 
-	private AppUser getTeacherInLesson(Lesson lesson, AppUser user) {
+	private User getTeacherInLesson(Lesson lesson, User user) {
 		if (lesson.getTeacher() == null) {
 			throw new NoUserInLessonException("No teacher in lesson with ID: " + lesson.getId());
 		}

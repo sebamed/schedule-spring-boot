@@ -16,7 +16,7 @@ import com.mudri.schedule.dto.LoginDTO;
 import com.mudri.schedule.dto.RegisterDTO;
 import com.mudri.schedule.dto.SignInResponseDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
-import com.mudri.schedule.model.AppUser;
+import com.mudri.schedule.model.User;
 import com.mudri.schedule.service.AuthService;
 import com.mudri.schedule.utils.ReturnResponse;
 import com.mudri.schedule.utils.TokenProvider;
@@ -47,7 +47,7 @@ public class AuthAPI {
 	
 	@PostMapping("/login")
 	public ResponseEntity<SignInResponseDTO> handleLogin(@RequestBody LoginDTO loginDTO){
-		AppUser user = this.authService.login(loginDTO);
+		User user = this.authService.login(loginDTO);
 		String token = tokenProvider.generateToken(user);
 		return new ResponseEntity<SignInResponseDTO>(new SignInResponseDTO(this.modelMapper.map(user, UserInfoDTO.class), token), HttpStatus.OK);
 	}
