@@ -69,6 +69,12 @@ public class UserAPI {
 	public ResponseEntity<List<SubjectDTO>> handleUpdateUsersSkills(@PathVariable("id") Long id, @RequestBody List<SubjectDTO> skillsDTO){
 		return ReturnResponse.listGet(this.userService.updateUserSkills(id, skillsDTO));
 	}
+	
+	@GetMapping("/skill/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<UserInfoDTO>> handleGetAllUsersBySubject(@PathVariable("id") Long id){
+		return ReturnResponse.listGet(this.userService.getAllUsersBySubject(id));
+	}
 
 	
 

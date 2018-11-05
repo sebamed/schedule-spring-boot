@@ -54,6 +54,10 @@ public class UserService implements BaseCrudInterface<User> {
 	@Autowired
 	RoleService roleService;
 	
+	public List<UserInfoDTO> getAllUsersBySubject(Long id){
+		return this.modelMapper.map(this.userRepository.findAllBySkillsId(id), TargetType.userInfoType);
+	}
+	
 	public List<SubjectDTO> updateUserSkills(Long id, List<SubjectDTO> skillsDTO){
 		List<Subject> subjects = new ArrayList<>();
 		for(SubjectDTO skill : skillsDTO) {
@@ -61,6 +65,18 @@ public class UserService implements BaseCrudInterface<User> {
 		}
 		
 		User user = this.findOneById(id);
+		for(Subject subject : this.subjectService.findAll()) {
+			if(subject.getSkilledUsers().contains(user)) {
+				subject.getSkilledUsers().remove(user);
+			}
+			
+		}
+		
+		for(Subject subject : subjects) {
+			subject.getSkilledUsers().add(user);
+			this.subjectService.save(subject);
+		}
+		
 		user.setSkills(subjects);
 		return this.modelMapper.map(this.save(user).getSkills(), TargetType.subjectType);
 	}
