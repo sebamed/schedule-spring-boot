@@ -54,6 +54,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 
 	@Autowired
 	EmailService emailService;
+	
 
 	public LessonDTO update(UpdateLessonDTO updateLessonDTO) {
 		Lesson lesson = this.findOneById(updateLessonDTO.getLessonId());
@@ -78,11 +79,22 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		LessonDTO lessonDTO = this.modelMapper.map(this.save(lesson), LessonDTO.class);
 		this.emailService.sendLessonCanceledMail(lessonDTO);
 		return lessonDTO;
-
+	}
+	
+	public List<LessonDTO> getDoneLessonsByUserId(Long id){
+		return this.modelMapper.map(this.lessonRepository.findAllDoneByUser(id), TargetType.lessonType);
+	}
+	
+	public List<LessonDTO> getCanceledLessonsByUserId(Long id){
+		return this.modelMapper.map(this.lessonRepository.findAllCanceledByUserId(id), TargetType.lessonType);
+	}
+	
+	public List<LessonDTO> getConfirmedLessonsByUserId(Long id){
+		return this.modelMapper.map(this.lessonRepository.findAllConfirmedByUserId(id), TargetType.lessonType);
 	}
 
 	public List<LessonDTO> getLessonsBySkillDTO(String skillName) {
-		return this.modelMapper.map(this.lessonRepository.findAllBySkillName(skillName), TargetType.lessonType);
+		return this.modelMapper.map(this.lessonRepository.findAllNonConfirmedBySkillName(skillName), TargetType.lessonType);
 	}
 
 	public List<UserDTO> getStudentsDTO(Long id) {

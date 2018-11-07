@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.SubjectDTO;
-import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.exception.EntityAlreadyExistsException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;

@@ -54,6 +54,24 @@ public class LessonAPI {
 	public ResponseEntity<List<LessonDTO>> handleGetBySkillName(@PathVariable("name") String name) {
 		return ReturnResponse.listGet(this.lessonService.getLessonsBySkillDTO(name));
 	}
+	
+	@GetMapping("/confirmed/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<LessonDTO>> handleGetAllConfirmedByTeacher(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getConfirmedLessonsByUserId(id));
+	}
+	
+	@GetMapping("/canceled/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<LessonDTO>> handleGetAllCanceledByTeacher(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getCanceledLessonsByUserId(id));
+	}
+	
+	@GetMapping("/done/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<LessonDTO>> handleGetAllDoneByTeacher(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getDoneLessonsByUserId(id));
+	}
 
 	@GetMapping("/{id}/students")
     @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
