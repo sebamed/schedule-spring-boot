@@ -26,6 +26,7 @@ import com.mudri.schedule.model.Role;
 import com.mudri.schedule.model.Subject;
 import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.UserRepository;
+import com.mudri.schedule.utils.ModelUpdater;
 import com.mudri.schedule.utils.TargetType;
 
 /*
@@ -97,9 +98,9 @@ public class UserService implements BaseCrudInterface<User> {
 		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 
 		User user = new User();
-		user.setFieldsFromRegisterDTO(registerDTO);
 		user.setPassword(this.bCryptPasswordEncoder.encode(registerDTO.getPassword()));
 		user.setRole(role);
+		user = ModelUpdater.registerUser(user, registerDTO);
 
 		role.getUsers().add(user);
 		this.roleService.save(role);

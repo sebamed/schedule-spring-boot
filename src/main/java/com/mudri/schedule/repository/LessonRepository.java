@@ -51,6 +51,12 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
 	@Query(nativeQuery = true, value = "select * from lesson l inner join user u on l.teacher_id = u.id where u.id = ?1 and l.canceled = 1")
 	List<Lesson> findAllCanceledByUserId(Long id);
 	
+	
+	/**
+	 * returns all finished lessons for teacher
+	 * @param id
+	 * @return
+	 */
 	@Query(nativeQuery = true, value = "select * from lesson l inner join user u on l.teacher_id = u.id where u.id = ?1 and l.canceled = 0 and l.confirmed = 1 and l.date < CURDATE()")
 	List<Lesson> findAllDoneByUser(Long id);
 

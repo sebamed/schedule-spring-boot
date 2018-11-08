@@ -25,14 +25,14 @@ import lombok.NoArgsConstructor;
 public class LessonDTO {
 
 	private Long id;
+	private int price;
+	private int length;
+	private boolean canceled;
 	private boolean confirmed;
 	private Date date;
 	private Time time;
-	private int price;
-	private boolean canceled;
-	private int length;
-	private List<UserDTO> students;
 	private UserDTO teacher;
+	private List<UserDTO> students;
 	private CourseDTO course;
 	
 }

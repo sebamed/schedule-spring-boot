@@ -27,6 +27,7 @@ import com.mudri.schedule.model.User;
 import com.mudri.schedule.model.Course;
 import com.mudri.schedule.model.Lesson;
 import com.mudri.schedule.repository.LessonRepository;
+import com.mudri.schedule.utils.ModelUpdater;
 import com.mudri.schedule.utils.TargetType;
 
 /*
@@ -63,7 +64,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		user = this.getTeacherInLesson(lesson, user);
 		
 		LessonDTO oldLessonDTO = this.modelMapper.map(lesson, LessonDTO.class);
-		lesson.updateLesson(updateLessonDTO);
+		lesson = ModelUpdater.updateLesson(lesson, updateLessonDTO);
 		
 		LessonDTO newLessonDTO = this.modelMapper.map(this.save(lesson), LessonDTO.class);
 		this.emailService.sendLessonUpdatedMail(oldLessonDTO, newLessonDTO);
@@ -75,7 +76,7 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 		User user = this.userService.findOneById(userLessonDTO.getUserId());
 
 		user = this.getTeacherInLesson(lesson, user);
-		lesson.cancel();
+		lesson.setCanceled(true);
 		LessonDTO lessonDTO = this.modelMapper.map(this.save(lesson), LessonDTO.class);
 		this.emailService.sendLessonCanceledMail(lessonDTO);
 		return lessonDTO;
