@@ -42,9 +42,15 @@ public class LessonAPI {
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
 		return ReturnResponse.listGet(this.lessonService.getAllDTO());
 	}
+	
+	@GetMapping("/{id}")
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
+	public ResponseEntity<LessonDTO> handleGetById(@PathVariable("id") Long id) {
+		return ReturnResponse.entityGet(this.lessonService.getDTOById(id));
+	}
 
 	@PostMapping()
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER)
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
 		return ReturnResponse.entityCreated(this.lessonService.create(lessonDTO));
 	}
@@ -86,7 +92,7 @@ public class LessonAPI {
 	}
 
 	@PostMapping("/join")
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER)
 	public ResponseEntity<LessonDTO> handleJoinLesson(@RequestBody UserLessonDTO userLessonDTO) {
 		return ReturnResponse.entityGet(this.lessonService.join(userLessonDTO));
 	}

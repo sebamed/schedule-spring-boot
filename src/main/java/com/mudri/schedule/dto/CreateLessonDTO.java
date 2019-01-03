@@ -26,9 +26,9 @@ public class CreateLessonDTO {
 
 	// TODO: dodati datum i vreme
 	
-	private Long userID;
+	private Long userId;
 	private CourseDTO course;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date date;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
 	private Date time;

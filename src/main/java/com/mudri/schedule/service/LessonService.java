@@ -158,7 +158,8 @@ public class LessonService implements BaseCrudInterface<Lesson> {
 	}
 
 	public LessonDTO create(CreateLessonDTO createLessonDTO) {
-		User user = this.userService.findOneById(createLessonDTO.getUserID());
+		User user = this.userService.findOneById(createLessonDTO.getUserId());
+		System.out.println(createLessonDTO.getCourse().toString());
 		Course course = this.courseService.save(this.modelMapper.map(createLessonDTO.getCourse(), Course.class));
 		Lesson lesson = new Lesson();
 
