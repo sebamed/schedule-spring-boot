@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,6 +49,12 @@ public class SubjectAPI {
     @PreAuthorize(RoleConstants.AUTH_ADMIN)
 	public ResponseEntity<SubjectDTO> handleCreateSubject(@RequestBody SubjectDTO subjectDTO) {
 		return ReturnResponse.entityCreated(this.subjectService.create(subjectDTO));
+	}
+	
+	@PutMapping()
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<SubjectDTO> handleUpdateSubject(@RequestBody SubjectDTO subjectDTO) {
+		return ReturnResponse.entityCreated(this.subjectService.update(subjectDTO));
 	}
 
 }

@@ -1,0 +1,52 @@
+body {
+  font-family: Helvetica;
+  background-color: #20262e;
+  width: 100%;
+}
+
+ul {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 10px;
+}
+
+li {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  font-size: 15px;
+}
+
+li p {
+  line-height: 30px;
+}
+
+.details {
+  list-style-type: none;
+  padding: 0;
+}
+
+.details li {
+  padding: 10px 0 0 0;
+  background-color: transparent;
+}
+
+.text {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  background-color: #008cba;
+}
+
+.header {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+}
+
+.info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 13px;
+}

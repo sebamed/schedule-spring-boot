@@ -3,6 +3,8 @@
  */
 package com.mudri.schedule.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ public class UserInfoDTO {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private List<SubjectDTO> skills;
 	private RoleDTO role;
 	
 }

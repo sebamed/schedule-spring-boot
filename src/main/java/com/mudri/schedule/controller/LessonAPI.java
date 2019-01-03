@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.consts.RoleConstants;
+import com.mudri.schedule.dto.ConfirmLessonDTO;
 import com.mudri.schedule.dto.CreateLessonDTO;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.UpdateLessonDTO;
 import com.mudri.schedule.dto.UserDTO;
 import com.mudri.schedule.dto.UserLessonDTO;
 import com.mudri.schedule.service.LessonService;
@@ -52,6 +54,24 @@ public class LessonAPI {
 	public ResponseEntity<List<LessonDTO>> handleGetBySkillName(@PathVariable("name") String name) {
 		return ReturnResponse.listGet(this.lessonService.getLessonsBySkillDTO(name));
 	}
+	
+	@GetMapping("/confirmed/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<LessonDTO>> handleGetAllConfirmedByTeacher(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getConfirmedLessonsByUserId(id));
+	}
+	
+	@GetMapping("/canceled/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<LessonDTO>> handleGetAllCanceledByTeacher(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getCanceledLessonsByUserId(id));
+	}
+	
+	@GetMapping("/done/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<LessonDTO>> handleGetAllDoneByTeacher(@PathVariable("id") Long id) {
+		return ReturnResponse.listGet(this.lessonService.getDoneLessonsByUserId(id));
+	}
 
 	@GetMapping("/{id}/students")
     @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
@@ -61,8 +81,8 @@ public class LessonAPI {
 
 	@PostMapping("/confirm")
     @PreAuthorize(RoleConstants.AUTH_ADMIN)
-	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody UserLessonDTO userLessonDTO) {
-		return ReturnResponse.entityCreated(this.lessonService.confirm(userLessonDTO));
+	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody ConfirmLessonDTO confirmLessonDTO) {
+		return ReturnResponse.entityCreated(this.lessonService.confirm(confirmLessonDTO));
 	}
 
 	@PostMapping("/join")
@@ -79,8 +99,14 @@ public class LessonAPI {
 	
 	@PostMapping("/cancel")
 	@PreAuthorize(RoleConstants.AUTH_ADMIN)
-	public ResponseEntity<LessonDTO> handleCanceLesson(@RequestBody UserLessonDTO userLessonDTO){
+	public ResponseEntity<LessonDTO> handleCancelLesson(@RequestBody UserLessonDTO userLessonDTO){
 		return ReturnResponse.entityGet(this.lessonService.cancel(userLessonDTO));
+	}
+	
+	@PostMapping("/update")
+	@PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<LessonDTO> handleUpdateLesson(@RequestBody UpdateLessonDTO updateLessonDTO){
+		return ReturnResponse.entityGet(this.lessonService.update(updateLessonDTO));
 	}
 
 }

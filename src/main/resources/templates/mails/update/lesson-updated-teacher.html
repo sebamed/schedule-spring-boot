@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css" /> -->
+<style type="text/css">
+.mail {
+	background-color: #20262e;
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	width: 93%;
+}
+
+.checkmark {
+	background-color: #3CBEF0;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.checkmark p {
+	font-size: 60px;
+	color: #fff;
+}
+
+.welcome h1 {
+	color: #247290;
+}
+
+.welcome p {
+	color: #3CBEF0;
+	margin: 10px 40px;
+}
+
+.details {
+	padding: 0;
+	list-style-type: none;
+	margin-bottom: 20px;
+}
+
+.new-details {
+	padding: 0;
+	list-style-type: none;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.footer {
+	background-color: #3CBEF0;
+	text-align: center;
+	padding: 20px 0;
+	width: 100%;
+	color: #fff;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+</style>
+<title>Lesson successfully updated!</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<div class="mail">
+		<div class="container">
+			<div class="checkmark">
+				<p>&#x2701;</p>
+			</div>
+			<div class="welcome">
+				<h1>Lesson updated!</h1>
+				<p>
+					You have successfully updated the lesson!<br />Please check out information down below. Students are automatically notified!
+				</p>
+			</div>
+			<br />
+			<hr width="60%" />
+			<br />
+			<div class="info">
+				<ul class="details">
+					<li><h4>OLD INFO:</h4></li>
+					<li>Course: <b th:text="${oldLesson.course.subject.name}">course</b>
+						| <b th:each="type : ${oldLesson.course.types}"
+						th:text="${type + ', '}">types</b> | <b
+						th:each="material : ${oldLesson.course.material}"
+						th:text="${material + ', '}"></b></li>
+					<li>Starts at: <b
+						th:text="${oldLesson.time + ', ' + oldLesson.date}">Start</b></li>
+					<li>Price: <b th:text="${oldLesson.price}">Price</b></li>
+					<li>Duration: <b th:text="${oldLesson.length}">Duration</b></li>
+				</ul>
+				<hr width="40%" />
+				<ul class="new-details">
+					<li><h4>NEW INFO:</h4></li>
+					<li>Course: <b th:text="${newLesson.course.subject.name}">course</b>
+						| <b th:each="type : ${newLesson.course.types}"
+						th:text="${type + ', '}">types</b> | <b
+						th:each="material : ${newLesson.course.material}"
+						th:text="${material + ', '}"></b></li>
+					<li>Starts at: <b
+						th:text="${newLesson.time + ', ' + newLesson.date}">Start</b></li>
+					<li>Price: <b th:text="${newLesson.price}">Price</b></li>
+					<li>Duration: <b th:text="${newLesson.length}">Duration</b></li>
+				</ul>
+			</div>
+			<div class="footer">This is an automatic mail, please do not
+				reply!</div>
+		</div>
+	</div>
+</body>
+</html>

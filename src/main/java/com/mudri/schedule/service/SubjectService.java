@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.dto.SubjectDTO;
+import com.mudri.schedule.exception.EntityAlreadyExistsException;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.model.Subject;
@@ -35,8 +36,19 @@ public class SubjectService implements BaseCrudInterface<Subject> {
 
 	@Autowired
 	ModelMapper modelMapper;
+	
+	public SubjectDTO update(SubjectDTO subjectDTO) {
+		Subject subject = this.findOneById(subjectDTO.getId());
+		subject.setName(subjectDTO.getName());
+		return this.modelMapper.map(this.save(subject), SubjectDTO.class);
+	}
 
 	public SubjectDTO create(SubjectDTO subjectDTO) {
+		
+		if(this.doesSubjectExist(subjectDTO.getName())) {
+			throw new EntityAlreadyExistsException("Subject with name: " + subjectDTO.getName() + " already exists!");
+		}
+		
 		Subject subject = new Subject();
 		subject.setName(subjectDTO.getName());
 
@@ -62,6 +74,10 @@ public class SubjectService implements BaseCrudInterface<Subject> {
 		} catch (Exception e) {
 			throw new SaveFailedException("Subject not saved!");
 		}
+	}
+	
+	private boolean doesSubjectExist(String name) {
+		return this.subjectRepository.findOneByName(name).isPresent();
 	}
 
 	@Override

@@ -24,6 +24,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.mudri.schedule.dto.UpdateLessonDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -68,11 +70,11 @@ public class Lesson {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST })
 	@JoinTable(name = "lesson_students", joinColumns = { @JoinColumn(name = "lesson_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "user_id") })
-	private List<AppUser> students;
+	private List<User> students;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE })
 	@JoinColumn(name = "teacher_id")
-	private AppUser teacher;
+	private User teacher;
 
 	@ManyToOne(cascade = { CascadeType.REFRESH })
 	@JoinColumn(name = "course_id")
@@ -92,6 +94,13 @@ public class Lesson {
 	
 	public void cancel() {
 		this.setCanceled(true);
+	}
+	
+	public void updateLesson(UpdateLessonDTO updateLessonDTO) {
+		this.setDate(updateLessonDTO.getDate());
+		this.setTime(updateLessonDTO.getTime());
+		this.setLength(updateLessonDTO.getLength());
+		this.setPrice(updateLessonDTO.getPrice());		
 	}
 
 }

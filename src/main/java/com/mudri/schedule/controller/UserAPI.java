@@ -10,11 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mudri.schedule.consts.RoleConstants;
 import com.mudri.schedule.dto.LessonDTO;
+import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.service.UserService;
 import com.mudri.schedule.utils.ReturnResponse;
@@ -54,5 +57,25 @@ public class UserAPI {
 	public ResponseEntity<List<LessonDTO>> handleGetUsersLessons(@PathVariable("id") Long id){
 		return ReturnResponse.listGet(this.userService.getUserLessonsDTO(id));
 	}
+	
+	@GetMapping("/{id}/skills")
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
+	public ResponseEntity<List<SubjectDTO>> handleGetUsersSkills(@PathVariable("id") Long id){
+		return ReturnResponse.listGet(this.userService.getUserSkillsDTO(id));
+	}
+	
+	@PostMapping("/{id}/skills")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<SubjectDTO>> handleUpdateUsersSkills(@PathVariable("id") Long id, @RequestBody List<SubjectDTO> skillsDTO){
+		return ReturnResponse.listGet(this.userService.updateUserSkills(id, skillsDTO));
+	}
+	
+	@GetMapping("/skill/{id}")
+    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+	public ResponseEntity<List<UserInfoDTO>> handleGetAllUsersBySubject(@PathVariable("id") Long id){
+		return ReturnResponse.listGet(this.userService.getAllUsersBySubject(id));
+	}
+
+	
 
 }

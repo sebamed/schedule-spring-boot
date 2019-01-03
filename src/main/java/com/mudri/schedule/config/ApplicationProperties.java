@@ -17,6 +17,22 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationProperties {
 	
     public final Security security = new Security();
+    
+    public final Mail mail = new Mail();
+    
+    public static class Mail {
+    	
+    	private String from;
+    	
+		public String getFrom() {
+			return from;
+		}
+		
+		public void setFrom(String from) {
+			this.from = from;
+		}
+		
+    }
 
 	public static class Security {
 
@@ -42,6 +58,10 @@ public class ApplicationProperties {
 
 	public Security getSecurity() {
 		return security;
+	}
+
+	public Mail getMail() {
+		return mail;
 	}
 
 }

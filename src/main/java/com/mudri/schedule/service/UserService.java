@@ -3,6 +3,7 @@
  */
 package com.mudri.schedule.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -16,13 +17,16 @@ import com.mudri.schedule.base.BaseCrudInterface;
 import com.mudri.schedule.consts.Constants;
 import com.mudri.schedule.dto.LessonDTO;
 import com.mudri.schedule.dto.RegisterDTO;
+import com.mudri.schedule.dto.SubjectDTO;
 import com.mudri.schedule.dto.UserInfoDTO;
 import com.mudri.schedule.exception.NotFoundException;
 import com.mudri.schedule.exception.SaveFailedException;
 import com.mudri.schedule.exception.UserAlreadyExistsException;
-import com.mudri.schedule.model.AppUser;
 import com.mudri.schedule.model.Role;
+import com.mudri.schedule.model.Subject;
+import com.mudri.schedule.model.User;
 import com.mudri.schedule.repository.UserRepository;
+import com.mudri.schedule.utils.ModelUpdater;
 import com.mudri.schedule.utils.TargetType;
 
 /*
@@ -34,7 +38,7 @@ import com.mudri.schedule.utils.TargetType;
 */
 
 @Service
-public class UserService implements BaseCrudInterface<AppUser> {
+public class UserService implements BaseCrudInterface<User> {
 
 	@Autowired
 	ModelMapper modelMapper;
@@ -44,9 +48,43 @@ public class UserService implements BaseCrudInterface<AppUser> {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	SubjectService subjectService;
 
 	@Autowired
 	RoleService roleService;
+	
+	public List<UserInfoDTO> getAllUsersBySubject(Long id){
+		return this.modelMapper.map(this.userRepository.findAllBySkillsId(id), TargetType.userInfoType);
+	}
+	
+	public List<SubjectDTO> updateUserSkills(Long id, List<SubjectDTO> skillsDTO){
+		List<Subject> subjects = new ArrayList<>();
+		for(SubjectDTO skill : skillsDTO) {
+			subjects.add(this.subjectService.findOneById(skill.getId()));
+		}
+		
+		User user = this.findOneById(id);
+		for(Subject subject : this.subjectService.findAll()) {
+			if(subject.getSkilledUsers().contains(user)) {
+				subject.getSkilledUsers().remove(user);
+			}
+			
+		}
+		
+		for(Subject subject : subjects) {
+			subject.getSkilledUsers().add(user);
+			this.subjectService.save(subject);
+		}
+		
+		user.setSkills(subjects);
+		return this.modelMapper.map(this.save(user).getSkills(), TargetType.subjectType);
+	}
+	
+	public List<SubjectDTO> getUserSkillsDTO(Long id){
+		return this.modelMapper.map(this.findOneById(id).getSkills(), TargetType.subjectType);
+	}
 
 	public List<LessonDTO> getUserLessonsDTO(Long id) {
 		return this.modelMapper.map(this.findOneById(id).getLessons(), TargetType.lessonType);
@@ -59,10 +97,10 @@ public class UserService implements BaseCrudInterface<AppUser> {
 
 		Role role = this.roleService.findOneByName(Constants.USER_ROLE);
 
-		AppUser user = new AppUser();
-		user.setFieldsFromRegisterDTO(registerDTO);
+		User user = new User();
 		user.setPassword(this.bCryptPasswordEncoder.encode(registerDTO.getPassword()));
 		user.setRole(role);
+		user = ModelUpdater.registerUser(user, registerDTO);
 
 		role.getUsers().add(user);
 		this.roleService.save(role);
@@ -90,8 +128,8 @@ public class UserService implements BaseCrudInterface<AppUser> {
 		return this.userRepository.findOneByEmail(email).isPresent();
 	}
 
-	public AppUser findOneByEmail(String email) {
-		Optional<AppUser> user = this.userRepository.findOneByEmail(email);
+	public User findOneByEmail(String email) {
+		Optional<User> user = this.userRepository.findOneByEmail(email);
 		if (user.isPresent())
 			return user.get();
 		else
@@ -100,7 +138,7 @@ public class UserService implements BaseCrudInterface<AppUser> {
 	}
 
 	@Override
-	public AppUser save(AppUser object) {
+	public User save(User object) {
 		try {
 			return this.userRepository.save(object);
 		} catch (Exception e) {
@@ -109,8 +147,8 @@ public class UserService implements BaseCrudInterface<AppUser> {
 	}
 
 	@Override
-	public AppUser findOneById(Long id) {
-		Optional<AppUser> user = this.userRepository.findOneById(id);
+	public User findOneById(Long id) {
+		Optional<User> user = this.userRepository.findOneById(id);
 		if (user.isPresent()) {
 			return user.get();
 		} else {
@@ -119,20 +157,20 @@ public class UserService implements BaseCrudInterface<AppUser> {
 	}
 
 	@Override
-	public List<AppUser> findAll() {
-		List<AppUser> users = this.userRepository.findAll();
+	public List<User> findAll() {
+		List<User> users = this.userRepository.findAll();
 		return this.returnList(users);
 	}
 
-	public List<AppUser> findAllByRoleId(Long id) {
+	public List<User> findAllByRoleId(Long id) {
 		return this.returnList(this.userRepository.findAllByRoleId(id));
 	}
 
-	public List<AppUser> findAllByRoleName(String name) {
+	public List<User> findAllByRoleName(String name) {
 		return this.returnList(this.userRepository.findAllByRoleName(name));
 	}
 
-	private List<AppUser> returnList(List<AppUser> users) {
+	private List<User> returnList(List<User> users) {
 		return !users.isEmpty() ? users : Collections.emptyList();
 	}
 

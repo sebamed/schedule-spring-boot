@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css" /> -->
+<style type="text/css">
+.mail {
+	background-color: #20262e;
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	width: 93%;
+}
+
+.checkmark {
+	background-color: #2ECC71;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.checkmark p {
+	font-size: 60px;
+	color: #fff;
+}
+
+.welcome h1 {
+	color: #208e4f;
+}
+
+.welcome p {
+	color: #29b765;
+	margin: 10px 40px;
+}
+
+.details {
+	padding: 0;
+	list-style-type: none;
+	margin-bottom: 20px;
+}
+
+.footer {
+	background-color: #2ecc71;
+	text-align: center;
+	padding: 20px 0;
+	width: 100%;
+	color: #fff;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+</style>
+<title>Lesson You want to attend is confirmed!</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<div class="mail">
+		<div class="container">
+			<div class="checkmark">
+				<p>&#x2714;</p>
+			</div>
+			<div class="welcome">
+				<h1>Lesson confirmed!</h1>
+				<p>
+					Welcome! <br />The lesson you want to attend is now confirmed!
+					Please make sure you read all information and check for any
+					mistakes! <br /> You can always leave the lesson or contact
+					teachers for more information.
+				</p>
+			</div>
+			<br />
+			<hr width="60%" />
+			<br />
+			<div class="info">
+				<ul class="details">
+					<li>Course: <b th:text="${lesson.course.subject.name}">course</b>
+						| <b th:each="type : ${lesson.course.types}"
+						th:text="${type + ', '}">types</b> | <b
+						th:each="material : ${lesson.course.material}"
+						th:text="${material + ', '}"></b></li>
+					<li>Starts at: <b
+						th:text="${lesson.time + ', ' + lesson.date}">Start</b></li>
+					<li>Price: <b th:text="${lesson.price}">Price</b></li>
+					<li>Duration: <b th:text="${lesson.length}">Duration</b></li>
+					<li>Teacher: <b th:text="${lesson.teacher.firstName + ' ' + lesson.teacher.lastName}">teacher</b></li>
+				</ul>
+			</div>
+			<div class="footer">This is an automatic mail, please do not
+				reply!</div>
+		</div>
+	</div>
+</body>
+</html>
