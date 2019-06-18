@@ -28,7 +28,7 @@ public class CreateLessonDTO {
 	
 	private Long userID;
 	private CourseDTO course;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date date;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
 	private Date time;

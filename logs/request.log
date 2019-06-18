@@ -1,0 +1,390 @@
+2019-06-18 17:22:07 INFO  - REQUEST: /api/auth/register | POST
+2019-06-18 17:22:59 INFO  - REQUEST: /api/auth/register | POST
+2019-06-18 17:23:00 INFO  - SUCCESSFUL: /api/auth/register | POST | 201
+2019-06-18 17:23:07 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:23:07 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:26:42 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:27:00 INFO  - REQUEST: /api/auth/register | POST
+2019-06-18 17:27:00 INFO  - SUCCESSFUL: /api/auth/register | POST | 201
+2019-06-18 17:27:05 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:27:05 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:28:13 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:28:13 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:28:40 INFO  - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:28:41 INFO  - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:28:43 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:28:44 INFO  - SUCCESSFUL: /api/subjects | GET | 404
+2019-06-18 17:29:40 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:29:40 INFO  - SUCCESSFUL: /api/subjects | GET | 404
+2019-06-18 17:30:21 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:30:21 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:30:21 INFO  - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:30:21 INFO  - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:30:22 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:30:22 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:31:06 INFO  - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:31:06 INFO  - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:31:06 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:31:06 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:31:17 INFO  - REQUEST: /api/users2/skills | POST
+2019-06-18 17:31:17 INFO  - SUCCESSFUL: /api/users2/skills | POST | 404
+2019-06-18 17:31:17 INFO  - REQUEST: /error | POST
+2019-06-18 17:31:17 INFO  - SUCCESSFUL: /error | POST | 404
+2019-06-18 17:32:14 INFO  - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:32:14 INFO  - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:32:14 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:32:14 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:32:28 INFO  - REQUEST: /api/users/2/skills | POST
+2019-06-18 17:32:28 INFO  - SUCCESSFUL: /api/users/2/skills | POST | 200
+2019-06-18 17:32:31 INFO  - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:32:31 INFO  - SUCCESSFUL: /api/users/2/skills | GET | 200
+2019-06-18 17:32:32 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:32:32 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:32:52 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:32:52 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:10 INFO  - REQUEST: /api/subjects | POST
+2019-06-18 17:33:10 INFO  - SUCCESSFUL: /api/subjects | POST | 201
+2019-06-18 17:33:10 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:33:10 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:17 INFO  - REQUEST: /api/subjects | PUT
+2019-06-18 17:33:17 INFO  - SUCCESSFUL: /api/subjects | PUT | 201
+2019-06-18 17:33:17 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:33:17 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:22 INFO  - REQUEST: /api/roles | GET
+2019-06-18 17:33:22 INFO  - SUCCESSFUL: /api/roles | GET | 200
+2019-06-18 17:33:25 INFO  - REQUEST: /api/roles | GET
+2019-06-18 17:33:25 INFO  - SUCCESSFUL: /api/roles | GET | 200
+2019-06-18 17:33:25 INFO  - REQUEST: /api/users/role/ADMIN | GET
+2019-06-18 17:33:25 INFO  - REQUEST: /api/users/role/USER | GET
+2019-06-18 17:33:25 INFO  - SUCCESSFUL: /api/users/role/USER | GET | 200
+2019-06-18 17:33:25 INFO  - SUCCESSFUL: /api/users/role/ADMIN | GET | 200
+2019-06-18 17:33:29 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:33:29 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:29 INFO  - REQUEST: /api/users/skill/1 | GET
+2019-06-18 17:33:29 INFO  - REQUEST: /api/users/skill/4 | GET
+2019-06-18 17:33:29 INFO  - REQUEST: /api/users/skill/2 | GET
+2019-06-18 17:33:29 INFO  - REQUEST: /api/users/skill/3 | GET
+2019-06-18 17:33:29 INFO  - REQUEST: /api/users/skill/5 | GET
+2019-06-18 17:33:29 INFO  - SUCCESSFUL: /api/users/skill/1 | GET | 404
+2019-06-18 17:33:30 INFO  - SUCCESSFUL: /api/users/skill/5 | GET | 404
+2019-06-18 17:33:30 INFO  - SUCCESSFUL: /api/users/skill/4 | GET | 200
+2019-06-18 17:33:30 INFO  - SUCCESSFUL: /api/users/skill/3 | GET | 200
+2019-06-18 17:33:30 INFO  - SUCCESSFUL: /api/users/skill/2 | GET | 200
+2019-06-18 17:33:44 INFO  - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:33:44 INFO  - SUCCESSFUL: /api/users/2/skills | GET | 200
+2019-06-18 17:33:44 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:33:44 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:47 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:33:47 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:47 INFO  - REQUEST: /api/users/skill/1 | GET
+2019-06-18 17:33:47 INFO  - REQUEST: /api/users/skill/5 | GET
+2019-06-18 17:33:47 INFO  - REQUEST: /api/users/skill/3 | GET
+2019-06-18 17:33:47 INFO  - REQUEST: /api/users/skill/4 | GET
+2019-06-18 17:33:47 INFO  - SUCCESSFUL: /api/users/skill/5 | GET | 404
+2019-06-18 17:33:47 INFO  - SUCCESSFUL: /api/users/skill/1 | GET | 404
+2019-06-18 17:33:47 INFO  - REQUEST: /api/users/skill/2 | GET
+2019-06-18 17:33:47 INFO  - SUCCESSFUL: /api/users/skill/3 | GET | 200
+2019-06-18 17:33:47 INFO  - SUCCESSFUL: /api/users/skill/4 | GET | 200
+2019-06-18 17:33:47 INFO  - SUCCESSFUL: /api/users/skill/2 | GET | 200
+2019-06-18 17:34:26 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:35:09 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:35:09 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:40:19 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:40:19 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:40:19 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:40:19 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:40:58 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:41:11 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:41:19 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:41:45 INFO  - REQUEST: /api/lessons/1 | GET
+2019-06-18 17:41:45 INFO  - SUCCESSFUL: /api/lessons/1 | GET | 404
+2019-06-18 17:41:45 INFO  - REQUEST: /error | GET
+2019-06-18 17:41:45 INFO  - SUCCESSFUL: /error | GET | 404
+2019-06-18 17:43:30 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:43:30 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:43:34 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:43:34 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:43:50 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:44:11 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:54:05 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:54:05 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:54:14 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:54:14 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:54:14 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:54:14 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:54:28 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:55:38 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:57:46 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:57:46 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:57:46 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:57:46 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:57:53 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:58:42 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:58:42 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:58:42 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:58:42 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:58:52 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 17:58:53 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 17:58:53 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:58:53 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:58:57 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 17:58:57 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 17:58:57 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:58:57 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:59:27 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:59:27 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:59:35 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 17:59:35 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:59:45 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 17:59:45 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 17:59:45 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 17:59:45 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 17:59:45 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 17:59:45 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 404
+2019-06-18 18:00:01 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 18:00:02 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:00:06 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:00:06 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:00:06 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:00:06 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:00:29 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:00:29 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:00:29 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:00:29 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:00:36 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 18:00:37 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:00:37 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:00:37 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:00:53 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 18:00:53 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:01:02 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:01:02 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:01:02 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:01:02 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:01:02 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:01:02 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 18:01:56 INFO  - REQUEST: /api/lessons/confirm | POST
+2019-06-18 18:01:56 INFO  - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 18:01:56 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:01:56 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:01:56 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:01:56 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:01:56 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:01:56 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 404
+2019-06-18 18:02:00 INFO  - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 18:02:00 INFO  - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 18:02:05 INFO  - REQUEST: /api/lessons/done/2 | GET
+2019-06-18 18:02:05 INFO  - SUCCESSFUL: /api/lessons/done/2 | GET | 404
+2019-06-18 18:02:11 INFO  - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 18:02:11 INFO  - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 18:02:30 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 18:02:30 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:02:36 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:02:36 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:02:36 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:02:36 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:05:05 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:05:05 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:05:05 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:05:05 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:05:18 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 18:05:18 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:05:18 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:05:18 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:04 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:06:04 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:06:04 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:06:04 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:13 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 18:06:13 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:06:14 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:06:14 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:32 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:06:32 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:06:32 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:06:32 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:49 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 18:06:49 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:06:59 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:06:59 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:06:59 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:06:59 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:06:59 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:06:59 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 18:07:10 INFO  - REQUEST: /api/lessons/confirm | POST
+2019-06-18 18:07:10 INFO  - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 18:07:10 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:07:10 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:07:10 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:07:10 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:07:10 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:07:10 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 18:07:14 INFO  - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 18:07:14 INFO  - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 18:07:45 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 18:07:45 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:07:50 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:07:50 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:07:50 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:07:50 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:09:41 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:09:41 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:09:41 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:09:41 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:09:58 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:09:58 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:09:58 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:09:58 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:51:01 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 18:51:02 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:51:06 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:51:06 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:51:06 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:51:06 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:53:08 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:53:08 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:53:08 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:53:08 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:53:30 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 18:53:57 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:53:57 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:53:57 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:53:57 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:53:59 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:53:59 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 18:53:59 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:53:59 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:54:25 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 18:54:25 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:54:25 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 18:54:25 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:54:27 INFO  - REQUEST: /api/lessons/6 | GET
+2019-06-18 18:54:27 INFO  - SUCCESSFUL: /api/lessons/6 | GET | 404
+2019-06-18 18:54:27 INFO  - REQUEST: /error | GET
+2019-06-18 18:54:27 INFO  - SUCCESSFUL: /error | GET | 404
+2019-06-18 18:54:31 INFO  - REQUEST: /api/lessons/5 | GET
+2019-06-18 18:54:31 INFO  - SUCCESSFUL: /api/lessons/5 | GET | 404
+2019-06-18 18:54:31 INFO  - REQUEST: /error | GET
+2019-06-18 18:54:31 INFO  - SUCCESSFUL: /error | GET | 404
+2019-06-18 18:54:34 INFO  - REQUEST: /api/lessons/1 | GET
+2019-06-18 18:54:34 INFO  - SUCCESSFUL: /api/lessons/1 | GET | 404
+2019-06-18 18:54:34 INFO  - REQUEST: /error | GET
+2019-06-18 18:54:34 INFO  - SUCCESSFUL: /error | GET | 404
+2019-06-18 19:01:49 INFO  - REQUEST: /api/lessons/6 | GET
+2019-06-18 19:01:49 INFO  - SUCCESSFUL: /api/lessons/6 | GET | 200
+2019-06-18 19:01:54 INFO  - REQUEST: /api/lessons/5 | GET
+2019-06-18 19:01:54 INFO  - SUCCESSFUL: /api/lessons/5 | GET | 200
+2019-06-18 19:04:30 INFO  - REQUEST: /api/lessons/1 | GET
+2019-06-18 19:04:30 INFO  - SUCCESSFUL: /api/lessons/1 | GET | 200
+2019-06-18 19:04:34 INFO  - REQUEST: /api/lessons/3 | GET
+2019-06-18 19:04:34 INFO  - SUCCESSFUL: /api/lessons/3 | GET | 200
+2019-06-18 19:04:39 INFO  - REQUEST: /api/lessons/leave | POST
+2019-06-18 19:04:39 INFO  - REQUEST: /api/lessons/join | POST
+2019-06-18 19:04:39 INFO  - SUCCESSFUL: /api/lessons/leave | POST | 200
+2019-06-18 19:04:40 INFO  - REQUEST: /api/lessons/3 | GET
+2019-06-18 19:04:40 INFO  - SUCCESSFUL: /api/lessons/3 | GET | 200
+2019-06-18 19:04:43 INFO  - REQUEST: /api/lessons/5 | GET
+2019-06-18 19:04:43 INFO  - SUCCESSFUL: /api/lessons/5 | GET | 200
+2019-06-18 19:04:46 INFO  - REQUEST: /api/lessons/6 | GET
+2019-06-18 19:04:46 INFO  - SUCCESSFUL: /api/lessons/6 | GET | 200
+2019-06-18 19:05:41 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:05:41 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:05:41 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:05:42 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:05:48 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 19:05:49 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:05:49 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:05:49 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:05:56 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:05:56 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:05:56 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:05:56 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:06:05 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 19:06:05 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:06:05 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:06:05 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:06:46 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:06:46 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:06:46 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:06:47 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:07:01 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 19:07:01 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:07:01 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:07:01 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:07:37 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:07:37 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:07:37 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:07:37 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:07:50 INFO  - REQUEST: /api/lessons | POST
+2019-06-18 19:07:50 INFO  - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:07:50 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:07:50 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:08:02 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:08:04 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:08:05 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:08:15 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:15 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:15 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:15 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:15 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:15 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:23 INFO  - REQUEST: /api/lessons/confirm | POST
+2019-06-18 19:08:23 INFO  - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 19:08:24 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:24 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:24 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:24 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:24 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:24 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:32 INFO  - REQUEST: /api/lessons/confirm | POST
+2019-06-18 19:08:32 INFO  - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 19:08:32 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:32 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:32 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:32 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:32 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:32 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:39 INFO  - REQUEST: /api/lessons/confirm | POST
+2019-06-18 19:08:39 INFO  - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 19:08:39 INFO  - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:39 INFO  - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:39 INFO  - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:39 INFO  - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:39 INFO  - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:39 INFO  - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:43 INFO  - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 19:08:43 INFO  - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 19:08:44 INFO  - REQUEST: /api/lessons/done/2 | GET
+2019-06-18 19:08:44 INFO  - SUCCESSFUL: /api/lessons/done/2 | GET | 404
+2019-06-18 19:08:46 INFO  - REQUEST: /api/lessons/canceled/2 | GET
+2019-06-18 19:08:46 INFO  - SUCCESSFUL: /api/lessons/canceled/2 | GET | 200
+2019-06-18 19:09:26 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:09:26 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:09:29 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:09:29 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:09:38 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:09:38 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:09:38 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:09:38 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:09:41 INFO  - REQUEST: /api/lessons/1 | GET
+2019-06-18 19:09:41 INFO  - SUCCESSFUL: /api/lessons/1 | GET | 200
+2019-06-18 19:09:43 INFO  - REQUEST: /api/lessons/1 | GET
+2019-06-18 19:09:43 INFO  - SUCCESSFUL: /api/lessons/1 | GET | 200
+2019-06-18 19:09:45 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:09:45 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:09:45 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:09:45 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:10:33 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:10:33 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:12:43 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:12:43 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:12:43 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:12:43 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:12:48 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:12:48 INFO  - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:12:48 INFO  - REQUEST: /api/lessons | GET
+2019-06-18 19:12:48 INFO  - REQUEST: /api/subjects | GET
+2019-06-18 19:12:48 INFO  - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:12:49 INFO  - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:13:01 INFO  - REQUEST: /api/auth/login | POST
+2019-06-18 19:13:01 INFO  - SUCCESSFUL: /api/auth/login | POST | 200

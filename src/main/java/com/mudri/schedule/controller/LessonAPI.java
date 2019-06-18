@@ -42,9 +42,15 @@ public class LessonAPI {
 	public ResponseEntity<List<LessonDTO>> handleGetAllLessons() {
 		return ReturnResponse.listGet(this.lessonService.getAllDTO());
 	}
-
+	
+	@GetMapping("/{id}")
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
+	public ResponseEntity<LessonDTO> handleGetById(@PathVariable("id") Long id){
+		return ReturnResponse.entityGet(this.lessonService.getDTOById(id));
+	}
+	
 	@PostMapping()
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<LessonDTO> handleCreateLesson(@RequestBody CreateLessonDTO lessonDTO) {
 		return ReturnResponse.entityCreated(this.lessonService.create(lessonDTO));
 	}
@@ -56,19 +62,19 @@ public class LessonAPI {
 	}
 	
 	@GetMapping("/confirmed/{id}")
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<List<LessonDTO>> handleGetAllConfirmedByTeacher(@PathVariable("id") Long id) {
 		return ReturnResponse.listGet(this.lessonService.getConfirmedLessonsByUserId(id));
 	}
 	
 	@GetMapping("/canceled/{id}")
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<List<LessonDTO>> handleGetAllCanceledByTeacher(@PathVariable("id") Long id) {
 		return ReturnResponse.listGet(this.lessonService.getCanceledLessonsByUserId(id));
 	}
 	
 	@GetMapping("/done/{id}")
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<List<LessonDTO>> handleGetAllDoneByTeacher(@PathVariable("id") Long id) {
 		return ReturnResponse.listGet(this.lessonService.getDoneLessonsByUserId(id));
 	}
@@ -80,31 +86,31 @@ public class LessonAPI {
 	}
 
 	@PostMapping("/confirm")
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<LessonDTO> handleConfirmLesson(@RequestBody ConfirmLessonDTO confirmLessonDTO) {
 		return ReturnResponse.entityCreated(this.lessonService.confirm(confirmLessonDTO));
 	}
 
 	@PostMapping("/join")
-    @PreAuthorize(RoleConstants.AUTH_ADMIN)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<LessonDTO> handleJoinLesson(@RequestBody UserLessonDTO userLessonDTO) {
 		return ReturnResponse.entityGet(this.lessonService.join(userLessonDTO));
 	}
 
 	@PostMapping("/leave")
-    @PreAuthorize(RoleConstants.AUTH_USER)
+    @PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<LessonDTO> handleLeaveLesson(@RequestBody UserLessonDTO userLessonDTO) {
 		return ReturnResponse.entityGet(this.lessonService.leave(userLessonDTO));
 	}
 	
 	@PostMapping("/cancel")
-	@PreAuthorize(RoleConstants.AUTH_ADMIN)
+	@PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<LessonDTO> handleCancelLesson(@RequestBody UserLessonDTO userLessonDTO){
 		return ReturnResponse.entityGet(this.lessonService.cancel(userLessonDTO));
 	}
 	
 	@PostMapping("/update")
-	@PreAuthorize(RoleConstants.AUTH_ADMIN)
+	@PreAuthorize(RoleConstants.AUTH_USER_ADMIN)
 	public ResponseEntity<LessonDTO> handleUpdateLesson(@RequestBody UpdateLessonDTO updateLessonDTO){
 		return ReturnResponse.entityGet(this.lessonService.update(updateLessonDTO));
 	}

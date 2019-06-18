@@ -1,0 +1,1066 @@
+2019-06-18 17:21:16 [main] INFO  c.mudri.schedule.ScheduleApplication - Starting ScheduleApplication on t460s with PID 8182 (/home/sebamed/Projects/FTN/rva/schedule-spring-boot/target/classes started by sebamed in /home/sebamed/Projects/FTN/rva/schedule-spring-boot)
+2019-06-18 17:21:16 [main] INFO  c.mudri.schedule.ScheduleApplication - No active profile set, falling back to default profiles: default
+2019-06-18 17:21:16 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:21:16 CEST 2019]; root of context hierarchy
+2019-06-18 17:21:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71117269] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:21:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$9bf3aa3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:21:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:21:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3a5c2626' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:21:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$2e93dd55] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:21:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:21:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-18 17:21:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-18 17:21:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-18 17:21:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-06-18 17:21:18 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-18 17:21:19 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-18 17:21:19 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2759 ms
+2019-06-18 17:21:19 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-06-18 17:21:20 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'authenticationTokenFilterBean' to: [/*]
+2019-06-18 17:21:21 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2019-06-18 17:21:22 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.AuthAPI.handleRegister(com.mudri.schedule.dto.RegisterDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SignInResponseDTO> com.mudri.schedule.controller.AuthAPI.handleLogin(com.mudri.schedule.dto.LoginDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.CourseDTO>> com.mudri.schedule.controller.CourseAPI.handleGetAllDTO()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleCreateCourse(com.mudri.schedule.dto.CourseDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleGetDTOById(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirmed/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllConfirmedByTeacher(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/canceled/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllCanceledByTeacher(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/done/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllDoneByTeacher(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}/students],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserDTO>> com.mudri.schedule.controller.LessonAPI.handleGetStudents(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirm],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleConfirmLesson(com.mudri.schedule.dto.ConfirmLessonDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/join],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleJoinLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/leave],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleLeaveLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/cancel],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCancelLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleUpdateLesson(com.mudri.schedule.dto.UpdateLessonDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllLessons()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCreateLesson(com.mudri.schedule.dto.CreateLessonDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/skill/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetBySkillName(java.lang.String)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleGetRoleById(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.RoleDTO>> com.mudri.schedule.controller.RoleAPI.handleGetAllRoles()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleCreateRole(com.mudri.schedule.dto.RoleDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleGetSubjectById(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.SubjectAPI.handleGetAllSubjects()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleCreateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleUpdateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/role/{role}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersByRoleName(java.lang.String)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.UserAPI.handleGetUserById(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersLessons(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersSkills(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleUpdateUsersSkills(java.lang.Long,java.util.List<com.mudri.schedule.dto.SubjectDTO>)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/skill/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersBySubject(java.lang.Long)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsers()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/app/**/*.{js,html}'], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/i18n/**'], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/content/**'], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/test/**'], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-06-18 17:21:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dd2856e, org.springframework.security.web.context.SecurityContextPersistenceFilter@56382bc9, org.springframework.security.web.header.HeaderWriterFilter@76a805b7, org.springframework.security.web.authentication.logout.LogoutFilter@316acbb5, com.mudri.schedule.config.security.JWTFilter@60f625f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53ed80d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5377414a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a49af50, org.springframework.security.web.session.SessionManagementFilter@167381c7, org.springframework.security.web.access.ExceptionTranslationFilter@57545c3f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4833eff3]
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:21:16 CEST 2019]; root of context hierarchy
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/css/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:21:23 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in restExceptionHandlerController
+2019-06-18 17:21:24 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-06-18 17:21:24 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-18 17:21:24 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-18 17:21:24 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-06-18 17:21:24 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-06-18 17:21:24 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-06-18 17:21:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-18 17:21:24 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-06-18 17:21:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-18 17:21:24 [main] INFO  c.mudri.schedule.ScheduleApplication - Started ScheduleApplication in 8.542 seconds (JVM running for 10.814)
+2019-06-18 17:22:07 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-06-18 17:22:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-06-18 17:22:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2019-06-18 17:22:07 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/auth/register | POST
+2019-06-18 17:22:07 [http-nio-8080-exec-2] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2019-06-18 17:22:08 [http-nio-8080-exec-2] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/auth/register | POST | 404 | No role found with name: USER
+2019-06-18 17:22:08 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.NotFoundException: No role found with name: USER]
+2019-06-18 17:22:59 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/auth/register | POST
+2019-06-18 17:23:00 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/auth/register | POST | 201
+2019-06-18 17:23:07 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:23:07 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:26:42 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:26:43 [http-nio-8080-exec-7] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/auth/login | POST | 404 | User email@gmail.com was not found in the database
+2019-06-18 17:26:43 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.NotFoundException: User email@gmail.com was not found in the database]
+2019-06-18 17:27:00 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/auth/register | POST
+2019-06-18 17:27:00 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/auth/register | POST | 201
+2019-06-18 17:27:05 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:27:05 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:28:13 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:28:13 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:28:40 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:28:41 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:28:43 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:28:44 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/subjects | GET | 404
+2019-06-18 17:29:40 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:29:40 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/subjects | GET | 404
+2019-06-18 17:30:21 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:30:21 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:30:21 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:30:21 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:30:22 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:30:22 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:31:06 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:31:06 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:31:06 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:31:06 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:31:17 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/users2/skills | POST
+2019-06-18 17:31:17 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/users2/skills | POST | 404
+2019-06-18 17:31:17 [http-nio-8080-exec-3] INFO  requests - REQUEST: /error | POST
+2019-06-18 17:31:17 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /error | POST | 404
+2019-06-18 17:32:14 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:32:14 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/users/2/skills | GET | 404
+2019-06-18 17:32:14 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:32:14 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:32:28 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/users/2/skills | POST
+2019-06-18 17:32:28 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/users/2/skills | POST | 200
+2019-06-18 17:32:31 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:32:31 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/users/2/skills | GET | 200
+2019-06-18 17:32:32 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:32:32 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:32:52 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:32:52 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:10 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/subjects | POST
+2019-06-18 17:33:10 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/subjects | POST | 201
+2019-06-18 17:33:10 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:33:10 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:17 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/subjects | PUT
+2019-06-18 17:33:17 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/subjects | PUT | 201
+2019-06-18 17:33:17 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:33:17 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:22 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/roles | GET
+2019-06-18 17:33:22 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/roles | GET | 200
+2019-06-18 17:33:25 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/roles | GET
+2019-06-18 17:33:25 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/roles | GET | 200
+2019-06-18 17:33:25 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/users/role/ADMIN | GET
+2019-06-18 17:33:25 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/users/role/USER | GET
+2019-06-18 17:33:25 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/users/role/USER | GET | 200
+2019-06-18 17:33:25 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/users/role/ADMIN | GET | 200
+2019-06-18 17:33:29 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:33:29 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:29 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/users/skill/1 | GET
+2019-06-18 17:33:29 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/users/skill/4 | GET
+2019-06-18 17:33:29 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/users/skill/2 | GET
+2019-06-18 17:33:29 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/users/skill/3 | GET
+2019-06-18 17:33:29 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/users/skill/5 | GET
+2019-06-18 17:33:29 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/users/skill/1 | GET | 404
+2019-06-18 17:33:30 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/users/skill/5 | GET | 404
+2019-06-18 17:33:30 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/users/skill/4 | GET | 200
+2019-06-18 17:33:30 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/users/skill/3 | GET | 200
+2019-06-18 17:33:30 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/users/skill/2 | GET | 200
+2019-06-18 17:33:44 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/users/2/skills | GET
+2019-06-18 17:33:44 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/users/2/skills | GET | 200
+2019-06-18 17:33:44 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:33:44 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:47 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:33:47 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:33:47 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/users/skill/1 | GET
+2019-06-18 17:33:47 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/users/skill/5 | GET
+2019-06-18 17:33:47 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/users/skill/3 | GET
+2019-06-18 17:33:47 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/users/skill/4 | GET
+2019-06-18 17:33:47 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/users/skill/5 | GET | 404
+2019-06-18 17:33:47 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/users/skill/1 | GET | 404
+2019-06-18 17:33:47 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/users/skill/2 | GET
+2019-06-18 17:33:47 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/users/skill/3 | GET | 200
+2019-06-18 17:33:47 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/users/skill/4 | GET | 200
+2019-06-18 17:33:47 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/users/skill/2 | GET | 200
+2019-06-18 17:34:26 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:34:26 [http-nio-8080-exec-9] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/auth/login | POST | 404 | User sebastian.frontend@gmail.com was not found in the database
+2019-06-18 17:34:26 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.NotFoundException: User sebastian.frontend@gmail.com was not found in the database]
+2019-06-18 17:35:09 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:35:09 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:40:19 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:40:19 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:40:19 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:40:19 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:40:58 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:40:58 [http-nio-8080-exec-9] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 500 | JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])
+2019-06-18 17:40:58 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])]
+2019-06-18 17:41:11 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:41:11 [http-nio-8080-exec-5] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 500 | JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])
+2019-06-18 17:41:11 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])]
+2019-06-18 17:41:19 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:41:19 [http-nio-8080-exec-4] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 500 | JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])
+2019-06-18 17:41:19 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-22": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])]
+2019-06-18 17:41:45 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/1 | GET
+2019-06-18 17:41:45 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/1 | GET | 404
+2019-06-18 17:41:45 [http-nio-8080-exec-6] INFO  requests - REQUEST: /error | GET
+2019-06-18 17:41:45 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /error | GET | 404
+2019-06-18 17:43:30 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:43:30 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:43:34 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:43:34 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:43:50 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:43:50 [http-nio-8080-exec-1] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 500 | JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])
+2019-06-18 17:43:50 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])]
+2019-06-18 17:44:11 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:44:11 [http-nio-8080-exec-9] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 500 | JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])
+2019-06-18 17:44:11 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2019-06-23": expected format "dd/MM/yyyy"
+ at [Source: (PushbackInputStream); line: 1, column: 20] (through reference chain: com.mudri.schedule.dto.CreateLessonDTO["date"])]
+2019-06-18 17:53:10 [main] INFO  c.mudri.schedule.ScheduleApplication - Starting ScheduleApplication on t460s with PID 4195 (/home/sebamed/Projects/FTN/rva/schedule-spring-boot/target/classes started by sebamed in /home/sebamed/Projects/FTN/rva/schedule-spring-boot)
+2019-06-18 17:53:10 [main] INFO  c.mudri.schedule.ScheduleApplication - No active profile set, falling back to default profiles: default
+2019-06-18 17:53:10 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:53:10 CEST 2019]; root of context hierarchy
+2019-06-18 17:53:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14f03da7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:53:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$ad9e05e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:53:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:53:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@25da615a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:53:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$d272a893] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:53:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:53:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-18 17:53:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-18 17:53:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-18 17:53:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-06-18 17:53:12 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-18 17:53:12 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-18 17:53:12 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2326 ms
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-06-18 17:53:13 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'authenticationTokenFilterBean' to: [/*]
+2019-06-18 17:53:14 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2019-06-18 17:53:15 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.AuthAPI.handleRegister(com.mudri.schedule.dto.RegisterDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SignInResponseDTO> com.mudri.schedule.controller.AuthAPI.handleLogin(com.mudri.schedule.dto.LoginDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.CourseDTO>> com.mudri.schedule.controller.CourseAPI.handleGetAllDTO()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleCreateCourse(com.mudri.schedule.dto.CourseDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleGetDTOById(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirmed/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllConfirmedByTeacher(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/canceled/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllCanceledByTeacher(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/done/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllDoneByTeacher(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}/students],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserDTO>> com.mudri.schedule.controller.LessonAPI.handleGetStudents(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirm],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleConfirmLesson(com.mudri.schedule.dto.ConfirmLessonDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/join],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleJoinLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/leave],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleLeaveLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/cancel],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCancelLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleUpdateLesson(com.mudri.schedule.dto.UpdateLessonDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllLessons()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCreateLesson(com.mudri.schedule.dto.CreateLessonDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/skill/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetBySkillName(java.lang.String)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleGetRoleById(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.RoleDTO>> com.mudri.schedule.controller.RoleAPI.handleGetAllRoles()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleCreateRole(com.mudri.schedule.dto.RoleDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleGetSubjectById(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.SubjectAPI.handleGetAllSubjects()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleCreateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleUpdateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/role/{role}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersByRoleName(java.lang.String)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.UserAPI.handleGetUserById(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersLessons(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersSkills(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleUpdateUsersSkills(java.lang.Long,java.util.List<com.mudri.schedule.dto.SubjectDTO>)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/skill/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersBySubject(java.lang.Long)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsers()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/app/**/*.{js,html}'], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/i18n/**'], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/content/**'], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/test/**'], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-06-18 17:53:15 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41b13f3d, org.springframework.security.web.context.SecurityContextPersistenceFilter@30839e44, org.springframework.security.web.header.HeaderWriterFilter@21a02556, org.springframework.security.web.authentication.logout.LogoutFilter@56382bc9, com.mudri.schedule.config.security.JWTFilter@6e8ac1fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1945113f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7978e022, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c0777b5, org.springframework.security.web.session.SessionManagementFilter@138aa3cc, org.springframework.security.web.access.ExceptionTranslationFilter@1d50a7ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e906375]
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:53:10 CEST 2019]; root of context hierarchy
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/css/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:53:15 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in restExceptionHandlerController
+2019-06-18 17:53:16 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-06-18 17:53:16 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-18 17:53:16 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-18 17:53:16 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-06-18 17:53:16 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-06-18 17:53:16 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-06-18 17:53:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-18 17:53:16 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-06-18 17:53:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-18 17:53:16 [main] INFO  c.mudri.schedule.ScheduleApplication - Started ScheduleApplication in 6.846 seconds (JVM running for 7.985)
+2019-06-18 17:54:05 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-06-18 17:54:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-06-18 17:54:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2019-06-18 17:54:05 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:54:05 [http-nio-8080-exec-2] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2019-06-18 17:54:05 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:54:14 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:54:14 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:54:14 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:54:14 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:54:28 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:54:28 [http-nio-8080-exec-7] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 403 | Access is denied
+2019-06-18 17:54:28 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:53:10 CEST 2019]; root of context hierarchy
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-06-18 17:55:15 [RMI TCP Connection(12)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-06-18 17:55:17 [main] INFO  c.mudri.schedule.ScheduleApplication - Starting ScheduleApplication on t460s with PID 4463 (/home/sebamed/Projects/FTN/rva/schedule-spring-boot/target/classes started by sebamed in /home/sebamed/Projects/FTN/rva/schedule-spring-boot)
+2019-06-18 17:55:17 [main] INFO  c.mudri.schedule.ScheduleApplication - No active profile set, falling back to default profiles: default
+2019-06-18 17:55:17 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:55:17 CEST 2019]; root of context hierarchy
+2019-06-18 17:55:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5fb3260e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:55:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$f860ee48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:55:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:55:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@c1fca2a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:55:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$1d3590fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:55:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 17:55:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-18 17:55:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-18 17:55:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-18 17:55:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-06-18 17:55:19 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-18 17:55:19 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-18 17:55:19 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1977 ms
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-06-18 17:55:20 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'authenticationTokenFilterBean' to: [/*]
+2019-06-18 17:55:21 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2019-06-18 17:55:22 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.AuthAPI.handleRegister(com.mudri.schedule.dto.RegisterDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SignInResponseDTO> com.mudri.schedule.controller.AuthAPI.handleLogin(com.mudri.schedule.dto.LoginDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleGetDTOById(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.CourseDTO>> com.mudri.schedule.controller.CourseAPI.handleGetAllDTO()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleCreateCourse(com.mudri.schedule.dto.CourseDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllLessons()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCreateLesson(com.mudri.schedule.dto.CreateLessonDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/skill/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetBySkillName(java.lang.String)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirmed/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllConfirmedByTeacher(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/canceled/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllCanceledByTeacher(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/done/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllDoneByTeacher(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}/students],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserDTO>> com.mudri.schedule.controller.LessonAPI.handleGetStudents(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirm],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleConfirmLesson(com.mudri.schedule.dto.ConfirmLessonDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/join],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleJoinLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/leave],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleLeaveLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/cancel],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCancelLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleUpdateLesson(com.mudri.schedule.dto.UpdateLessonDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleGetRoleById(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.RoleDTO>> com.mudri.schedule.controller.RoleAPI.handleGetAllRoles()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleCreateRole(com.mudri.schedule.dto.RoleDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleGetSubjectById(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.SubjectAPI.handleGetAllSubjects()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleCreateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleUpdateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/role/{role}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersByRoleName(java.lang.String)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.UserAPI.handleGetUserById(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersLessons(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersSkills(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleUpdateUsersSkills(java.lang.Long,java.util.List<com.mudri.schedule.dto.SubjectDTO>)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/skill/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersBySubject(java.lang.Long)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsers()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/app/**/*.{js,html}'], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/i18n/**'], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/content/**'], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/test/**'], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-06-18 17:55:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56928e17, org.springframework.security.web.context.SecurityContextPersistenceFilter@608b1fd2, org.springframework.security.web.header.HeaderWriterFilter@34585ac9, org.springframework.security.web.authentication.logout.LogoutFilter@7ce85af2, com.mudri.schedule.config.security.JWTFilter@4509b3ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@591a4f8e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fe533ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@dd2856e, org.springframework.security.web.session.SessionManagementFilter@15f35bc3, org.springframework.security.web.access.ExceptionTranslationFilter@6993c8df, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b0a1231]
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:55:17 CEST 2019]; root of context hierarchy
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/css/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:55:22 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in restExceptionHandlerController
+2019-06-18 17:55:22 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-06-18 17:55:22 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-18 17:55:22 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-18 17:55:22 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-06-18 17:55:22 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-06-18 17:55:22 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-06-18 17:55:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-18 17:55:23 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-06-18 17:55:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-18 17:55:23 [main] INFO  c.mudri.schedule.ScheduleApplication - Started ScheduleApplication in 5.895 seconds (JVM running for 6.546)
+2019-06-18 17:55:38 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-06-18 17:55:38 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-06-18 17:55:38 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2019-06-18 17:55:38 [http-nio-8080-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2019-06-18 17:55:38 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:55:38 [http-nio-8080-exec-1] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 404 | No user found with ID: null
+2019-06-18 17:55:38 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.NotFoundException: No user found with ID: null]
+2019-06-18 17:57:46 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:57:46 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:57:46 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:57:46 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:57:53 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:57:54 [http-nio-8080-exec-5] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 404 | No user found with ID: null
+2019-06-18 17:57:54 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.NotFoundException: No user found with ID: null]
+2019-06-18 17:58:42 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:58:42 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:58:42 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:58:42 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:58:52 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 17:58:53 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 17:58:53 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:58:53 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:58:57 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 17:58:57 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 17:58:57 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 17:58:57 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 17:59:27 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:59:27 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:59:35 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 17:59:35 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 17:59:45 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 17:59:45 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 17:59:45 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 17:59:45 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 17:59:45 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 17:59:45 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 404
+2019-06-18 18:00:01 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 18:00:02 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:00:06 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:00:06 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:00:06 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:00:06 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:00:29 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:00:29 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:00:29 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:00:29 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:00:36 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 18:00:37 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:00:37 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:00:37 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:00:53 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 18:00:53 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:01:02 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:01:02 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:01:02 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:01:02 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:01:02 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:01:02 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 18:01:56 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons/confirm | POST
+2019-06-18 18:01:56 [http-nio-8080-exec-4] INFO  o.s.s.a.AnnotationAsyncExecutionInterceptor - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+2019-06-18 18:01:56 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 18:01:56 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:01:56 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:01:56 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:01:56 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:01:56 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:01:56 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 404
+2019-06-18 18:02:00 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 18:02:00 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 18:02:05 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/done/2 | GET
+2019-06-18 18:02:05 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/done/2 | GET | 404
+2019-06-18 18:02:11 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 18:02:11 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 18:02:30 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 18:02:30 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:02:36 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:02:36 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:02:36 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:02:36 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:05:05 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:05:05 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:05:05 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:05:05 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:05:18 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 18:05:18 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:05:18 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:05:18 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cd76f31: startup date [Tue Jun 18 17:55:17 CEST 2019]; root of context hierarchy
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-06-18 18:05:46 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-06-18 18:05:47 [main] INFO  c.mudri.schedule.ScheduleApplication - Starting ScheduleApplication on t460s with PID 4970 (/home/sebamed/Projects/FTN/rva/schedule-spring-boot/target/classes started by sebamed in /home/sebamed/Projects/FTN/rva/schedule-spring-boot)
+2019-06-18 18:05:47 [main] INFO  c.mudri.schedule.ScheduleApplication - No active profile set, falling back to default profiles: default
+2019-06-18 18:05:47 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 18:05:47 CEST 2019]; root of context hierarchy
+2019-06-18 18:05:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4642f3bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:05:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$def0bbf9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:05:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:05:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4efc25fc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:05:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$3c55eab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:05:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:05:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-18 18:05:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-18 18:05:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-18 18:05:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-06-18 18:05:50 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-18 18:05:50 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-18 18:05:50 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2949 ms
+2019-06-18 18:05:50 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-06-18 18:05:51 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-18 18:05:52 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'authenticationTokenFilterBean' to: [/*]
+2019-06-18 18:05:53 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2019-06-18 18:05:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.AuthAPI.handleRegister(com.mudri.schedule.dto.RegisterDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SignInResponseDTO> com.mudri.schedule.controller.AuthAPI.handleLogin(com.mudri.schedule.dto.LoginDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.CourseDTO>> com.mudri.schedule.controller.CourseAPI.handleGetAllDTO()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleCreateCourse(com.mudri.schedule.dto.CourseDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleGetDTOById(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirmed/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllConfirmedByTeacher(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/canceled/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllCanceledByTeacher(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/done/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllDoneByTeacher(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}/students],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserDTO>> com.mudri.schedule.controller.LessonAPI.handleGetStudents(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirm],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleConfirmLesson(com.mudri.schedule.dto.ConfirmLessonDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/join],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleJoinLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/leave],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleLeaveLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/cancel],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCancelLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleUpdateLesson(com.mudri.schedule.dto.UpdateLessonDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllLessons()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCreateLesson(com.mudri.schedule.dto.CreateLessonDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/skill/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetBySkillName(java.lang.String)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleGetRoleById(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.RoleDTO>> com.mudri.schedule.controller.RoleAPI.handleGetAllRoles()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleCreateRole(com.mudri.schedule.dto.RoleDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleGetSubjectById(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.SubjectAPI.handleGetAllSubjects()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleCreateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleUpdateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/role/{role}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersByRoleName(java.lang.String)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.UserAPI.handleGetUserById(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersLessons(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersSkills(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleUpdateUsersSkills(java.lang.Long,java.util.List<com.mudri.schedule.dto.SubjectDTO>)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/skill/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersBySubject(java.lang.Long)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsers()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/app/**/*.{js,html}'], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/i18n/**'], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/content/**'], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/test/**'], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-06-18 18:05:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@463561c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@56f730b2, org.springframework.security.web.header.HeaderWriterFilter@5807efad, org.springframework.security.web.authentication.logout.LogoutFilter@5d4e13e1, com.mudri.schedule.config.security.JWTFilter@4863075e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7930ffa9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a39aa2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@659feb22, org.springframework.security.web.session.SessionManagementFilter@7ce85af2, org.springframework.security.web.access.ExceptionTranslationFilter@5d5b9ecb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25d0cb3a]
+2019-06-18 18:05:55 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:05:56 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 18:05:47 CEST 2019]; root of context hierarchy
+2019-06-18 18:05:56 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:05:56 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:05:56 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/css/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:05:56 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in restExceptionHandlerController
+2019-06-18 18:05:56 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-06-18 18:05:56 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-18 18:05:56 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-18 18:05:56 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-06-18 18:05:56 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-06-18 18:05:56 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-06-18 18:05:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-18 18:05:57 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-06-18 18:05:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-18 18:05:57 [main] INFO  c.mudri.schedule.ScheduleApplication - Started ScheduleApplication in 9.949 seconds (JVM running for 10.501)
+2019-06-18 18:06:04 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-06-18 18:06:04 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-06-18 18:06:04 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 43 ms
+2019-06-18 18:06:04 [http-nio-8080-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2019-06-18 18:06:04 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:06:04 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:06:04 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:06:04 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:13 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 18:06:13 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:06:14 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:06:14 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:32 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:06:32 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:06:32 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:06:32 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:06:49 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 18:06:49 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:06:59 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:06:59 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:06:59 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:06:59 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:06:59 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:06:59 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 18:07:10 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/confirm | POST
+2019-06-18 18:07:10 [http-nio-8080-exec-1] INFO  o.s.s.a.AnnotationAsyncExecutionInterceptor - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+2019-06-18 18:07:10 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 18:07:10 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 18:07:10 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 18:07:10 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 404
+2019-06-18 18:07:10 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 18:07:10 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 18:07:10 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 18:07:14 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 18:07:14 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 18:07:45 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 18:07:45 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:07:50 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:07:50 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:07:50 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:07:50 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:09:41 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:09:41 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:09:41 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:09:41 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:09:58 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:09:58 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:09:58 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:09:58 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 18:05:47 CEST 2019]; root of context hierarchy
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-06-18 18:10:16 [RMI TCP Connection(21)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-06-18 18:50:17 [main] INFO  c.mudri.schedule.ScheduleApplication - Starting ScheduleApplication on t460s with PID 5950 (/home/sebamed/Projects/FTN/rva/schedule-spring-boot/target/classes started by sebamed in /home/sebamed/Projects/FTN/rva/schedule-spring-boot)
+2019-06-18 18:50:17 [main] INFO  c.mudri.schedule.ScheduleApplication - No active profile set, falling back to default profiles: default
+2019-06-18 18:50:17 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 18:50:17 CEST 2019]; root of context hierarchy
+2019-06-18 18:50:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c423f665] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:50:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$5cd1be9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:50:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:50:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@e48bf9a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:50:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$81a66151] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:50:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 18:50:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-18 18:50:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-18 18:50:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-18 18:50:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-06-18 18:50:19 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2078 ms
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-06-18 18:50:20 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'authenticationTokenFilterBean' to: [/*]
+2019-06-18 18:50:21 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2019-06-18 18:50:22 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.AuthAPI.handleRegister(com.mudri.schedule.dto.RegisterDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SignInResponseDTO> com.mudri.schedule.controller.AuthAPI.handleLogin(com.mudri.schedule.dto.LoginDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.CourseDTO>> com.mudri.schedule.controller.CourseAPI.handleGetAllDTO()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleCreateCourse(com.mudri.schedule.dto.CourseDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleGetDTOById(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllLessons()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCreateLesson(com.mudri.schedule.dto.CreateLessonDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/skill/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetBySkillName(java.lang.String)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirmed/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllConfirmedByTeacher(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/canceled/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllCanceledByTeacher(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/done/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllDoneByTeacher(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}/students],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserDTO>> com.mudri.schedule.controller.LessonAPI.handleGetStudents(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirm],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleConfirmLesson(com.mudri.schedule.dto.ConfirmLessonDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/join],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleJoinLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/leave],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleLeaveLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/cancel],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCancelLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleUpdateLesson(com.mudri.schedule.dto.UpdateLessonDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleGetRoleById(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.RoleDTO>> com.mudri.schedule.controller.RoleAPI.handleGetAllRoles()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleCreateRole(com.mudri.schedule.dto.RoleDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleGetSubjectById(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.SubjectAPI.handleGetAllSubjects()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleCreateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleUpdateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/role/{role}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersByRoleName(java.lang.String)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.UserAPI.handleGetUserById(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersLessons(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersSkills(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleUpdateUsersSkills(java.lang.Long,java.util.List<com.mudri.schedule.dto.SubjectDTO>)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/skill/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersBySubject(java.lang.Long)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsers()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 18:50:22 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/app/**/*.{js,html}'], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/i18n/**'], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/content/**'], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/test/**'], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-06-18 18:50:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a49af50, org.springframework.security.web.context.SecurityContextPersistenceFilter@591a4f8e, org.springframework.security.web.header.HeaderWriterFilter@15f35bc3, org.springframework.security.web.authentication.logout.LogoutFilter@56f730b2, com.mudri.schedule.config.security.JWTFilter@7dbdc787, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ba060f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e83a98, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b1dc579, org.springframework.security.web.session.SessionManagementFilter@608b1fd2, org.springframework.security.web.access.ExceptionTranslationFilter@326e0b8e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4694f434]
+2019-06-18 18:50:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:50:23 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 18:50:17 CEST 2019]; root of context hierarchy
+2019-06-18 18:50:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:50:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:50:23 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/css/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 18:50:23 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in restExceptionHandlerController
+2019-06-18 18:50:23 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-06-18 18:50:23 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-18 18:50:23 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-18 18:50:23 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-06-18 18:50:23 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-06-18 18:50:23 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-06-18 18:50:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-18 18:50:24 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-06-18 18:50:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-18 18:50:24 [main] INFO  c.mudri.schedule.ScheduleApplication - Started ScheduleApplication in 7.152 seconds (JVM running for 7.865)
+2019-06-18 18:51:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-06-18 18:51:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-06-18 18:51:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2019-06-18 18:51:01 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 18:51:01 [http-nio-8080-exec-2] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2019-06-18 18:51:02 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 18:51:06 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:51:06 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:51:06 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:51:06 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:53:08 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:53:08 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:53:08 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:53:08 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:53:30 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 18:53:30 [http-nio-8080-exec-1] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons | POST | 404 | No user found with ID: null
+2019-06-18 18:53:30 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.NotFoundException: No user found with ID: null]
+2019-06-18 18:53:57 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:53:57 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:53:57 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:53:57 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:53:59 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:53:59 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 18:53:59 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 18:53:59 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:54:25 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 18:54:25 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 18:54:25 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 18:54:25 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 18:54:27 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/6 | GET
+2019-06-18 18:54:27 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/6 | GET | 404
+2019-06-18 18:54:27 [http-nio-8080-exec-1] INFO  requests - REQUEST: /error | GET
+2019-06-18 18:54:27 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /error | GET | 404
+2019-06-18 18:54:31 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/5 | GET
+2019-06-18 18:54:31 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/5 | GET | 404
+2019-06-18 18:54:31 [http-nio-8080-exec-2] INFO  requests - REQUEST: /error | GET
+2019-06-18 18:54:31 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /error | GET | 404
+2019-06-18 18:54:34 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/1 | GET
+2019-06-18 18:54:34 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/1 | GET | 404
+2019-06-18 18:54:34 [http-nio-8080-exec-6] INFO  requests - REQUEST: /error | GET
+2019-06-18 18:54:34 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /error | GET | 404
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 18:50:17 CEST 2019]; root of context hierarchy
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-06-18 19:01:22 [RMI TCP Connection(29)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-06-18 19:01:24 [main] INFO  c.mudri.schedule.ScheduleApplication - Starting ScheduleApplication on t460s with PID 6431 (/home/sebamed/Projects/FTN/rva/schedule-spring-boot/target/classes started by sebamed in /home/sebamed/Projects/FTN/rva/schedule-spring-boot)
+2019-06-18 19:01:24 [main] INFO  c.mudri.schedule.ScheduleApplication - No active profile set, falling back to default profiles: default
+2019-06-18 19:01:24 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 19:01:24 CEST 2019]; root of context hierarchy
+2019-06-18 19:01:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c423f665] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 19:01:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$5cd1be9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 19:01:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 19:01:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@e48bf9a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 19:01:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$81a66151] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 19:01:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-18 19:01:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-18 19:01:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-18 19:01:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-18 19:01:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1900 ms
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-06-18 19:01:26 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'authenticationTokenFilterBean' to: [/*]
+2019-06-18 19:01:27 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2019-06-18 19:01:28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.AuthAPI.handleRegister(com.mudri.schedule.dto.RegisterDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/auth/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SignInResponseDTO> com.mudri.schedule.controller.AuthAPI.handleLogin(com.mudri.schedule.dto.LoginDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleGetDTOById(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.CourseDTO>> com.mudri.schedule.controller.CourseAPI.handleGetAllDTO()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/courses],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.CourseDTO> com.mudri.schedule.controller.CourseAPI.handleCreateCourse(com.mudri.schedule.dto.CourseDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleGetById(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllLessons()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCreateLesson(com.mudri.schedule.dto.CreateLessonDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/skill/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetBySkillName(java.lang.String)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirmed/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllConfirmedByTeacher(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/canceled/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllCanceledByTeacher(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/done/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.LessonAPI.handleGetAllDoneByTeacher(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/{id}/students],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserDTO>> com.mudri.schedule.controller.LessonAPI.handleGetStudents(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/confirm],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleConfirmLesson(com.mudri.schedule.dto.ConfirmLessonDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/join],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleJoinLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/leave],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleLeaveLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/cancel],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleCancelLesson(com.mudri.schedule.dto.UserLessonDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/lessons/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.LessonDTO> com.mudri.schedule.controller.LessonAPI.handleUpdateLesson(com.mudri.schedule.dto.UpdateLessonDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleGetRoleById(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.RoleDTO>> com.mudri.schedule.controller.RoleAPI.handleGetAllRoles()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/roles],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.RoleDTO> com.mudri.schedule.controller.RoleAPI.handleCreateRole(com.mudri.schedule.dto.RoleDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleGetSubjectById(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.SubjectAPI.handleGetAllSubjects()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleCreateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/subjects],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.SubjectDTO> com.mudri.schedule.controller.SubjectAPI.handleUpdateSubject(com.mudri.schedule.dto.SubjectDTO)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/lessons],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.LessonDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersLessons(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleGetUsersSkills(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}/skills],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.SubjectDTO>> com.mudri.schedule.controller.UserAPI.handleUpdateUsersSkills(java.lang.Long,java.util.List<com.mudri.schedule.dto.SubjectDTO>)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/skill/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersBySubject(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsers()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/role/{role}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.mudri.schedule.dto.UserInfoDTO>> com.mudri.schedule.controller.UserAPI.handleGetAllUsersByRoleName(java.lang.String)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.mudri.schedule.dto.UserInfoDTO> com.mudri.schedule.controller.UserAPI.handleGetUserById(java.lang.Long)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/app/**/*.{js,html}'], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/i18n/**'], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/content/**'], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/test/**'], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-06-18 19:01:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4833eff3, org.springframework.security.web.context.SecurityContextPersistenceFilter@15f35bc3, org.springframework.security.web.header.HeaderWriterFilter@36baa049, org.springframework.security.web.authentication.logout.LogoutFilter@5807efad, com.mudri.schedule.config.security.JWTFilter@79cb7dd1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@608b1fd2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57c00115, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4694f434, org.springframework.security.web.session.SessionManagementFilter@34585ac9, org.springframework.security.web.access.ExceptionTranslationFilter@2f894ad9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3976ebfa]
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@367ffa75: startup date [Tue Jun 18 19:01:24 CEST 2019]; root of context hierarchy
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/css/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 19:01:28 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in restExceptionHandlerController
+2019-06-18 19:01:29 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-06-18 19:01:29 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-18 19:01:29 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-18 19:01:29 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-06-18 19:01:29 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-06-18 19:01:29 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-06-18 19:01:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-18 19:01:29 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-06-18 19:01:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-18 19:01:29 [main] INFO  c.mudri.schedule.ScheduleApplication - Started ScheduleApplication in 5.562 seconds (JVM running for 6.118)
+2019-06-18 19:01:49 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-06-18 19:01:49 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-06-18 19:01:49 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2019-06-18 19:01:49 [http-nio-8080-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2019-06-18 19:01:49 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/6 | GET
+2019-06-18 19:01:49 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/6 | GET | 200
+2019-06-18 19:01:54 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/5 | GET
+2019-06-18 19:01:54 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/5 | GET | 200
+2019-06-18 19:04:30 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons/1 | GET
+2019-06-18 19:04:30 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons/1 | GET | 200
+2019-06-18 19:04:34 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/3 | GET
+2019-06-18 19:04:34 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/3 | GET | 200
+2019-06-18 19:04:39 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons/leave | POST
+2019-06-18 19:04:39 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/join | POST
+2019-06-18 19:04:39 [http-nio-8080-exec-9] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/lessons/join | POST | 409 | User with ID: 1 already joined this lesson
+2019-06-18 19:04:39 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.mudri.schedule.exception.UserAlreadyInLessonException: User with ID: 1 already joined this lesson]
+2019-06-18 19:04:39 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons/leave | POST | 200
+2019-06-18 19:04:40 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/3 | GET
+2019-06-18 19:04:40 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/3 | GET | 200
+2019-06-18 19:04:43 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons/5 | GET
+2019-06-18 19:04:43 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons/5 | GET | 200
+2019-06-18 19:04:46 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons/6 | GET
+2019-06-18 19:04:46 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons/6 | GET | 200
+2019-06-18 19:05:41 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:05:41 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:05:41 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:05:42 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:05:48 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 19:05:49 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:05:49 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:05:49 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:05:56 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:05:56 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:05:56 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:05:56 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:06:05 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 19:06:05 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:06:05 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:06:05 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:06:46 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:06:46 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:06:46 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:06:47 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:07:01 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 19:07:01 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:07:01 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:07:01 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:07:37 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:07:37 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:07:37 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:07:37 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:07:50 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | POST
+2019-06-18 19:07:50 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons | POST | 201
+2019-06-18 19:07:50 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:07:50 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:08:02 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:08:02 [http-nio-8080-exec-6] ERROR c.m.s.e.h.RestExceptionHandlerController - /api/auth/login | POST | 401 | Bad credentials
+2019-06-18 19:08:02 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2019-06-18 19:08:04 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:08:05 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:08:15 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:15 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:15 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:15 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:15 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:15 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:23 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons/confirm | POST
+2019-06-18 19:08:23 [http-nio-8080-exec-5] INFO  o.s.s.a.AnnotationAsyncExecutionInterceptor - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+2019-06-18 19:08:23 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 19:08:24 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:24 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:24 [http-nio-8080-exec-7] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:24 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:24 [http-nio-8080-exec-7] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:24 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:32 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons/confirm | POST
+2019-06-18 19:08:32 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 19:08:32 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:32 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:32 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:32 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:32 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:32 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:39 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/lessons/confirm | POST
+2019-06-18 19:08:39 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/lessons/confirm | POST | 201
+2019-06-18 19:08:39 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/lessons/skill/Analiza | GET
+2019-06-18 19:08:39 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/lessons/skill/Analiza | GET | 404
+2019-06-18 19:08:39 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons/skill/Matematika%20II | GET
+2019-06-18 19:08:39 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/lessons/skill/Fizika | GET
+2019-06-18 19:08:39 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons/skill/Matematika%20II | GET | 200
+2019-06-18 19:08:39 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/lessons/skill/Fizika | GET | 200
+2019-06-18 19:08:43 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons/confirmed/2 | GET
+2019-06-18 19:08:43 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons/confirmed/2 | GET | 404
+2019-06-18 19:08:44 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/done/2 | GET
+2019-06-18 19:08:44 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons/done/2 | GET | 404
+2019-06-18 19:08:46 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons/canceled/2 | GET
+2019-06-18 19:08:46 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons/canceled/2 | GET | 200
+2019-06-18 19:09:26 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:09:26 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:09:29 [http-nio-8080-exec-3] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:09:29 [http-nio-8080-exec-3] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:09:38 [http-nio-8080-exec-5] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:09:38 [http-nio-8080-exec-6] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:09:38 [http-nio-8080-exec-6] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:09:38 [http-nio-8080-exec-5] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:09:41 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/lessons/1 | GET
+2019-06-18 19:09:41 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/lessons/1 | GET | 200
+2019-06-18 19:09:43 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/lessons/1 | GET
+2019-06-18 19:09:43 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/lessons/1 | GET | 200
+2019-06-18 19:09:45 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:09:45 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:09:45 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:09:45 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:10:33 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:10:33 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:12:43 [http-nio-8080-exec-10] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:12:43 [http-nio-8080-exec-8] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:12:43 [http-nio-8080-exec-10] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:12:43 [http-nio-8080-exec-8] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:12:48 [http-nio-8080-exec-9] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:12:48 [http-nio-8080-exec-9] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
+2019-06-18 19:12:48 [http-nio-8080-exec-4] INFO  requests - REQUEST: /api/lessons | GET
+2019-06-18 19:12:48 [http-nio-8080-exec-2] INFO  requests - REQUEST: /api/subjects | GET
+2019-06-18 19:12:48 [http-nio-8080-exec-2] INFO  requests - SUCCESSFUL: /api/subjects | GET | 200
+2019-06-18 19:12:49 [http-nio-8080-exec-4] INFO  requests - SUCCESSFUL: /api/lessons | GET | 200
+2019-06-18 19:13:01 [http-nio-8080-exec-1] INFO  requests - REQUEST: /api/auth/login | POST
+2019-06-18 19:13:01 [http-nio-8080-exec-1] INFO  requests - SUCCESSFUL: /api/auth/login | POST | 200
